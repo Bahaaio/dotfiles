@@ -2,6 +2,16 @@
 
 My personal configuration files for various tools.
 
+```
+       __      __  _____ __
+  ____/ /___  / /_/ __(_) /__  _____
+ / __  / __ \/ __/ /_/ / / _ \/ ___/
+/ /_/ / /_/ / /_/ __/ / /  __(__  )
+\__,_/\____/\__/_/ /_/_/\___/____/
+
+BahaaMohamed98
+```
+
 ## Requirments
 
 Make sure you have git and GNU stow installed

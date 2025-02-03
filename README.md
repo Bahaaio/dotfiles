@@ -26,8 +26,9 @@ sudo apt install git stow
 First, clone the dotfiles repository into your home directory
 
 ```sh
-git clone https://github.com/BahaaMohamed98/dotfiles.git ~
-cd ~/dotfiles
+cd ~
+git clone https://github.com/BahaaMohamed98/dotfiles.git
+cd dotfiles
 ```
 
 then use the [install.sh](install.sh) to create the symlinks
@@ -36,3 +37,5 @@ then use the [install.sh](install.sh) to create the symlinks
 chmod +x install.sh 
 ./install.sh
 ```
+
+---

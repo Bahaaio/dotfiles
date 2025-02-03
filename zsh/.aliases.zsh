@@ -1,3 +1,4 @@
+# ls
 alias ls='lsd'
 alias ll='ls -lh'
 alias l='ls -l'
@@ -5,9 +6,14 @@ alias la='ls -A'
 alias lla='ls -lAh'
 alias lt='ls --tree'
 alias lta='ls --tree -a'
+
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias ..='cd ..'
+
+# history
+alias hs='history | grep'
+alias hl='history | less'
 
 # apt
 alias update='sudo apt update'
@@ -26,6 +32,7 @@ alias clip='clipcopy'
 alias src='source ~/.zshrc'
 alias copy='clipcopy'
 alias paste='clippaste'
+alias copypath='pwd | clipcopy; echo "current path was copied to the clipboard."'
 alias clock='tty-clock -c -s -b -t'
 
 # git

@@ -37,6 +37,7 @@ return {
    tab_max_width = 23,
    show_tab_index_in_tab_bar = false,
    switch_to_last_active_tab_when_closing_tab = true,
+   window_decorations = 'RESIZE',
 
    -- window
    window_padding = {

@@ -36,3 +36,9 @@ map("n", "<leader>to", "<cmd>tabnew<Cr>", { desc = "open new tab" }) -- open new
 map("n", "<leader>tx", "<cmd>tabclose<Cr>", { desc = "close current tab" }) -- close current tab
 map("n", "<leader>tn", "<cmd>tabn<Cr>", { desc = "go to next tab" }) --  go to next tab
 map("n", "<leader>tp", "<cmd>tabp<Cr>", { desc = "go to previous tab" }) --  go to previous tab
+
+-- vim-tmux-navigator
+map("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "switch window left" })
+map("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "switch window down" })
+map("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "switch window up" })
+map("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "switch window right" })

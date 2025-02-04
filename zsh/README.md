@@ -1,4 +1,4 @@
-# Zsh
+# [Zsh](https://www.zsh.org/)
 
 My Zsh configuration setup
 

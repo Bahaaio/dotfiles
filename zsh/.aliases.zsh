@@ -10,6 +10,7 @@ alias lta='ls --tree -a'
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias ..='cd ..'
+alias cl='clear'
 
 # history
 alias hs='history | grep'

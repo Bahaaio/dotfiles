@@ -13,7 +13,7 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Which plugins would you like to load?
 # Add wisely, as too many plugins slow down shell startup.
@@ -66,14 +66,6 @@ f() {
     fi
     if [[ -n $dir ]]; then
         cd "$dir" || return
-    fi
-}
-
-google() {
-    if [[ -n $1 ]]; then
-        xdg-open "https://www.google.com/search?q=$1"
-    else 
-        xdg-open "https://www.google.com/"
     fi
 }
 

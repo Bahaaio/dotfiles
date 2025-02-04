@@ -9,6 +9,8 @@ map("n", "<C-u>", "<C-u>zz", { desc = "half page up" })
 map("n", "n", "nzz", { desc = "next search result" })
 map("n", "N", "Nzz", { desc = "previous search result" })
 
+map("n", "G", "Gzz", { desc = "last line" })
+
 map("n", "<leader>q", "<cmd>q<Cr>", { desc = "quit buffer" })
 
 -- terminal

@@ -14,7 +14,7 @@ BahaaMohamed98
 
 ## Requirments
 
-Make sure you have git and GNU stow installed
+Make sure you have [git](https://git-scm.com/) and [GNU stow](https://www.gnu.org/software/stow/) installed
 
 ```sh
 sudo apt update

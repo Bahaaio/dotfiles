@@ -22,10 +22,16 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 ```
 
+### [zoxide](https://github.com/ajeetdsouza/zoxide)
+
+```sh
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+```
+
 ### Utilities
 
 ```sh
-sudo apt install lsd xclip bat fzf
+sudo apt install lsd xclip bat fzf neofetch lolcat
 ```
 
 ## Optional

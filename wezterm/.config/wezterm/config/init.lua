@@ -30,9 +30,9 @@ function Config:append(new_options)
    return self
 end
 
-wezterm.on("gui-startup", function()
-  local _, _, window = wezterm.mux.spawn_window{}
-  window:gui_window():toggle_fullscreen()
-end)
+-- wezterm.on("gui-startup", function(cmd)
+--   local _, _, window = wezterm.mux.spawn_window(cmd or {})
+--   window:gui_window():toggle_fullscreen()
+-- end)
 
 return Config

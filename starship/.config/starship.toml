@@ -6,6 +6,7 @@ format = """
 $directory\
 $git_branch\
 $git_status\
+$git_metrics\
 $fill\
 $c\
 $cmake\
@@ -22,20 +23,35 @@ $character"""
 
 [directory]
 truncation_length = 8
-read_only_style = '197'
-read_only = '  '
-format = '[$path]($style)[$read_only]($read_only_style) '
+read_only_style = '31'
+read_only = ' '
+repo_root_style = '39'
+style = '74'
+format = '[$read_only]($read_only_style)[$path]($style)'
+
+[status]
+disabled = false
+style = '160'
+symbol =  '✗ '
+format = '[$symbol $status]($style)'
+
+[character]
+success_symbol = '[❯](76)'
+error_symbol = '[❯](196)'
+vimcmd_symbol = '[❮](76)'
+vimcmd_visual_symbol = '[V](76)'
+
 
 [fill]
 symbol = ' '
 
 [git_branch]
+style = '76'
 format = '[$symbol$branch]($style)'
-style = 'bold green'
 
 [git_status]
 format = '[$all_status$ahead_behind]($style) '
-style = 'bold green'
+style = '214'
 up_to_date = ''
 untracked = ''
 ahead = ' ⇡${count}'

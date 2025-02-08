@@ -1,4 +1,4 @@
-# Fish
+# [Fish](https://fishshell.com/)
 
 My Fish shell configuration setup
 

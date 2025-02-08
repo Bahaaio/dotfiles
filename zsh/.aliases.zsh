@@ -36,6 +36,7 @@ alias paste='clippaste'
 alias copypath='pwd | clipcopy; echo "current path was copied to the clipboard."'
 alias clock='tty-clock -c -s -b -t'
 alias leetcode='nvim leetcode.nvim'
+alias vim='nvim'
 
 # git
 alias gc='git clone'

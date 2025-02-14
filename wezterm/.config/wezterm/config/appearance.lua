@@ -42,9 +42,9 @@ return {
    -- window
    window_padding = {
       left = 5,
-      right = 5,
-      top = 10,
-      bottom = 7.5,
+      right = 0,
+      top = 5,
+      bottom = 5,
    },
    adjust_window_size_when_changing_font_size = false,
    window_close_confirmation = 'NeverPrompt',

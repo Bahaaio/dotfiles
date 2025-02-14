@@ -27,5 +27,5 @@ if [[ "$day" -gt 9 ]]; then
     day_name="$day_name "
 fi
 
-echo " $day_name$day_with_ordinal | $time"
+echo "$day_name$day_with_ordinal | $time"
 

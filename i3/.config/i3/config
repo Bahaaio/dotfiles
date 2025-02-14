@@ -71,7 +71,7 @@ bindsym $mod+Return exec wezterm
 bindsym $mod+q kill
 
 # rofi app launcher
-bindsym Mod1+space exec --no-startup-id ~/.config/rofi/launcher/launcher.sh 
+bindsym Mod1+space exec --no-startup-id ~/.config/rofi/launcher/launcher.sh
 
 # rofi powermenu
 bindsym $mod+x exec --no-startup-id ~/.config/rofi/powermenu/powermenu.sh
@@ -122,7 +122,7 @@ bindsym $mod+Mod1+v split h
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# change container layout (tabbed, toggle split)
+# change container layout (tabbed, split)
 bindsym $mod+w layout tabbed
 bindsym $mod+s layout toggle split
 
@@ -186,10 +186,10 @@ bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
+        # Pressing left will grow the window’s width.
+        # Pressing right will shrink the window’s width.
+        # Pressing up will grow the window’s height.
+        # Pressing down will shrink the window’s height.
         bindsym h resize grow width 10 px or 10 ppt
         bindsym j resize shrink height 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
@@ -211,9 +211,9 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # window rules
-for_window [class="gnome-control-center"] floating enable, border pixel 3
-for_window [class="copyq"] floating enable, border pixel 5
-for_window [class="Brave-browser"] border pixel 2
+for_window [class="gnome-control-center"] floating enable
+for_window [class="copyq"] floating enable
+for_window [window_type="normal"] border pixel 2
 
 workspace_auto_back_and_forth yes
 

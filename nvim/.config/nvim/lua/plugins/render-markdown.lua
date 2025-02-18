@@ -5,4 +5,5 @@ return {
   ---@type render.md.UserConfig
   opts = {},
   cmd = { "RenderMarkdown" },
+  vim.keymap.set("n", "<leader>mr", "<cmd>RenderMarkdown<cr>", { desc = "render markdown" }),
 }

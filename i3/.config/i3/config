@@ -76,11 +76,20 @@ bindsym Mod1+space exec --no-startup-id ~/.config/rofi/launcher/launcher.sh
 # rofi powermenu
 bindsym $mod+x exec --no-startup-id ~/.config/rofi/powermenu/powermenu.sh
 
-# rofi search
-bindsym $mod+o exec --no-startup-id ~/.config/rofi/rofi-search/rofi-search.sh
-
 # file explorer
-bindsym $mod+e exec --no-startup-id nautilus &
+# bindsym $mod+e exec --no-startup-id wezterm -e yazi
+
+exec --no-startup-id wezterm start --class wezbtop -e btop
+for_window [class="wezbtop"] move scratchpad
+bindsym $mod+b [class="wezbtop"] scratchpad show; move position center
+
+exec --no-startup-id wezterm start --class wezyazi -e yazi
+for_window [class="wezyazi"] move scratchpad
+bindsym $mod+e [class="wezyazi"] scratchpad show; move position center
+
+exec --no-startup-id wezterm start --class wezscratch
+for_window [class="wezscratch"] move scratchpad
+bindsym $mod+o [class="wezscratch"] scratchpad show; move position center
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -122,9 +131,10 @@ bindsym $mod+Mod1+v split h
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# change container layout (tabbed, split)
-bindsym $mod+w layout tabbed
+# change container layout (tabbed, split, and stacked)
+bindsym $mod+t layout tabbed
 bindsym $mod+s layout toggle split
+bindsym $mod+w layout stacking
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle

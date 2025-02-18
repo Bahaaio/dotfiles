@@ -3,8 +3,8 @@ require "nvchad.mappings"
 local map = vim.keymap.set
 
 -- default keymaps override
-map("n", "<C-d>", "<C-d>zz", { desc = "half page down" })
-map("n", "<C-u>", "<C-u>zz", { desc = "half page up" })
+-- map("n", "<C-d>", "<C-d>zz", { desc = "half page down" })
+-- map("n", "<C-u>", "<C-u>zz", { desc = "half page up" })
 
 map("n", "n", "nzz", { desc = "next search result" })
 map("n", "N", "Nzz", { desc = "previous search result" })
@@ -12,6 +12,7 @@ map("n", "N", "Nzz", { desc = "previous search result" })
 map("n", "G", "Gzz", { desc = "last line" })
 
 map("n", "<leader>q", "<cmd>q<Cr>", { desc = "quit buffer" })
+map("n", "<leader>Q", "<cmd>qa<Cr>", { desc = "quit all" })
 
 -- terminal
 map("n", "<leader>ft", "<cmd>ToggleTerm direction=float<Cr>", { desc = "toggle floating terminal" })
@@ -44,3 +45,26 @@ map("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "switch window left" })
 map("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "switch window down" })
 map("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "switch window up" })
 map("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "switch window right" })
+
+-- yank to the system clipboard
+map("n", "<leader>y", '"+y', { desc = "yank to the system clipboard" })
+map("n", "<leader>Y", '"+y$', { desc = "yank eol to the system clipboard" })
+
+-- open current file in apostrophe
+map("n", "<leader>mp", function()
+  local file = vim.fn.expand "%:p" -- Get current file path
+  if file ~= "" then
+    vim.fn.jobstart("apostrophe " .. vim.fn.shellescape(file), { detach = true })
+  else
+    print "No file open"
+  end
+end, { desc = "preview markdown in apostrophe" })
+
+-- vim visual multi mappings
+map("n", "<leader>ev", '<cmd>Lazy load vim-visual-multi<cr> <bar> <cmd>echo "loaded plugin vim-visual-multi"<cr>', { desc = "load vim-visual-multi" })
+vim.g.VM_maps = {
+  ["Find Under"] = "<M-j>",
+  ["Find Subword Under"] = "<M-j>",
+  ["Select Cursor Up"] = "<M-C-k>",
+  ["Select Cursor Down"] = "<M-C-j>",
+}

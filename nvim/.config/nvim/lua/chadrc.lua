@@ -6,25 +6,20 @@
 local M = {}
 
 M.base46 = {
-    theme = "horizon",
-
-    hl_override = {
-        Comment = { italic = true },
-        ["@comment"] = { italic = true },
-    },
-    -- transparency = true,
+  theme = "horizon",
+  integrations = { "neogit" },
+  hl_override = {
+    Comment = { italic = true },
+    ["@comment"] = { italic = true },
+  },
+  -- transparency = true,
 }
 
 M.nvdash = { load_on_startup = true }
 M.ui = {
-    tabufline = {
-        lazyload = false,
-    },
+  tabufline = {
+    lazyload = true,
+  },
 }
-
--- transparency toggle keymap
-vim.keymap.set("n", "<leader>tt", function()
-    require("base46").toggle_transparency()
-end, { desc = "toggle nvim transparency" })
 
 return M

@@ -35,8 +35,3 @@ require "nvchad.autocmds"
 vim.schedule(function()
   require "mappings"
 end)
-
--- custom plugins
-require("overseer").setup()
-require "configs.cmake-tools"
-require("lsp-file-operations").setup()

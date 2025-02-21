@@ -61,10 +61,21 @@ map("n", "<leader>mp", function()
 end, { desc = "preview markdown in apostrophe" })
 
 -- vim visual multi mappings
-map("n", "<leader>ev", '<cmd>Lazy load vim-visual-multi<cr> <bar> <cmd>echo "loaded plugin vim-visual-multi"<cr>', { desc = "load vim-visual-multi" })
+map(
+  "n",
+  "<leader>ev",
+  '<cmd>Lazy load vim-visual-multi<cr> <bar> <cmd>echo "loaded plugin vim-visual-multi"<cr>',
+  { desc = "load vim-visual-multi" }
+)
+
 vim.g.VM_maps = {
   ["Find Under"] = "<M-j>",
   ["Find Subword Under"] = "<M-j>",
   ["Select Cursor Up"] = "<M-C-k>",
   ["Select Cursor Down"] = "<M-C-j>",
 }
+
+-- transparency toggle keymap
+vim.keymap.set("n", "<leader>tt", function()
+  require("base46").toggle_transparency()
+end, { desc = "toggle nvim transparency" })

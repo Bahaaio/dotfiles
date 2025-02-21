@@ -1,35 +1,106 @@
-" .ideavimrc is a configuration file for IdeaVim plugin. It uses
-"   the same commands as the original .vimrc configuration.
-" You can find a list of commands here: https://jb.gg/h38q75
-" Find more examples here: https://jb.gg/share-ideavimrc
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""               
+"    ██╗██████╗ ███████╗ █████╗ ██╗   ██╗██╗███╗   ███╗██████╗  ██████╗
+"    ██║██╔══██╗██╔════╝██╔══██╗██║   ██║██║████╗ ████║██╔══██╗██╔════╝
+"    ██║██║  ██║█████╗  ███████║██║   ██║██║██╔████╔██║██████╔╝██║
+"    ██║██║  ██║██╔══╝  ██╔══██║╚██╗ ██╔╝██║██║╚██╔╝██║██╔══██╗██║
+"    ██║██████╔╝███████╗██║  ██║ ╚████╔╝ ██║██║ ╚═╝ ██║██║  ██║╚██████╗
+"    ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝
+"    BahaaMohamed98
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""               
 
-" Source your .vimrc
-source ~/.vimrc
-
-"" -- Suggested options --
-" Show a few lines of context around the cursor. Note that this makes the
-" text scroll if you mouse-click near the start or end of the window.
-set scrolloff=5
-
-" Do incremental searching.
+" -- options --
+set scrolloff=10
 set incsearch
+set ignorecase
+set smartcase
+set ideajoin
+set number
+set relativenumber
+set hlsearch
+set notimeout
 
-" Don't use Ex mode, use Q for formatting.
-map Q gq
+" -- plugins --
+set mini-ai
+set NERDTree
+set surround
+set which-key
+set highlightedyank
 
-" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+" -- keymaps --
 
-" Highlight copied text
-Plug 'machakann/vim-highlightedyank'
-" Commentary plugin
-Plug 'tpope/vim-commentary'
+let mapleader=" "
 
-"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
-"" Map \r to the Reformat Code action
-"map \r <Action>(ReformatCode)
+" Window Navigation
+nmap <C-h> <C-w>h
+nmap <C-l> <C-w>l
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
 
-"" Map <leader>d to start debug
-"map <leader>d <Action>(Debug)
+" General Mappings
+nmap <Esc> :noh<CR>
+nmap <leader>rn :set rnu!<CR>
+nmap <C-S-v> <Action>(EditorPaste)
+imap <C-S-v> <Action>(EditorPaste)
+nmap <leader>fm <Action>(ReformatCode)
+nmap <leader>h <Action>(HideActiveWindow)
 
-"" Map \b to toggle the breakpoint on the current line
-"map \b <Action>(ToggleLineBreakpoint)
+" default keymaps override
+nmap n nzz
+nmap N Nzz
+nmap G Gzz
+
+" NERDTree
+nmap <C-n> :NERDTreeToggle<CR>
+
+" Finding files
+nmap <leader>ff <Action>(GotoFile)
+nmap <leader>fw <Action>(FindInPath)
+nmap <leader>fu <Action>(FindUsages)
+
+" Find and Replace
+nmap <leader>rf <Action>(Replace)
+vmap <leader>rf <Action>(Replace)
+nmap <leader>ra <Action>(ReplaceInPath)
+vmap <leader>fa <Action>(ReplaceInPath)
+
+" Commenting
+nmap <leader>/ <Action>(CommentByLineComment)
+vmap <leader>/ <Action>(CommentByLineComment)
+
+" Buffer management
+nmap <Tab> :prev<CR>
+nmap <S-Tab> :next<CR>
+nmap <leader>x :bd<CR>
+
+" Split management
+nmap <leader>sx :close<CR>
+nmap <leader>sh :split<CR>
+nmap <leader>sv :vsplit<CR>
+
+" Insert mode keymaps
+imap <C-h> <Left>
+imap <C-j> <Down>
+imap <C-k> <Up>
+imap <C-l> <Right>
+
+" Yank to system clipboard
+nmap <C-c> :%y+<CR>
+nnoremap <leader>y "+y
+nnoremap <leader>Y "+y$
+
+" .ideavimrc
+nnoremap ve :e ~/.ideavimrc<CR>
+nnoremap vr :action IdeaVim.ReloadVimRc.reload<CR>
+
+" git
+nmap <leader>gp <Action>(Vcs.Push)
+nmap <leader>gu <Action>(Vcs.UpdateProject)
+nmap <leader>gc <Action>(ActivateCommitToolWindow)
+nmap <leader>gs <Action>(ActivateVersionControlToolWindow)
+
+" terminal
+nmap <leader>t <Action>(ActivateTerminalToolWindow)
+
+" debugger
+map <leader>dr <Action>(Debug)
+map <leader>db <Action>(ToggleLineBreakpoint)

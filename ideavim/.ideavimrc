@@ -37,12 +37,14 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 
 " General Mappings
-nmap <Esc> :noh<CR>
+nmap <C-S> :w<CR>
+nmap <leader>n :noh<CR>
 nmap <leader>rn :set rnu!<CR>
+nmap <leader>fm <Action>(ReformatCode)
+
+" Paste
 nmap <C-S-v> <Action>(EditorPaste)
 imap <C-S-v> <Action>(EditorPaste)
-nmap <leader>fm <Action>(ReformatCode)
-nmap <leader>h <Action>(HideActiveWindow)
 
 " default keymaps override
 nmap n nzz
@@ -51,25 +53,41 @@ nmap G Gzz
 
 " NERDTree
 nmap <C-n> :NERDTreeToggle<CR>
+nmap <leader>e :NERDTreeFocus<CR>
 
-" Finding files
+" Find
 nmap <leader>ff <Action>(GotoFile)
 nmap <leader>fw <Action>(FindInPath)
 nmap <leader>fu <Action>(FindUsages)
+nmap <leader>fz <Action>(Find)
+
+" diagnostics
+nmap <leader>ds <Action>(FileStructurePopup)
+nmap <leader>de <Action>(ShowErrorDescription)
+nmap <leader>da <Action>(ShowIntentionActions)
+nmap <leader>df <Action>(ActivateProblemsViewToolWindow)
+nmap <leader>dn <Action>(GotoNextError)
+nmap <leader>dp <Action>(GotoPreviousError)
 
 " Find and Replace
 nmap <leader>rf <Action>(Replace)
 vmap <leader>rf <Action>(Replace)
-nmap <leader>ra <Action>(ReplaceInPath)
-vmap <leader>fa <Action>(ReplaceInPath)
+nmap <leader>rp <Action>(ReplaceInPath)
+vmap <leader>rp <Action>(ReplaceInPath)
+
+" rename
+nmap <leader>ra <Action>(RenameElement)
+
+" change signature
+nmap <leader>cs <Action>(ChangeSignature)
 
 " Commenting
 nmap <leader>/ <Action>(CommentByLineComment)
 vmap <leader>/ <Action>(CommentByLineComment)
 
 " Buffer management
-nmap <Tab> :prev<CR>
-nmap <S-Tab> :next<CR>
+nmap <C-]> :tabn<CR>
+nmap <C-[> :tabp<CR>
 nmap <leader>x :bd<CR>
 
 " Split management
@@ -97,9 +115,6 @@ nmap <leader>gp <Action>(Vcs.Push)
 nmap <leader>gu <Action>(Vcs.UpdateProject)
 nmap <leader>gc <Action>(ActivateCommitToolWindow)
 nmap <leader>gs <Action>(ActivateVersionControlToolWindow)
-
-" terminal
-nmap <leader>t <Action>(ActivateTerminalToolWindow)
 
 " debugger
 map <leader>dr <Action>(Debug)

@@ -24,6 +24,9 @@ map("t", "<C-k>", "<C-\\><C-N><C-w>k") -- move out of horizontal terminal
 -- Telescope
 map("n", "<leader>tr", "<cmd>Telescope resume<Cr>", { desc = "telescope resume" })
 
+-- Lazy
+map("n", "<leader>l", "<cmd>Lazy<Cr>", { desc = "open Lazy" })
+
 -- Gitsigns
 map("n", "<leader>gd", "<cmd>Gitsigns diffthis<Cr>", { desc = "Gitsigns diff" })
 map("n", "<leader>gp", "<cmd>Gitsigns preview_hunk<Cr>", { desc = "Gitsigns preview hunk" })
@@ -33,6 +36,15 @@ map("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split 
 -- map("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
 map("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
 map("n", "<leader>sx", "<cmd>close<Cr>", { desc = "Close current split" }) -- close current split window
+
+-- tabufline
+map("n", "<C-]>", function()
+  require("nvchad.tabufline").next()
+end, { desc = "buffer goto next" })
+
+map("n", "<C-[>", function()
+  require("nvchad.tabufline").prev()
+end, { desc = "buffer goto prev" })
 
 -- tab management
 map("n", "<leader>to", "<cmd>tabnew<Cr>", { desc = "open new tab" }) -- open new tab
@@ -47,7 +59,7 @@ map("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "switch window up" })
 map("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "switch window right" })
 
 -- yank to the system clipboard
-map("n", "<leader>y", '"+y', { desc = "yank to the system clipboard" })
+map({ "n", "v" }, "<leader>y", '"+y', { desc = "yank to the system clipboard" })
 map("n", "<leader>Y", '"+y$', { desc = "yank eol to the system clipboard" })
 
 -- open current file in apostrophe
@@ -79,3 +91,5 @@ vim.g.VM_maps = {
 vim.keymap.set("n", "<leader>tt", function()
   require("base46").toggle_transparency()
 end, { desc = "toggle nvim transparency" })
+
+vim.keymap.set("n", "<leader>n", "<cmd>Noice dismiss<Cr>", { desc = "dismiss notifications" })

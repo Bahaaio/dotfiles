@@ -1,6 +1,5 @@
 return {
   "stevearc/conform.nvim",
-  -- event = 'BufWritePre', -- uncomment for format on save
   opts = {
     formatters_by_ft = {
       lua = { "stylua" },
@@ -11,6 +10,7 @@ return {
       cpp = { "clang_format" },
       c = { "clang_format" },
       cmake = { "gersemi" },
+      python = { "black" },
     },
 
     -- format_on_save = {

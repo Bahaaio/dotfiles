@@ -4,6 +4,8 @@ return {
   ---@module 'render-markdown'
   ---@type render.md.UserConfig
   opts = {},
-  cmd = { "RenderMarkdown" },
-  vim.keymap.set("n", "<leader>mr", "<cmd>RenderMarkdown<cr>", { desc = "render markdown" }),
+  ft = { "markdown" },
+  config = function()
+    require("render-markdown").setup()
+  end,
 }

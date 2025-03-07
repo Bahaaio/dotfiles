@@ -6,7 +6,7 @@ return {
     {
       "<leader>dl",
       "<cmd>Trouble diagnostics toggle focus=true<cr>",
-      desc = "Diagnostics list(Trouble)",
+      desc = "Diagnostics list (Trouble)",
     },
     {
       "<leader>df",
@@ -20,8 +20,8 @@ return {
     },
     {
       "<leader>dr",
-      "<cmd>Trouble lsp toggle focus=true win.position=right<cr>",
-      desc = "LSP Definitions / references / ... (Trouble)",
+      "<cmd>Trouble lsp_references toggle focus=true<cr>",
+      desc = "LSP references (Trouble)",
     },
     --   {
     --     "<leader>xL",

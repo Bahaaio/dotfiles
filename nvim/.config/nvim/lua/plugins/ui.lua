@@ -75,7 +75,7 @@ return {
     -- enabled = false,
     config = function()
       require("mini.animate").setup {
-      cursor = { enable = false },
+        cursor = { enable = false },
         resize = {
           timing = require("mini.animate").gen_timing.linear { duration = 50, unit = "total" },
         },
@@ -106,6 +106,8 @@ return {
             "notify",
             "toggleterm",
             "trouble",
+            "neogit",
+            "NeogitStatus",
           },
           callback = function()
             vim.b.miniindentscope_disable = true

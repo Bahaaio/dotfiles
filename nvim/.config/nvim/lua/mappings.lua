@@ -1,16 +1,16 @@
 require "nvchad.mappings"
 
 local map = vim.keymap.set
+local nomap = vim.keymap.del
 
 -- default keymaps override
 -- map("n", "<C-d>", "<C-d>zz", { desc = "half page down" })
 -- map("n", "<C-u>", "<C-u>zz", { desc = "half page up" })
-
 map("n", "n", "nzz", { desc = "next search result" })
 map("n", "N", "Nzz", { desc = "previous search result" })
-
 map("n", "G", "Gzz", { desc = "last line" })
 
+-- quit
 map("n", "<leader>q", "<cmd>q<Cr>", { desc = "quit buffer" })
 map("n", "<leader>Q", "<cmd>qa<Cr>", { desc = "quit all" })
 
@@ -23,6 +23,9 @@ map("t", "<C-k>", "<C-\\><C-N><C-w>k") -- move out of horizontal terminal
 
 -- Telescope
 map("n", "<leader>tr", "<cmd>Telescope resume<Cr>", { desc = "telescope resume" })
+map("n", "<leader>fs", "<cmd>Telescope session-lens<Cr>", { desc = "telescope find session" })
+nomap("n", "<leader>fz")
+map("n", "<leader>fi", "<cmd>Telescope current_buffer_fuzzy_find<Cr>", { desc = "telescope find in current buffer" })
 
 -- Lazy
 map("n", "<leader>l", "<cmd>Lazy<Cr>", { desc = "open Lazy" })
@@ -36,6 +39,8 @@ map("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split 
 -- map("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
 map("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
 map("n", "<leader>sx", "<cmd>close<Cr>", { desc = "Close current split" }) -- close current split window
+
+map("n", "<C-CR>", "<C-]>zz", { noremap = true, silent = true })
 
 -- tabufline
 map("n", "<C-]>", function()
@@ -72,24 +77,17 @@ map("n", "<leader>mp", function()
   end
 end, { desc = "preview markdown in apostrophe" })
 
--- vim visual multi mappings
-map(
-  "n",
-  "<leader>ev",
-  '<cmd>Lazy load vim-visual-multi<cr> <bar> <cmd>echo "loaded plugin vim-visual-multi"<cr>',
-  { desc = "load vim-visual-multi" }
-)
-
 vim.g.VM_maps = {
-  ["Find Under"] = "<M-j>",
-  ["Find Subword Under"] = "<M-j>",
-  ["Select Cursor Up"] = "<M-C-k>",
-  ["Select Cursor Down"] = "<M-C-j>",
+  ["Find Under"] = "<A-j>",
+  ["Find Subword Under"] = "<A-j>",
+  ["Select Cursor Up"] = "<A-C-k>",
+  ["Select Cursor Down"] = "<A-C-j>",
 }
 
--- transparency toggle keymap
+-- toggle transparency
 vim.keymap.set("n", "<leader>tt", function()
   require("base46").toggle_transparency()
 end, { desc = "toggle nvim transparency" })
 
+-- dismiss noice notifications
 vim.keymap.set("n", "<leader>n", "<cmd>Noice dismiss<Cr>", { desc = "dismiss notifications" })

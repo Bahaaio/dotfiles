@@ -41,6 +41,7 @@ nmap <C-S> :w<CR>
 nmap <leader>n :noh<CR>
 nmap <leader>rn :set rnu!<CR>
 nmap <leader>fm <Action>(ReformatCode)
+nmap <C-CR> <Action>(GotoDeclaration)
 
 " Paste
 nmap <C-S-v> <Action>(EditorPaste)
@@ -56,14 +57,14 @@ nmap <C-n> :NERDTreeToggle<CR>
 nmap <leader>e :NERDTreeFocus<CR>
 
 " Find
+nmap <leader>fi <Action>(Find)
 nmap <leader>ff <Action>(GotoFile)
 nmap <leader>fw <Action>(FindInPath)
 nmap <leader>fu <Action>(FindUsages)
-nmap <leader>fz <Action>(Find)
 
 " diagnostics
 nmap <leader>ds <Action>(FileStructurePopup)
-nmap <leader>de <Action>(ShowErrorDescription)
+nmap <leader>di <Action>(ShowErrorDescription)
 nmap <leader>da <Action>(ShowIntentionActions)
 nmap <leader>df <Action>(ActivateProblemsViewToolWindow)
 nmap <leader>dn <Action>(GotoNextError)
@@ -103,8 +104,8 @@ imap <C-l> <Right>
 
 " Yank to system clipboard
 nmap <C-c> :%y+<CR>
-nnoremap <leader>y "+y
-nnoremap <leader>Y "+y$
+map <leader>y "+y
+nmap <leader>Y "+y$
 
 " .ideavimrc
 nnoremap ve :e ~/.ideavimrc<CR>

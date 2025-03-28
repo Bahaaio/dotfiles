@@ -6,7 +6,7 @@ return {
 
     local lspconfig = require "lspconfig"
 
-    local servers = { "html", "cssls", "clangd", "ts_ls", "pyright" }
+    local servers = { "html", "cssls", "clangd", "ts_ls", "pyright", "jdtls", "biome" }
     local nvlsp = require "nvchad.configs.lspconfig"
 
     -- lsps with default config

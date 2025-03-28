@@ -11,6 +11,7 @@ return {
       c = { "clang_format" },
       cmake = { "gersemi" },
       python = { "black" },
+      java = { "google_java_format" },
     },
 
     -- format_on_save = {

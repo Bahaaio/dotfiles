@@ -46,7 +46,7 @@ source /usr/share/doc/fzf/examples/completion.zsh
 eval "$(zoxide init --cmd cd zsh)"
 
 # vi mode
-bindkey -v
+# bindkey -v
 
 # Function to get files or directories while ignoring patterns from the ignore file
 get_files() {

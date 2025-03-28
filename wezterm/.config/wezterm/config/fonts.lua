@@ -1,6 +1,5 @@
 local wezterm = require('wezterm')
 
--- local font = 'Maple Mono SC NF'
 local font_family = 'JetBrainsMono Nerd Font'
 
 return {

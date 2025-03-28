@@ -18,5 +18,5 @@ opt.smartindent = true
 -- overriding nvchad's clipboard = "unnamedplus"
 opt.clipboard = ""
 
-vim.opt.scrolloff = 8 -- Keeps at least 8 lines above/below the cursor when scrolling
-vim.opt.sidescrolloff = 8 -- Keeps at least 8 columns to the left/right of the cursor
+-- vim.opt.scrolloff = 8 -- Keeps at least 8 lines above/below the cursor when scrolling
+-- vim.opt.sidescrolloff = 8 -- Keeps at least 8 columns to the left/right of the cursor

@@ -79,6 +79,9 @@ vmap <leader>rp <Action>(ReplaceInPath)
 " rename
 nmap <leader>ra <Action>(RenameElement)
 
+" todo
+nmap <leader>td <Action>(ActivateTODOToolWindow)
+
 " change signature
 nmap <leader>cs <Action>(ChangeSignature)
 

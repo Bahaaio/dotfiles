@@ -34,10 +34,13 @@ alias src='source ~/.zshrc'
 alias copy='clipcopy'
 alias paste='clippaste'
 alias copypath='pwd | clipcopy; echo "current path was copied to the clipboard."'
-alias clock='tty-clock -c -s -b -t'
+alias clock='tty-clock -c -s -b -t -C 6'
 alias leetcode='nvim leetcode.nvim'
 alias vim='nvim'
 
 # git
 alias gc='git clone'
 alias gc1='git clone --depth=1'
+
+# tlp
+alias charge='sudo tlp fullcharge'

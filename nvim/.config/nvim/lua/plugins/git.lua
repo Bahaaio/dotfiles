@@ -15,7 +15,7 @@ return {
     config = function()
       require("neogit").setup {
         graph_style = "unicode",
-        process_spinner = true,
+        -- process_spinner = true,
         signs = {
           -- { CLOSED, OPENED }
           hunk = { "", "" },

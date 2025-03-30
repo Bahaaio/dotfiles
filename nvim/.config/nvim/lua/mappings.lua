@@ -40,14 +40,12 @@ map("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split 
 map("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
 map("n", "<leader>sx", "<cmd>close<Cr>", { desc = "Close current split" }) -- close current split window
 
-map("n", "<C-CR>", "<C-]>zz", { noremap = true, silent = true })
-
 -- tabufline
-map("n", "<C-]>", function()
+map("n", "L", function()
   require("nvchad.tabufline").next()
 end, { desc = "buffer goto next" })
 
-map("n", "<C-[>", function()
+map("n", "H", function()
   require("nvchad.tabufline").prev()
 end, { desc = "buffer goto prev" })
 

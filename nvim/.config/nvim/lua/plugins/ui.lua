@@ -18,11 +18,6 @@ return {
   },
 
   {
-    "Bekaboo/dropbar.nvim",
-    event = "VeryLazy",
-  },
-
-  {
     "folke/noice.nvim",
     event = "VeryLazy",
     opts = {},

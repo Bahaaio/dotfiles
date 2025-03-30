@@ -12,7 +12,7 @@ My personal configuration files for various tools.
 BahaaMohamed98
 ```
 
-## Requirments
+## Requirements
 
 Make sure you have [git](https://git-scm.com/) and [GNU stow](https://www.gnu.org/software/stow/) installed
 
@@ -23,7 +23,7 @@ sudo apt install git stow
 
 ## Installation
 
-First, clone the dotfiles repository into your home directory
+First, clone the repository into your home directory
 
 ```sh
 cd ~
@@ -31,7 +31,7 @@ git clone https://github.com/BahaaMohamed98/dotfiles.git
 cd dotfiles
 ```
 
-then use the [install.sh](install.sh) to create the symlinks
+Then use the [install.sh](install.sh) to create the symlinks
 
 ```sh
 chmod +x install.sh 

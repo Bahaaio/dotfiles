@@ -44,3 +44,6 @@ alias gc1='git clone --depth=1'
 
 # tlp
 alias charge='sudo tlp fullcharge'
+
+# nvim
+alias lvim='NVIM_APPNAME=lazyVim nvim'

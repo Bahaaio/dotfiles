@@ -1,10 +1,15 @@
 return {
   "Civitasv/cmake-tools.nvim",
   lazy = true,
-  ft = { "cpp", "h", "hpp", "cmake" },
-
+  ft = { "c", "cpp", "h", "hpp", "cmake" },
+  keys = {
+    { "<leader>cg", "<cmd>CMakeGenerate<Cr>", desc = "cmake generate" },
+    { "<leader>cb", "<cmd>CMakeBuild<Cr>", desc = "cmake build" },
+    { "<leader>cr", "<cmd>CMakeRun<Cr>", desc = "cmake run" },
+    { "<leader>cs", "<cmd>CMakeSelectBuildType<Cr>", desc = "cmake select build type" },
+  },
   config = function()
-    require("cmake-tools").setup {
+    require("cmake-tools").setup({
       cmake_runner = { -- runner to use
         name = "toggleterm", -- name of the runner
         opts = {}, -- the options the runner will get, possible values depend on the runner type. See `default_opts` for possible values.
@@ -22,12 +27,6 @@ return {
         runner = { enabled = false },
         executor = { enabled = true },
       },
-    }
+    })
   end,
-
-  -- keymaps
-  vim.keymap.set("n", "<leader>cg", "<cmd>CMakeGenerate<Cr>", { desc = "cmake generate" }),
-  vim.keymap.set("n", "<leader>cb", "<cmd>CMakeBuild<Cr>", { desc = "cmake build" }),
-  vim.keymap.set("n", "<leader>cr", "<cmd>CMakeRun<Cr>", { desc = "cmake run" }),
-  vim.keymap.set("n", "<leader>cs", "<cmd>CMakeSelectBuildType<Cr>", { desc = "cmake select build type" }),
 }

@@ -7,7 +7,6 @@ vim.api.nvim_create_autocmd("VimEnter", {
     callback = function()
         if vim.fn.getcwd() ~= vim.env.HOME then
             require("persistence").load()
-            print("yes")
         end
     end,
     nested = true,

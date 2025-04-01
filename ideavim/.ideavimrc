@@ -41,11 +41,11 @@ nmap <C-S> :w<CR>
 nmap <leader>n :noh<CR>
 nmap <leader>rn :set rnu!<CR>
 nmap <leader>fm <Action>(ReformatCode)
-nmap <C-CR> <Action>(GotoDeclaration)
 
 " Paste
 nmap <C-S-v> <Action>(EditorPaste)
 imap <C-S-v> <Action>(EditorPaste)
+vmap <C-S-v> <Action>(EditorPaste)
 
 " default keymaps override
 nmap n nzz
@@ -65,10 +65,10 @@ nmap <leader>fu <Action>(FindUsages)
 " diagnostics
 nmap <leader>ds <Action>(FileStructurePopup)
 nmap <leader>di <Action>(ShowErrorDescription)
-nmap <leader>da <Action>(ShowIntentionActions)
 nmap <leader>df <Action>(ActivateProblemsViewToolWindow)
 nmap <leader>dn <Action>(GotoNextError)
 nmap <leader>dp <Action>(GotoPreviousError)
+nmap <leader>ca <Action>(ShowIntentionActions)
 
 " Find and Replace
 nmap <leader>rf <Action>(Replace)
@@ -90,8 +90,8 @@ nmap <leader>/ <Action>(CommentByLineComment)
 vmap <leader>/ <Action>(CommentByLineComment)
 
 " Buffer management
-nmap <C-]> :tabn<CR>
-nmap <C-[> :tabp<CR>
+nmap L :tabn<CR>
+nmap H :tabp<CR>
 nmap <leader>x :bd<CR>
 
 " Split management

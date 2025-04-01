@@ -19,4 +19,6 @@ return {
       "typescript-language-server",
     },
   },
+
+  vim.keymap.set("n", "<leader>M", "<cmd>Mason<cr>", { desc = "Mason" }),
 }

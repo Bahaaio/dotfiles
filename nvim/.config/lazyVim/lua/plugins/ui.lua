@@ -13,6 +13,7 @@ return {
       })
     end,
   },
+
   {
     "nvim-lualine/lualine.nvim",
     opts = function()
@@ -31,6 +32,7 @@ return {
       return opts
     end,
   },
+
   {
     "snacks.nvim",
     opts = {

@@ -38,10 +38,6 @@ alias clock='tty-clock -c -s -b -t -C 6'
 alias leetcode='nvim leetcode.nvim'
 alias vim='lvim'
 
-# git
-alias gc='git clone'
-alias gc1='git clone --depth=1'
-
 # tlp
 alias charge='sudo tlp fullcharge'
 

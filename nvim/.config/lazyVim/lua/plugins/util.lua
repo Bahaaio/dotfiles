@@ -9,8 +9,15 @@ return {
       { "<C-l>", "<cmd>TmuxNavigateRight<cr>", desc = "switch window right" },
     },
   },
+
   {
     "wakatime/vim-wakatime",
+    lazy = false,
+  },
+
+  {
+    "vyfor/cord.nvim",
+    build = ":Cord update",
     lazy = false,
   },
 }

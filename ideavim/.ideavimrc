@@ -53,8 +53,7 @@ nmap N Nzz
 nmap G Gzz
 
 " NERDTree
-nmap <C-n> :NERDTreeToggle<CR>
-nmap <leader>e :NERDTreeFocus<CR>
+nmap <leader>e :NERDTreeToggle<CR>
 
 " Find
 nmap <leader>fi <Action>(Find)

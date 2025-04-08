@@ -69,10 +69,18 @@ return {
   },
 
   {
+    "m4xshen/hardtime.nvim",
+    dependencies = { "MunifTanjim/nui.nvim" },
+    lazy = false,
+    -- enabled = false,
+    opts = {},
+  },
+
+  {
     "folke/which-key.nvim",
     opts = {
       spec = {
-        { "<leader>cc", group = "CMake", icon = { icon = " ", color = "blue" } },
+        { "<leader>m", group = "CMake", icon = { icon = " ", color = "blue" } },
       },
     },
   },
@@ -99,10 +107,6 @@ return {
       default_component_configs = {
         indent = {
           -- with_expanders = false,
-        },
-        name = {
-          use_git_status_colors = true,
-          highlight = "NeoTreeFileName",
         },
         git_status = {
           symbols = {

@@ -15,6 +15,25 @@ return {
   },
 
   {
+    "folke/tokyonight.nvim",
+    opts = {
+      -- style = "night",
+    },
+  },
+
+  {
+    "akinsho/bufferline.nvim",
+    opts = {
+      options = {
+        hover = {
+          enabled = true,
+          reveal = { "close" },
+        },
+      },
+    },
+  },
+
+  {
     "nvim-lualine/lualine.nvim",
     opts = function()
       local opts = {
@@ -24,7 +43,7 @@ return {
           },
           lualine_z = {
             function()
-              return " " .. os.date("%I:%M %p")
+              return " " .. os.date("%R")
             end,
           },
         },

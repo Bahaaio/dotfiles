@@ -2,35 +2,35 @@
 Language: Cpp
 BasedOnStyle: Google
 AccessModifierOffset: -4
-AlignConsecutiveAssignments: false
-AlignConsecutiveBitFields: 
+AlignConsecutiveAssignments: None
+AlignConsecutiveBitFields:
   Enabled: false
   AcrossEmptyLines: false
   AcrossComments: false
   AlignCompound: false
   AlignFunctionPointers: false
   PadOperators: false
-AlignConsecutiveDeclarations: false
-AlignConsecutiveMacros: 
+AlignConsecutiveDeclarations: None
+AlignConsecutiveMacros:
   Enabled: false
   AcrossEmptyLines: false
   AcrossComments: false
   AlignCompound: false
   AlignFunctionPointers: false
   PadOperators: false
-AlignConsecutiveShortCaseStatements: 
+AlignConsecutiveShortCaseStatements:
   Enabled: false
   AcrossEmptyLines: false
   AcrossComments: false
   AlignCaseArrows: false
   AlignCaseColons: false
-AlignOperands: true
+AlignOperands: Align
 AlignTrailingComments: true
 AllowShortCompoundRequirementOnASingleLine: true
-BraceWrapping: 
+BraceWrapping:
   AfterCaseLabel: false
   AfterClass: false
-  AfterControlStatement: false
+  AfterControlStatement: Never
   AfterEnum: false
   AfterFunction: false
   AfterNamespace: false
@@ -53,29 +53,29 @@ ColumnLimit: 120
 ConstructorInitializerAllOnOneLineOrOnePerLine: false
 ContinuationIndentWidth: 8
 IncludeBlocks: Preserve
-IncludeCategories: 
-  - Regex: '^<.*'
+IncludeCategories:
+  - Regex: "^<.*"
     Priority: 1
   - Regex: '^".*'
     Priority: 2
-  - Regex: '.*'
+  - Regex: ".*"
     Priority: 3
-IncludeIsMainRegex: '([-_](test|unittest))?$'
+IncludeIsMainRegex: "([-_](test|unittest))?$"
 IndentWidth: 4
 InsertNewlineAtEOF: true
-IntegerLiteralSeparator: 
+IntegerLiteralSeparator:
   Binary: 0
   BinaryMinDigits: 0
   Decimal: 3
   DecimalMinDigits: 0
   Hex: 0
   HexMinDigits: 0
-MacroBlockBegin: ''
-MacroBlockEnd: ''
+MacroBlockBegin: ""
+MacroBlockEnd: ""
 NamespaceIndentation: All
 SpaceAfterCStyleCast: true
 SpaceAfterTemplateKeyword: false
-SpaceBeforeParensOptions: 
+SpaceBeforeParensOptions:
   AfterControlStatements: true
   AfterForeachMacros: true
   AfterFunctionDeclarationName: false
@@ -88,10 +88,10 @@ SpaceBeforeParensOptions:
   BeforeNonEmptyParentheses: false
 SpaceInEmptyParentheses: false
 SpacesBeforeTrailingComments: 1
-SpacesInAngles: false
+SpacesInAngles: Never
 SpacesInConditionalStatement: false
 SpacesInCStyleCastParentheses: false
-SpacesInParensOptions: 
+SpacesInParensOptions:
   ExceptDoubleParentheses: false
   InConditionalStatements: false
   InCStyleCasts: false
@@ -99,4 +99,3 @@ SpacesInParensOptions:
   Other: false
 SpacesInParentheses: false
 TabWidth: 4
-...

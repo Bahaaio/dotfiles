@@ -1,5 +1,11 @@
 return {
   {
+    "github/copilot.vim",
+    lazy = false,
+    enabled = false,
+  },
+
+  {
     "mg979/vim-visual-multi",
     keys = { "<C-n>" },
   },
@@ -16,9 +22,9 @@ return {
   {
     "Wansmer/treesj",
     keys = {
-      { "J", "<cmd>TSJToggle<cr>", desc = "Join Toggle" },
+      { "<leader>cj", "<cmd>TSJToggle<cr>", desc = "Join Toggle" },
     },
-    opts = { use_default_keymaps = false, max_join_length = 150 },
+    opts = { use_default_keymaps = false },
   },
 
   {
@@ -73,7 +79,9 @@ return {
     dependencies = { "MunifTanjim/nui.nvim" },
     lazy = false,
     -- enabled = false,
-    opts = {},
+    opts = {
+      disable_mouse = false,
+    },
   },
 
   {
@@ -81,39 +89,6 @@ return {
     opts = {
       spec = {
         { "<leader>m", group = "CMake", icon = { icon = " ", color = "blue" } },
-      },
-    },
-  },
-
-  -- neo-tree
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    enabled = false,
-    opts = {
-      window = {
-        mappings = {
-          ["o"] = "open",
-          ["h"] = "close_node",
-          ["e"] = "rename_basename",
-        },
-      },
-      filesystem = {
-        filtered_items = {
-          hide_dotfiles = false,
-          hide_gitignored = false,
-          hide_hidden = false, -- on
-        },
-      },
-      default_component_configs = {
-        indent = {
-          -- with_expanders = false,
-        },
-        git_status = {
-          symbols = {
-            unstaged = "",
-            staged = "",
-          },
-        },
       },
     },
   },
@@ -138,5 +113,26 @@ return {
         },
       },
     },
+  },
+
+  -- yazi
+  {
+    "mikavilpas/yazi.nvim",
+    event = "VeryLazy",
+    dependencies = { "folke/snacks.nvim" },
+    keys = {
+      { "<leader>e", mode = { "n", "v" }, "<cmd>Yazi<cr>", desc = "Open yazi at the current file" },
+      { "<leader>E", "<cmd>Yazi cwd<cr>", desc = "Open yazi in current working directory" },
+      { "<c-up>", "<cmd>Yazi toggle<cr>", desc = "Resume the last yazi session" },
+    },
+    opts = {
+      -- if you want to open yazi instead of netrw, see below for more info
+      open_for_directories = true,
+      keymaps = { show_help = "<f1>" },
+    },
+    -- 👇 if you use `open_for_directories=true`, this is recommended
+    init = function()
+      vim.g.loaded_netrwPlugin = 1
+    end,
   },
 }

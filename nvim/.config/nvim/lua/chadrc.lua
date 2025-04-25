@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-  theme = "horizon",
+  theme = "tokyodark",
   integrations = { "neogit" },
   hl_override = {
     Comment = { italic = true },

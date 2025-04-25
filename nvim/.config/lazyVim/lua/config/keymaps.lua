@@ -28,8 +28,10 @@ map("n", "<leader>sg", LazyVim.pick("live_grep", { root = false }), { desc = "Gr
 map("n", "<leader>sG", LazyVim.pick("live_grep"), { desc = "Grep (Root Dir)" })
 map({ "n", "x" }, "<leader>sw", LazyVim.pick("grep_word"), { desc = "Visual selection or word (cwd)" })
 map({ "n", "x" }, "<leader>sW", LazyVim.pick("grep_word"), { desc = "Visual selection or word (Root Dir)" })
-map("n", "<leader>e", "<leader>fE", { desc = "Explorer Snacks (cwd)", remap = true })
-map("n", "<leader>E", "<leader>fe", { desc = "Explorer Snacks (root dir)", remap = true })
+
+-- floating terminal
+-- stylua: ignore
+map("n", "<leader>ft", "<cmd>ToggleTerm direction=float<Cr>", { desc = "toggle floating terminal" })
 -- stylua: ignore
 map("n", "<c-/>", function() Snacks.terminal() end, { desc = "Terminal (cwd)" })
 

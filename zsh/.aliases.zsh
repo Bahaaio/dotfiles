@@ -7,14 +7,11 @@ alias lla='ls -lAh'
 alias lt='ls --tree'
 alias lta='ls --tree -a'
 
+# system
+alias s='sudo'
 alias cp='cp -iv'
 alias mv='mv -iv'
-alias ..='cd ..'
 alias cl='clear'
-
-# history
-alias hs='history | grep'
-alias hl='history | less'
 
 # apt
 alias update='sudo apt update'

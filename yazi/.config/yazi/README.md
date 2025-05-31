@@ -1,6 +1,6 @@
 # Installation
 
-[GitHub releases](https://github.com/sxyazi/yazi/releases/)
+[Installation page](https://yazi-rs.github.io/docs/installation#source)
 
 # Requirments
 

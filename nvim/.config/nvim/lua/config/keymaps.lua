@@ -16,7 +16,7 @@ map("n", "N", "Nzz", { desc = "previous search result" })
 -- Insert movement
 map("i", "<C-h>", "<Left>", { desc = "move left" })
 map("i", "<C-j>", "<Down>", { desc = "move down" })
-map("i", "<C-k>", "<Up>", { desc = "move up" })
+map("i", "<C-k>", "<Up>", { desc = "move up", remap = true })
 map("i", "<C-l>", "<Right>", { desc = "move right" })
 map("i", "<C-b>", "<ESC>^i", { desc = "move beginning of line" })
 map("i", "<C-e>", "<End>", { desc = "move end of line" })
@@ -34,6 +34,7 @@ map({ "n", "x" }, "<leader>sW", LazyVim.pick("grep_word"), { desc = "Visual sele
 map({"n","t"}, "<C-'>", "<cmd>ToggleTerm direction=float<Cr>", { desc = "toggle floating terminal" })
 -- stylua: ignore
 map("n", "<c-/>", function() Snacks.terminal() end, { desc = "Terminal (cwd)" })
+map("t", "<c-x>", "<c-\\><c-n>", {})
 
 -- tab management
 map("n", "<leader>to", "<cmd>tabnew<Cr>", { desc = "open new tab" }) -- open new tab
@@ -61,3 +62,46 @@ vim.g.VM_maps = {
   ["Select Cursor Down"] = "<C-j>",
 }
 vim.g.VM_theme = "paper"
+
+-- snappify.com
+map("n", "<leader>ci", function()
+  local function url_encode(str)
+    if not str then
+      return ""
+    end
+
+    return str:gsub("([^%w%.%- ])", function(c)
+      return string.format("%%%02X", string.byte(c))
+    end)
+  end
+
+  local function get_file_name()
+    return vim.fn.expand("%:t") -- Get just the filename
+  end
+
+  local function get_file_language()
+    return vim.bo.filetype -- Get the file type (language)
+  end
+
+  local function get_file_text()
+    local buf = vim.api.nvim_get_current_buf() -- Get the current buffer
+    local lines = vim.api.nvim_buf_get_lines(buf, 0, -1, false) -- Get all lines from the buffer
+    return table.concat(lines, "\n") -- Join the lines with newline characters
+  end
+
+  local file_name = get_file_name()
+  local file_language = get_file_language()
+  local current_file_text = get_file_text()
+
+  -- Construct the URL
+  local url = "https://snappify.com/new?p=1"
+    .. "&f="
+    .. url_encode(file_name)
+    .. "&l="
+    .. url_encode(file_language)
+    .. "&c="
+    .. url_encode(current_file_text)
+
+  -- Open the URL in the default browser
+  vim.fn.system('xdg-open "' .. url .. '" &')
+end, { desc = "open current file in snappify" })

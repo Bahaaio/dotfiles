@@ -128,7 +128,7 @@ return {
     opts = {
       -- if you want to open yazi instead of netrw, see below for more info
       open_for_directories = true,
-      keymaps = { show_help = "<f1>" },
+      highlight_hovered_buffers_in_same_directory = false,
     },
     -- 👇 if you use `open_for_directories=true`, this is recommended
     init = function()

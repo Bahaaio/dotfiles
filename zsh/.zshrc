@@ -51,6 +51,7 @@ eval "$(zoxide init --cmd cd zsh)"
 export TERMINAL='wezterm'
 export BROWSER='brave-browser'
 export EDITOR='nvim'
+# export MANPAGER='nvim +Man!'
 
 # nvm
 export NVM_DIR="$HOME/.nvm"

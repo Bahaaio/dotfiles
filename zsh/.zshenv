@@ -6,8 +6,11 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/go/bin
 
 # java JDK stuff
-export JAVA_HOME="/home/bahaa/.jdks/openjdk-23"
+export JAVA_HOME="$HOME/.jdks/openjdk-23"
 export PATH="$JAVA_HOME/bin/:$PATH"
 
 # flutter
-export PATH="/home/bahaa/development/flutter/bin:$PATH"
+export PATH="$HOME/development/flutter/bin:$PATH"
+
+# rust
+. "$HOME/.cargo/env"

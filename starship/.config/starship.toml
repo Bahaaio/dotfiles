@@ -32,7 +32,7 @@ format = '[$read_only]($read_only_style)[$path]($style)'
 [status]
 disabled = false
 style = '160'
-symbol =  '✗ '
+symbol =  '✗'
 format = '[$symbol $status]($style)'
 
 [character]

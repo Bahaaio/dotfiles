@@ -11,7 +11,7 @@ rm -rf "$dir"
 
 # clone nvim
 echo "cloning..."
-git clone --depth 1 https://github.com/neovim/neovim.git "$dir"
+git clone -b release-0.11 --depth 1 https://github.com/neovim/neovim.git "$dir"
 
 # install dependencies
 echo "installing dependencies..."

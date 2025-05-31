@@ -233,7 +233,13 @@ for_window [class="gnome-control-center"] floating enable
 for_window [class="copyq"] floating enable
 for_window [class="org.gnome.Nautilus"] floating enable
 for_window [window_type="normal"] border pixel 2
-for_window [floating] resize set 1132 806
+
+
+set $pref_width 1132
+set $pref_height 806
+for_window [class="wezbtop"] resize set $pref_width $pref_height
+for_window [class="wezyazi"] resize set $pref_width $pref_height
+for_window [class="wezscratch"] resize set $pref_width $pref_height
 
 # workspace_auto_back_and_forth yes
 
@@ -244,7 +250,7 @@ focus_on_window_activation focus
 title_align center
 
 # Set inner/outer gaps
-gaps inner 8
+gaps inner 0
 gaps outer 0
 
 # catpuccin

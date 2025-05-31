@@ -28,15 +28,17 @@ alias cat='batcat'
 alias top='btop'
 alias clip='clipcopy'
 alias src='source ~/.zshrc'
+alias e='nvim ~/.zshrc'
+alias ea='nvim ~/.aliases.zsh'
 alias copy='clipcopy'
 alias paste='clippaste'
 alias copypath='pwd | clipcopy; echo "current path was copied to the clipboard."'
 alias clock='tty-clock -c -s -b -t -C 6'
 alias leetcode='nvim leetcode.nvim'
-alias vim='lvim'
+alias vim='nvim'
 
 # tlp
 alias charge='sudo tlp fullcharge'
 
 # nvim
-alias lvim='NVIM_APPNAME=lazyVim nvim'
+alias cvim='NVIM_APPNAME=NvChad nvim'

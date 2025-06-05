@@ -4,7 +4,7 @@ return {
   ---@module 'render-markdown'
   ---@type render.md.UserConfig
   opts = {},
-  ft = { "markdown" },
+  ft = { "markdown", "codecompanion" },
   config = function()
     require("render-markdown").setup()
   end,

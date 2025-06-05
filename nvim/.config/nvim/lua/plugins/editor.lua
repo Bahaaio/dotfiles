@@ -53,6 +53,11 @@ return {
           height = 0.80,
         },
       },
+      pickers = {
+        find_files = {
+          previewer = false,
+        },
+      },
     },
   },
 
@@ -78,7 +83,7 @@ return {
     "m4xshen/hardtime.nvim",
     dependencies = { "MunifTanjim/nui.nvim" },
     lazy = false,
-    -- enabled = false,
+    enabled = false,
     opts = {
       disable_mouse = false,
     },
@@ -89,6 +94,7 @@ return {
     opts = {
       spec = {
         { "<leader>m", group = "CMake", icon = { icon = " ", color = "blue" } },
+        { "<leader>a", group = "ai", icon = { icon = " ", color = "green" } },
       },
     },
   },
@@ -127,12 +133,8 @@ return {
     },
     opts = {
       -- if you want to open yazi instead of netrw, see below for more info
-      open_for_directories = true,
+      open_for_directories = false,
       highlight_hovered_buffers_in_same_directory = false,
     },
-    -- 👇 if you use `open_for_directories=true`, this is recommended
-    init = function()
-      vim.g.loaded_netrwPlugin = 1
-    end,
   },
 }

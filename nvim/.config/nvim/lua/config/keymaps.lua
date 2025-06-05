@@ -12,6 +12,8 @@ local map = vim.keymap.set
 -- default keymaps override
 map("n", "n", "nzz", { desc = "next search result" })
 map("n", "N", "Nzz", { desc = "previous search result" })
+map("n", "<leader>q", "<cmd>q<cr>", { desc = "quit" })
+vim.api.nvim_del_keymap("n", "<leader>qq")
 
 -- Insert movement
 map("i", "<C-h>", "<Left>", { desc = "move left" })

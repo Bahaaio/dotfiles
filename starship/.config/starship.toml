@@ -1,4 +1,4 @@
-add_newline = true
+add_newline = false
 command_timeout = 1000
 palette = "catppuccin_mocha"
 
@@ -32,7 +32,7 @@ format = '[$read_only]($read_only_style)[$path]($style)'
 [status]
 disabled = false
 style = '160'
-symbol =  '✗'
+symbol = '✗'
 format = '[$symbol $status]($style)'
 
 [character]
@@ -40,7 +40,6 @@ success_symbol = '[❯](76)'
 error_symbol = '[❯](196)'
 vimcmd_symbol = '[❮](76)'
 vimcmd_visual_symbol = '[V](76)'
-
 
 [fill]
 symbol = ' '

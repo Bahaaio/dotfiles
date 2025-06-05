@@ -71,7 +71,7 @@ bindsym $mod+Return exec wezterm
 bindsym $mod+q kill
 
 # rofi app launcher
-bindsym Mod1+space exec --no-startup-id ~/.config/rofi/launcher/launcher.sh
+# bindsym Mod1+space exec --no-startup-id ~/.config/rofi/launcher/launcher.sh
 
 # rofi powermenu
 bindsym $mod+x exec --no-startup-id ~/.config/rofi/powermenu/powermenu.sh
@@ -233,7 +233,7 @@ for_window [class="gnome-control-center"] floating enable
 for_window [class="copyq"] floating enable
 for_window [class="org.gnome.Nautilus"] floating enable
 for_window [window_type="normal"] border pixel 2
-
+for_window [class="Ulauncher"] border pixel 0
 
 set $pref_width 1132
 set $pref_height 806

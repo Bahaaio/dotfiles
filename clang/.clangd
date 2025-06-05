@@ -44,6 +44,7 @@ Diagnostics:
       - "misc-throw-by-value-catch-by-reference"
       - "misc-unconventional-assign-operator"
       - "misc-uniqueptr-reset-release"
+      - "misc-const-correctness"
 
     Remove:
       - "performance-no-int-to-ptr"

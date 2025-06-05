@@ -13,15 +13,15 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 alias cl='clear'
 
-# apt
-alias update='sudo apt update'
-alias upgrade='sudo apt upgrade'
-alias remove='sudo apt remove'
-alias purge='sudo apt purge'
-alias install='sudo apt install'
-alias show='apt show'
-alias autoremove='sudo apt autoremove --purge'
-alias list='sudo apt list'
+# nala
+alias i='sudo nala install'
+alias u='sudo nala upgrade'
+alias show='nala show'
+alias search='nala search'
+alias purge='sudo nala purge'
+alias list='sudo nala list -u'
+alias remove='sudo nala remove'
+alias autoremove='sudo nala autoremove --purge'
 
 # utils
 alias cat='batcat'

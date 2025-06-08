@@ -34,21 +34,6 @@ function BackDrops:init()
    return backdrops
 end
 
----Override the default `images_dir`
----Default `images_dir` is `wezterm.config_dir .. '/backdrops/'`
----
---- INFO:
----  This function must be invoked before `set_images()`
----
----@param path string directory of background images
-function BackDrops:set_images_dir(path)
-   self.images_dir = path
-   if not path:match('/$') then
-      self.images_dir = path .. '/'
-   end
-   return self
-end
-
 ---MUST BE RUN BEFORE ALL OTHER `BackDrops` functions
 ---Sets the `images` after instantiating `BackDrops`.
 ---
@@ -150,8 +135,6 @@ function BackDrops:_set_focus_opt(window)
    }
    window:set_config_overrides(opts)
 end
-
-
 
 ---Convert the `files` array to a table of `InputSelector` choices
 ---see: https://wezfurlong.org/wezterm/config/lua/keyassignment/InputSelector.html

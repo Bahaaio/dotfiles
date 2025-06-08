@@ -65,3 +65,30 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+# exercism cd to downloaded exercise
+exercism () {
+    if [[ $1 == "download" ]]; then
+        local out=()
+        while IFS= read -r line; do
+            out+=("$line")
+        done < <(command exercism "$@")
+
+        printf '%s\n' "${out[@]}"
+        [[ -d "${out[-1]}" ]] && cd "${out[-1]}"
+
+        # navigate to java main if exists
+        [[ -d "./src/main/java" ]] && command idea1 .
+    else
+        command exercism "$@"
+    fi
+}
+
+# run bats tests
+bats() {
+    BATS_RUN_SKIPPED=true command bats *.bats
+}
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

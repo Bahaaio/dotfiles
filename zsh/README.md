@@ -38,7 +38,7 @@ curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh 
 ### Utilities
 
 ```sh
-sudo apt install lsd xclip bat fzf lolcat nala
+sudo apt install lsd xclip bat fzf nala
 ```
 
 ## Optional

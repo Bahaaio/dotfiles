@@ -6,11 +6,6 @@ return {
   },
 
   {
-    "mg979/vim-visual-multi",
-    keys = { "<C-n>" },
-  },
-
-  {
     "kylechui/nvim-surround",
     version = "*",
     event = "VeryLazy",

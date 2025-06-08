@@ -241,10 +241,11 @@ for_window [class="wezbtop"] resize set $pref_width $pref_height
 for_window [class="wezyazi"] resize set $pref_width $pref_height
 for_window [class="wezscratch"] resize set $pref_width $pref_height
 
-# workspace_auto_back_and_forth yes
-
 # to focus when opening links
 focus_on_window_activation focus
+
+# hide border if only one window visible
+hide_edge_borders smart
 
 # align window title
 title_align center

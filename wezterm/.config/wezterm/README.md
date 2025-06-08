@@ -6,7 +6,7 @@
 
 ### Getting Started
 
-- ##### Requirements:
+- ##### Requirements
 
   - <details>
       <summary><b>WezTerm</b></summary>
@@ -17,10 +17,25 @@
 
   - <details>
     <summary>JetBrainsMono Nerd Font</summary>
-    
+
     ```sh
-    sudo apt install fonts-jetbrains-mono
+    # download the latest JetBrainsMono Nerd Font
+    wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
+
+    # create local fonts directory if it doesn't exist
+    mkdir -p ~/.local/share/fonts
+
+    # extract into the fonts directory
+    unzip JetBrainsMono.zip -d ~/.local/share/fonts/JetBrainsMono
+
+    # remove the archive
+    rm JetBrainsMono.zip
+
+    # update the font cache
+    fc-cache -fv
+
     ```
+
     </details/>
 
 ---
@@ -31,21 +46,17 @@ Most of the key bindings revolve around a <kbd>SUPER</kbd> and <kbd>SUPER_REV</k
 
 - <kbd>SUPER</kbd> ⇨ <kbd>Alt</kbd>
 - <kbd>SUPER_REV</kbd> ⇨ <kbd>Alt</kbd>+<kbd>Ctrl</kbd>
--  <kbd>LEADER</kbd> ⇨ <kbd>SUPER_REV</kbd>+<kbd>Space</kbd>
+- <kbd>LEADER</kbd> ⇨ <kbd>SUPER_REV</kbd>+<kbd>Space</kbd>
 
 #### Miscellaneous/Useful
 
-| Keys                              | Action                                      |
-| --------------------------------- | ------------------------------------------- |
-| <kbd>F1</kbd>                     | `ActivateCopyMode`                          |
-| <kbd>F2</kbd>                     | `ActivateCommandPalette`                    |
-| <kbd>F3</kbd>                     | `ShowLauncher`                              |
-| <kbd>F4</kbd>                     | `ShowLauncher` <sub>(tabs only)</sub>       |
-| <kbd>F5</kbd>                     | `ShowLauncher` <sub>(workspaces only)</sub> |
-| <kbd>F11</kbd>                    | `ToggleFullScreen`                          |
-| <kbd>F12</kbd>                    | `ShowDebugOverlay`                          |
-| <kbd>SUPER</kbd>+<kbd>f</kbd>     | Search Text                                 |
-| <kbd>SUPER_REV</kbd>+<kbd>u</kbd> | Open URL                                    |
+| Keys                              | Action             |
+| --------------------------------- | ------------------ |
+| <kbd>F11</kbd>                    | `ToggleFullScreen` |
+| <kbd>F12</kbd>                    | `ShowDebugOverlay` |
+| <kbd>SUPER</kbd>+<kbd>v</kbd>     | `ActivateCopyMode` |
+| <kbd>SUPER</kbd>+<kbd>f</kbd>     | Search Text        |
+| <kbd>SUPER_REV</kbd>+<kbd>u</kbd> | Open URL           |
 
 &nbsp;
 
@@ -58,24 +69,14 @@ Most of the key bindings revolve around a <kbd>SUPER</kbd> and <kbd>SUPER_REV</k
 
 &nbsp;
 
-#### Cursor Movements
-
-| Keys                                   | Action                                                     |
-| -------------------------------------- | ---------------------------------------------------------- |
-| <kbd>SUPER</kbd>+<kbd>LeftArrow</kbd>  | Move cursor to Line Start                                  |
-| <kbd>SUPER</kbd>+<kbd>RightArrow</kbd> | Move cursor to Line End                                    |
-| <kbd>SUPER</kbd>+<kbd>Backspace</kbd>  | Clear Line <sub>(does not work in PowerShell or cmd)</sub> |
-
-&nbsp;
-
 #### Tabs
 
 ##### Tabs: Spawn+Close
 
-| Keys                              | Action                                |
-| --------------------------------- | ------------------------------------- |
-| <kbd>SUPER</kbd>+<kbd>n</kbd>     | `SpawnTab` <sub>(DefaultDomain)</sub> |
-| <kbd>SUPER_REV</kbd>+<kbd>w</kbd> | `CloseCurrentTab`                     |
+| Keys                          | Action            |
+| ----------------------------- | ----------------- |
+| <kbd>SUPER</kbd>+<kbd>n</kbd> | `SpawnTab`        |
+| <kbd>SUPER</kbd>+<kbd>w</kbd> | `CloseCurrentTab` |
 
 ##### Tabs: Navigation
 
@@ -86,27 +87,24 @@ Most of the key bindings revolve around a <kbd>SUPER</kbd> and <kbd>SUPER_REV</k
 | <kbd>SUPER_REV</kbd>+<kbd>[</kbd> | Move Tab Left  |
 | <kbd>SUPER_REV</kbd>+<kbd>]</kbd> | Move Tab Right |
 
-##### Tabs: Title
+&nbsp;
 
-| Keys                          | Action         |
-| ----------------------------- | -------------- |
-| <kbd>SUPER</kbd>+<kbd>9</kbd> | Toggle tab bar |
-
-##### Tabs: Toggle Tab-bar
+##### Tabs: Tab-bar
 
 | Keys                              | Action             |
 | --------------------------------- | ------------------ |
+| <kbd>SUPER</kbd>+<kbd>9</kbd>     | Toggle tab bar     |
 | <kbd>SUPER</kbd>+<kbd>0</kbd>     | Rename Current Tab |
-| <kbd>SUPER_REV</kbd>+<kbd>0</kbd> | Undo Rename        |
+| <kbd>SUPER_REV</kbd>+<kbd>0</kbd> | Reset Tab Name     |
 
 &nbsp;
 
-#### Windows
+##### Resize font
 
-| Keys                              | Action               |
-| --------------------------------- | -------------------- |
-| <kbd>SUPER</kbd>+<kbd>=</kbd>     | Increase Window Size |
-| <kbd>SUPER</kbd>+<kbd>-</kbd>     | Decrease Window Size |
+| Keys                         | Action             |
+| ---------------------------- | ------------------ |
+| <kbd>CTRL</kbd>+<kbd>+</kbd> | `IncreaseFontSize` |
+| <kbd>CTRL</kbd>+<kbd>-</kbd> | `DecreaseFontSize` |
 
 &nbsp;
 
@@ -114,10 +112,10 @@ Most of the key bindings revolve around a <kbd>SUPER</kbd> and <kbd>SUPER_REV</k
 
 ##### Panes: Split Panes
 
-| Keys                               | Action                                             |
-| ---------------------------------- | -------------------------------------------------- |
-| <kbd>SUPER</kbd>+<kbd>\\</kbd>     | `SplitHorizontal` <sub>(CurrentPaneDomain)</sub>   |
-| <kbd>SUPER_REV</kbd>+<kbd>\\</kbd> | `SplitVerticaly` <sub>(CurrentPaneDomain)</sub>    |
+| Keys                               | Action              |
+| ---------------------------------- | ------------------- |
+| <kbd>CTRL</kbd>+<kbd>\\</kbd>      | `SplitVerticaly`    |
+| <kbd>SUPER_REV</kbd>+<kbd>\\</kbd> | `SplitHorizontally` |
 
 ##### Panes: Zoom+Close Pane
 
@@ -128,13 +126,22 @@ Most of the key bindings revolve around a <kbd>SUPER</kbd> and <kbd>SUPER_REV</k
 
 ##### Panes: Navigation
 
-| Keys                              | Action                  |
-| --------------------------------- | ----------------------- |
-| <kbd>SUPER_REV</kbd>+<kbd>k</kbd> | Move to Pane (Up)       |
-| <kbd>SUPER_REV</kbd>+<kbd>j</kbd> | Move to Pane (Down)     |
-| <kbd>SUPER_REV</kbd>+<kbd>h</kbd> | Move to Pane (Left)     |
-| <kbd>SUPER_REV</kbd>+<kbd>l</kbd> | Move to Pane (Right)    |
-| <kbd>SUPER_REV</kbd>+<kbd>p</kbd> | Swap with selected Pane |
+| Keys                          | Action                  |
+| ----------------------------- | ----------------------- |
+| <kbd>CTRL</kbd>+<kbd>k</kbd>  | Move to Pane (Up)       |
+| <kbd>CTRL</kbd>+<kbd>j</kbd>  | Move to Pane (Down)     |
+| <kbd>CTRL</kbd>+<kbd>h</kbd>  | Move to Pane (Left)     |
+| <kbd>CTRL</kbd>+<kbd>l</kbd>  | Move to Pane (Right)    |
+| <kbd>SUPER</kbd>+<kbd>p</kbd> | Swap with selected Pane |
+
+##### Panes: Resize
+
+| Keys                          | Action                                         |
+| ----------------------------- | ---------------------------------------------- |
+| <kbd>SUPER</kbd>+<kbd>k</kbd> | `AdjustPaneSize` <sub>(Direction: Up)</sub>    |
+| <kbd>SUPER</kbd>+<kbd>j</kbd> | `AdjustPaneSize` <sub>(Direction: Down)</sub>  |
+| <kbd>SUPER</kbd>+<kbd>h</kbd> | `AdjustPaneSize` <sub>(Direction: Left)</sub>  |
+| <kbd>SUPER</kbd>+<kbd>l</kbd> | `AdjustPaneSize` <sub>(Direction: Right)</sub> |
 
 ##### Panes: Scroll Pane
 
@@ -149,55 +156,13 @@ Most of the key bindings revolve around a <kbd>SUPER</kbd> and <kbd>SUPER_REV</k
 
 #### Background Images
 
-| Keys                              | Action                       |
-| --------------------------------- | ---------------------------- |
-| <kbd>SUPER</kbd>+<kbd>/</kbd>     | Select Random Image          |
-| <kbd>SUPER</kbd>+<kbd>,</kbd>     | Cycle to next Image          |
-| <kbd>SUPER</kbd>+<kbd>.</kbd>     | Cycle to previous Image      |
-| <kbd>SUPER_REV</kbd>+<kbd>/</kbd> | Fuzzy select Image           |
-| <kbd>SUPER</kbd>+<kbd>b</kbd>     | Toggle background focus mode |
+| Keys                          | Action                       |
+| ----------------------------- | ---------------------------- |
+| <kbd>SUPER</kbd>+<kbd>/</kbd> | Select Random Image          |
+| <kbd>SUPER</kbd>+<kbd>,</kbd> | Cycle to next Image          |
+| <kbd>SUPER</kbd>+<kbd>.</kbd> | Cycle to previous Image      |
+| <kbd>SUPER</kbd>+<kbd>b</kbd> | Toggle background focus mode |
 
-&nbsp;
-
-##### Resize font
-
-| Keys                           | Action             |
-| ------------------------------ | ------------------ |
-| <kbd>SUPER</kbd>+<kbd>+</kbd>  | `IncreaseFontSize` |
-| <kbd>SUPER</kbd>+<kbd>-</kbd>  | `DecreaseFontSize` |
-
-&nbsp;
-
-#### Key Tables
-
->see: [reference](https://wezfurlong.org/wezterm/config/key-tables.html)
-
-| Keys                           | Action        |
-| ------------------------------ | ------------- |
-| <kbd>LEADER</kbd>+<kbd>f</kbd> | `resize_font` |
-| <kbd>LEADER</kbd>+<kbd>p</kbd> | `resize_pane` |
-
-##### Key Table: `resize_font`
-
-| Keys           | Action                          |
-| -------------- | ------------------------------- |
-| <kbd>k</kbd>   | `IncreaseFontSize`              |
-| <kbd>j</kbd>   | `DecreaseFontSize`              |
-| <kbd>r</kbd>   | `ResetFontSize`                 |
-| <kbd>q</kbd>   | `PopKeyTable` <sub>(exit)</sub> |
-| <kbd>Esc</kbd> | `PopKeyTable` <sub>(exit)</sub> |
-
-##### Key Table: `resize_pane`
-
-| Keys           | Action                                         |
-| -------------- | ---------------------------------------------- |
-| <kbd>k</kbd>   | `AdjustPaneSize` <sub>(Direction: Up)</sub>    |
-| <kbd>j</kbd>   | `AdjustPaneSize` <sub>(Direction: Down)</sub>  |
-| <kbd>h</kbd>   | `AdjustPaneSize` <sub>(Direction: Left)</sub>  |
-| <kbd>l</kbd>   | `AdjustPaneSize` <sub>(Direction: Right)</sub> |
-| <kbd>q</kbd>   | `PopKeyTable` <sub>(exit)</sub>                |
-| <kbd>Esc</kbd> | `PopKeyTable` <sub>(exit)</sub>                |
-
----
+##
 
 > [Original repository](https://github.com/KevinSilvester/wezterm-config)

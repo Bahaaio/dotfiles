@@ -24,6 +24,21 @@ return {
 
   {
     "folke/flash.nvim",
+    opts = {
+      modes = {
+        char = {
+          -- enabled = false,
+          multi_line = false,
+          highlight = { backdrop = false },
+          char_actions = function()
+            return {
+              [";"] = "next", -- set to `right` to always go right
+              [","] = "prev", -- set to `left` to always go left
+            }
+          end,
+        },
+      },
+    },
     keys = function()
       -- stylua: ignore
       return {

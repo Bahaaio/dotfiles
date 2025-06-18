@@ -25,9 +25,11 @@ set NERDTree
 set surround
 set which-key
 set highlightedyank
+set argtextobj
+set functiontextobj
+set easymotion
 
 " -- keymaps --
-
 let mapleader=" "
 
 " Window Navigation
@@ -38,14 +40,14 @@ nmap <C-k> <C-w>k
 
 " General Mappings
 nmap <C-S> :w<CR>
-nmap <leader>n :noh<CR>
-nmap <leader>rn :set rnu!<CR>
-nmap <leader>fm <Action>(ReformatCode)
+nnoremap <expr> <Esc> v:hlsearch ? ':nohlsearch<CR>' : '<Esc>'
 
 " Paste
 nmap <C-S-v> <Action>(EditorPaste)
 imap <C-S-v> <Action>(EditorPaste)
 vmap <C-S-v> <Action>(EditorPaste)
+" paste without overriding register
+xnoremap p P
 
 " default keymaps override
 nmap n nzz
@@ -53,50 +55,116 @@ nmap N Nzz
 nmap G Gzz
 
 " NERDTree
-nmap <leader>e :NERDTreeToggle<CR>
+let g:WhichKeyDesc_misc_tree = "<leader>e NERDTree focus"
+nmap <leader>e :NERDTreeFocus<CR>
 
-" Find
-nmap <leader>fi <Action>(Find)
-nmap <leader>ff <Action>(GotoFile)
-nmap <leader>fw <Action>(FindInPath)
-nmap <leader>fu <Action>(FindUsages)
+" easymotion
+nmap m <Plug>(easymotion-s)
 
-" diagnostics
-nmap <leader>ds <Action>(FileStructurePopup)
-nmap <leader>di <Action>(ShowErrorDescription)
+" Diagnostics
+let g:WhichKeyDesc_diagnostics = "<leader>d Diagnostics/Debugger"
+let g:WhichKeyDesc_diagnostics_file = "<leader>df file diagnostics"
+let g:WhichKeyDesc_diagnostics_next = "<leader>dn next diagnostic"
+let g:WhichKeyDesc_diagnostics_prev = "<leader>dp previous diagnostic"
 nmap <leader>df <Action>(ActivateProblemsViewToolWindow)
 nmap <leader>dn <Action>(GotoNextError)
 nmap <leader>dp <Action>(GotoPreviousError)
+
+" Find
+let g:WhichKeyDesc_find = "<leader>f Find"
+let g:WhichKeyDesc_find_files = "<leader>ff Find files"
+let g:WhichKeyDesc_find_recent_files = "<leader>fr Find recent files"
+nmap <leader>ff <Action>(GotoFile)
+nmap <leader>fr <Action>(RecentFiles)
+nmap gr <Action>(FindUsages)
+
+" Search
+let g:WhichKeyDesc_search = "<leader>s Search/Replace"
+let g:WhichKeyDesc_search_todo = "<leader>st TODO"
+let g:WhichKeyDesc_search_grep = "<leader>sg grep"
+let g:WhichKeyDesc_search_current = "<leader>si Search in buffer"
+let g:WhichKeyDesc_search_symbol = "<leader>ss Go to symbol"
+let g:WhichKeyDesc_search_symbols = "<leader>sS Go to symbol (workspace)"
+let g:WhichKeyDesc_search_replace = "<leader>sr Search and replace"
+let g:WhichKeyDesc_search_replaceall = "<leader>sR Search and replace (workspace)"
+nmap <leader>st <Action>(ActivateTODOToolWindow)
+nmap <leader>sg <Action>(FindInPath)
+nmap <leader>si <Action>(Find)
+nmap <leader>ss <Action>(FileStructurePopup)
+nmap <leader>sS <Action>(GotoSymbol)
+nmap <leader>sr <Action>(Replace)
+vmap <leader>sr <Action>(Replace)
+nmap <leader>sR <Action>(ReplaceInPath)
+vmap <leader>sR <Action>(ReplaceInPath)
+
+" Code
+let g:WhichKeyDesc_code = "<leader>c Code"
+let g:WhichKeyDesc_code_action = "<leader>ca Code actions"
+let g:WhichKeyDesc_code_rename = "<leader>cr Rename"
+let g:WhichKeyDesc_code_format = "<leader>cf Format"
+let g:WhichKeyDesc_code_description = "<leader>cd Line diagnostics"
+let g:WhichKeyDesc_code_signature = "<leader>cs Change signature"
+let g:WhichKeyDesc_code_generate = "<leader>cg Generate code"
 nmap <leader>ca <Action>(ShowIntentionActions)
-
-" Find and Replace
-nmap <leader>rf <Action>(Replace)
-vmap <leader>rf <Action>(Replace)
-nmap <leader>rp <Action>(ReplaceInPath)
-vmap <leader>rp <Action>(ReplaceInPath)
-
-" rename
-nmap <leader>ra <Action>(RenameElement)
-
-" todo
-nmap <leader>td <Action>(ActivateTODOToolWindow)
-
-" change signature
+nmap <leader>cr <Action>(RenameElement)
+nmap <leader>cf <Action>(ReformatCode)
+nmap <leader>cd <Action>(ShowErrorDescription)
 nmap <leader>cs <Action>(ChangeSignature)
+nmap <leader>cg <Action>(Generate)
+xmap <leader>cs <Action>(Floating.CodeToolbar.Surround)
 
-" Commenting
-nmap <leader>/ <Action>(CommentByLineComment)
-vmap <leader>/ <Action>(CommentByLineComment)
+" Refactoring
+let g:WhichKeyDesc_refactor = "<leader>r Refactor"
+let g:WhichKeyDesc_refactor_extract = "<leader>re Extract"
+let g:WhichKeyDesc_refactor_method = "<leader>rm Extract method" 
+let g:WhichKeyDesc_refactor_variable = "<leader>rv Extract variable"
+let g:WhichKeyDesc_refactor_parameter = "<leader>rp Extract parameter"
+let g:WhichKeyDesc_refactor_inline = "<leader>ri Inline method"
+let g:WhichKeyDesc_refactor_imports = "<leader>rI Optimize imports"
+xmap <leader>re <Action>(Floating.CodeToolbar.Extract)
+nmap <leader>re <Action>(Floating.CodeToolbar.Extract)
+nmap <leader>rm <Action>(ExtractMethod)
+nmap <leader>rv <Action>(IntroduceVariable)
+nmap <leader>rp <Action>(IntroduceParameter)
+nmap <leader>ri <Action>(Inline)
+nmap <leader>rI <Action>(OptimizeImports)
 
-" Buffer management
+" ai
+let g:WhichKeyDesc_ai = "<leader>a AI"
+let g:WhichKeyDesc_ai_inline = "<leader>ai Inline assistant"
+let g:WhichKeyDesc_ai_chat = "<leader>aa AI Chat"
+let g:WhichKeyDesc_ai_action = "<leader>aA AI Action"
+nmap <leader>ai <Action>(AIAssistant.Editor.AskAiAssistantInEditor)
+nmap <leader>aa <Action>(ActivateAIAssistantToolWindow)
+nmap <leader>aA <Action>(IntentionActionAsAction_com.intellij.ml.llm.intentions.chat.AIAssistantIntention)
+
+" Tab management
 nmap L :tabn<CR>
 nmap H :tabp<CR>
-nmap <leader>x :bd<CR>
 
-" Split management
-nmap <leader>sx :close<CR>
-nmap <leader>sh :split<CR>
-nmap <leader>sv :vsplit<CR>
+" Buffer management
+let g:WhichKeyDesc_buffers = "<leader>b Buffers"
+let g:WhichKeyDesc_buffers_delete = "<leader>bd Delete buffer"
+let g:WhichKeyDesc_buffers_close = "<leader>x Close buffer"
+let g:WhichKeyDesc_buffers_pin = "<leader>bp Pin buffer"
+let g:WhichKeyDesc_buffers_closeothers = "<leader>bP Close other buffers"
+let g:WhichKeyDesc_buffers_closeright = "<leader>br Close buffers to right"
+let g:WhichKeyDesc_buffers_closeleft = "<leader>bl Close buffers to left"
+nmap <leader>bd :bd<CR>
+nmap <leader>x :bd<CR>
+nmap <leader>bp <Action>(PinActiveEditorTab)
+nmap <leader>bP <Action>(CloseAllEditorsButActive)
+nmap <leader>br <Action>(CloseAllToTheRight)
+nmap <leader>bl <Action>(CloseAllToTheLeft)
+
+" Window management
+let g:WhichKeyDesc_windows = "<leader>w Windows"
+let g:WhichKeyDesc_windows_delete = "<leader>wd Close window"
+let g:WhichKeyDesc_windows_split = "<leader>ws Split horizontally"
+let g:WhichKeyDesc_windows_vsplit = "<leader>wv Split vertically"
+nmap <leader>wd :close<CR>
+nmap <leader>ws :split<CR>
+nmap <leader>wv :vsplit<CR>
 
 " Insert mode keymaps
 imap <C-h> <Left>
@@ -105,20 +173,46 @@ imap <C-k> <Up>
 imap <C-l> <Right>
 
 " Yank to system clipboard
+let g:WhichKeyDesc_misc_yank = "<leader>y Yank to clipboard"
+let g:WhichKeyDesc_misc_yankline = "<leader>Y Yank eol to clipboard"
 nmap <C-c> :%y+<CR>
 map <leader>y "+y
 nmap <leader>Y "+y$
 
-" .ideavimrc
-nnoremap ve :e ~/.ideavimrc<CR>
-nnoremap vr :action IdeaVim.ReloadVimRc.reload<CR>
+" Commenting
+let g:WhichKeyDesc_misc_comment = "<leader>/ Toggle comment"
+nmap <leader>/ <Action>(CommentByLineComment)
+vmap <leader>/ <Action>(CommentByLineComment)
 
-" git
+" .ideavimrc
+let g:WhichKeyDesc_vim = "<leader>v ideavim"
+let g:WhichKeyDesc_vim_edit = "<leader>ve Edit .ideavimrc"
+let g:WhichKeyDesc_vim_reload = "<leader>vr Reload .ideavimrc"
+nnoremap <leader>ve :e ~/.ideavimrc<CR>
+nnoremap <leader>vr :action IdeaVim.ReloadVimRc.reload<CR>
+
+" Git
+let g:WhichKeyDesc_git = "<leader>g Git"
+let g:WhichKeyDesc_git_push = "<leader>gp Git push"
+let g:WhichKeyDesc_git_update = "<leader>gu Git Update/Pull"
+let g:WhichKeyDesc_git_commit = "<leader>gc Git Commit window"
+let g:WhichKeyDesc_git_status = "<leader>gs Git status"
+let g:WhichKeyDesc_git_diff = "<leader>gd Git diff file"
+let g:WhichKeyDesc_git_ai= "<leader>ga AI commit message"
 nmap <leader>gp <Action>(Vcs.Push)
 nmap <leader>gu <Action>(Vcs.UpdateProject)
 nmap <leader>gc <Action>(ActivateCommitToolWindow)
 nmap <leader>gs <Action>(ActivateVersionControlToolWindow)
+nmap <leader>gd <Action>(Compare.SameVersion)
+nmap <leader>ga <Action>(Vcs.LLMCommitMessageAction)
 
-" debugger
+" Project navigation
+let g:WhichKeyDesc_project = "<leader>p Project"
+let g:WhichKeyDesc_project_projects = "<leader>pp Recent projects"
+nmap <leader>pp <Action>(ManageRecentProjects)
+
+" Debugger
+let g:WhichKeyDesc_debug_run = "<leader>dr Run debugger"
+let g:WhichKeyDesc_debug_breakpoint = "<leader>db Toggle breakpoint"
 map <leader>dr <Action>(Debug)
 map <leader>db <Action>(ToggleLineBreakpoint)

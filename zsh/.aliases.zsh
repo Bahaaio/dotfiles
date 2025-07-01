@@ -7,11 +7,13 @@ alias lla='ls -lAh'
 alias lt='ls --tree'
 alias lta='ls --tree -a'
 
-# system
+# core-utils
 alias s='sudo'
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias cl='clear'
+alias top='btop'
+alias cat='batcat'
 
 # nala
 alias i='sudo nala install'
@@ -23,19 +25,20 @@ alias list='sudo nala list -u'
 alias remove='sudo nala remove'
 alias autoremove='sudo nala autoremove --purge'
 
-# utils
-alias cat='batcat'
-alias top='btop'
-alias clip='clipcopy'
+# zsh
 alias src='source ~/.zshrc'
 alias e='nvim ~/.zshrc'
 alias ea='nvim ~/.aliases.zsh'
+
+# utils
 alias copy='clipcopy'
 alias paste='clippaste'
 alias copypath='pwd | clipcopy; echo "current path was copied to the clipboard."'
 alias clock='tty-clock -c -s -b -t -C 6'
 alias leetcode='nvim leetcode.nvim'
-alias vim='nvim'
+alias ai='acli rovodev'
+
+# exercism
 alias ex='exercism'
 alias es='exercism submit'
 alias ej='exercism submit ./src/main/java/*.java'
@@ -44,4 +47,5 @@ alias ej='exercism submit ./src/main/java/*.java'
 alias charge='sudo tlp fullcharge'
 
 # nvim
+alias vim='nvim'
 alias cvim='NVIM_APPNAME=NvChad nvim'

@@ -38,14 +38,25 @@ nmap <C-l> <C-w>l
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 
+let g:WhichKeyDesc_quit = "<leader>q Hide/Toggle all Windows"
+nmap <leader>q <Action>(HideAllWindows)
+
 " General Mappings
 nmap <C-S> :w<CR>
 nnoremap <expr> <Esc> v:hlsearch ? ':nohlsearch<CR>' : '<Esc>'
 
+let g:WhichKeyDesc_run = "<leader>R Run"
+nmap <leader>R <Action>(Run)
+
+" Jump between methods
+let g:WhichKeyDesc_method_up = "[[ Method up"
+let g:WhichKeyDesc_method_down = "]] Method down"
+nmap [[ <Action>(MethodUp)
+nmap ]] <Action>(MethodDown)
+
 " Paste
-nmap <C-S-v> <Action>(EditorPaste)
+map <C-S-v> <Action>(EditorPaste)
 imap <C-S-v> <Action>(EditorPaste)
-vmap <C-S-v> <Action>(EditorPaste)
 " paste without overriding register
 xnoremap p P
 
@@ -53,6 +64,11 @@ xnoremap p P
 nmap n nzz
 nmap N Nzz
 nmap G Gzz
+nmap <C-d> <C-d>zz
+nmap <C-u> <C-u>zz
+" visual indentation
+vnoremap < <gv
+vnoremap > >gv
 
 " NERDTree
 let g:WhichKeyDesc_misc_tree = "<leader>e NERDTree focus"
@@ -74,9 +90,28 @@ nmap <leader>dp <Action>(GotoPreviousError)
 let g:WhichKeyDesc_find = "<leader>f Find"
 let g:WhichKeyDesc_find_files = "<leader>ff Find files"
 let g:WhichKeyDesc_find_recent_files = "<leader>fr Find recent files"
+let g:WhichKeyDesc_find_locations= "<leader>fl Find recent locations"
+let g:WhichKeyDesc_find_usages= "gr Find usages"
 nmap <leader>ff <Action>(GotoFile)
 nmap <leader>fr <Action>(RecentFiles)
-nmap gr <Action>(FindUsages)
+map <leader>fl <action>(RecentLocations)
+
+" Goto
+let g:WhichKeyDesc_goto = "g Go to"
+let g:WhichKeyDesc_goto_declaration = "gd Go to definition"
+let g:WhichKeyDesc_goto_type_declaration = "gy Go to type definition"
+let g:WhichKeyDesc_goto_implementation = "gi Go to implementation"
+let g:WhichKeyDesc_goto_usages = "gr Go to references"
+let g:WhichKeyDesc_goto_test = "gt Go to test"
+let g:WhichKeyDesc_goto_back = "gb Go back"
+let g:WhichKeyDesc_goto_forward = "gf Go forward"
+map gr <Action>(FindUsages)
+map gd <Action>(GotoDeclaration)
+map gy <Action>(GotoTypeDeclaration)
+map gi <Action>(GotoImplementation)
+map gt <Action>(GotoTest)
+map gb <Action>(Back)
+map gf <Action>(Forward)
 
 " Search
 let g:WhichKeyDesc_search = "<leader>s Search/Replace"
@@ -92,10 +127,8 @@ nmap <leader>sg <Action>(FindInPath)
 nmap <leader>si <Action>(Find)
 nmap <leader>ss <Action>(FileStructurePopup)
 nmap <leader>sS <Action>(GotoSymbol)
-nmap <leader>sr <Action>(Replace)
-vmap <leader>sr <Action>(Replace)
-nmap <leader>sR <Action>(ReplaceInPath)
-vmap <leader>sR <Action>(ReplaceInPath)
+map <leader>sr <Action>(Replace)
+map <leader>sR <Action>(ReplaceInPath)
 
 " Code
 let g:WhichKeyDesc_code = "<leader>c Code"
@@ -103,40 +136,39 @@ let g:WhichKeyDesc_code_action = "<leader>ca Code actions"
 let g:WhichKeyDesc_code_rename = "<leader>cr Rename"
 let g:WhichKeyDesc_code_format = "<leader>cf Format"
 let g:WhichKeyDesc_code_description = "<leader>cd Line diagnostics"
-let g:WhichKeyDesc_code_signature = "<leader>cs Change signature"
+let g:WhichKeyDesc_code_signature = "<leader>cs Surround"
 let g:WhichKeyDesc_code_generate = "<leader>cg Generate code"
+let g:WhichKeyDesc_run = "<leader>cc Code configuration"
 nmap <leader>ca <Action>(ShowIntentionActions)
 nmap <leader>cr <Action>(RenameElement)
 nmap <leader>cf <Action>(ReformatCode)
 nmap <leader>cd <Action>(ShowErrorDescription)
-nmap <leader>cs <Action>(ChangeSignature)
 nmap <leader>cg <Action>(Generate)
-xmap <leader>cs <Action>(Floating.CodeToolbar.Surround)
+map <leader>cs <Action>(Floating.CodeToolbar.Surround)
+nmap <leader>cc <Action>(RedesignedRunConfigurationSelector)
 
 " Refactoring
 let g:WhichKeyDesc_refactor = "<leader>r Refactor"
+let g:WhichKeyDesc_refactor_popup = "<leader>rr Refactor popup"
 let g:WhichKeyDesc_refactor_extract = "<leader>re Extract"
 let g:WhichKeyDesc_refactor_method = "<leader>rm Extract method" 
-let g:WhichKeyDesc_refactor_variable = "<leader>rv Extract variable"
-let g:WhichKeyDesc_refactor_parameter = "<leader>rp Extract parameter"
+let g:WhichKeyDesc_refactor_variable = "<leader>rv Introduce variable"
+let g:WhichKeyDesc_refactor_parameter = "<leader>rp Introduce parameter"
+let g:WhichKeyDesc_refactor_field = "<leader>rf Introduce field"
+let g:WhichKeyDesc_refactor_constant = "<leader>rc Introduce constant"
 let g:WhichKeyDesc_refactor_inline = "<leader>ri Inline method"
+let g:WhichKeyDesc_refactor_signature = "<leader>rs Change signature"
 let g:WhichKeyDesc_refactor_imports = "<leader>rI Optimize imports"
-xmap <leader>re <Action>(Floating.CodeToolbar.Extract)
-nmap <leader>re <Action>(Floating.CodeToolbar.Extract)
+map <leader>rr <Action>(Refactorings.QuickListPopupAction)
+map <leader>re <Action>(Floating.CodeToolbar.Extract)
 nmap <leader>rm <Action>(ExtractMethod)
 nmap <leader>rv <Action>(IntroduceVariable)
 nmap <leader>rp <Action>(IntroduceParameter)
+map <leader>rf <Action>(IntroduceField)
+map <leader>rc <Action>(IntroduceConstant)
 nmap <leader>ri <Action>(Inline)
+nmap <leader>rs <Action>(ChangeSignature)
 nmap <leader>rI <Action>(OptimizeImports)
-
-" ai
-let g:WhichKeyDesc_ai = "<leader>a AI"
-let g:WhichKeyDesc_ai_inline = "<leader>ai Inline assistant"
-let g:WhichKeyDesc_ai_chat = "<leader>aa AI Chat"
-let g:WhichKeyDesc_ai_action = "<leader>aA AI Action"
-nmap <leader>ai <Action>(AIAssistant.Editor.AskAiAssistantInEditor)
-nmap <leader>aa <Action>(ActivateAIAssistantToolWindow)
-nmap <leader>aA <Action>(IntentionActionAsAction_com.intellij.ml.llm.intentions.chat.AIAssistantIntention)
 
 " Tab management
 nmap L :tabn<CR>
@@ -171,6 +203,8 @@ imap <C-h> <Left>
 imap <C-j> <Down>
 imap <C-k> <Up>
 imap <C-l> <Right>
+inoremap <C-e> <End>
+inoremap <C-a> <Home>
 
 " Yank to system clipboard
 let g:WhichKeyDesc_misc_yank = "<leader>y Yank to clipboard"
@@ -181,8 +215,9 @@ nmap <leader>Y "+y$
 
 " Commenting
 let g:WhichKeyDesc_misc_comment = "<leader>/ Toggle comment"
-nmap <leader>/ <Action>(CommentByLineComment)
-vmap <leader>/ <Action>(CommentByLineComment)
+let g:WhichKeyDesc_misc_doc = "<leader>\\ Toggle documentation"
+map <leader>/ <Action>(CommentByLineComment)
+nmap <leader>\\ <Action>(ToggleRenderedDocPresentation)
 
 " .ideavimrc
 let g:WhichKeyDesc_vim = "<leader>v ideavim"
@@ -195,24 +230,54 @@ nnoremap <leader>vr :action IdeaVim.ReloadVimRc.reload<CR>
 let g:WhichKeyDesc_git = "<leader>g Git"
 let g:WhichKeyDesc_git_push = "<leader>gp Git push"
 let g:WhichKeyDesc_git_update = "<leader>gu Git Update/Pull"
-let g:WhichKeyDesc_git_commit = "<leader>gc Git Commit window"
+let g:WhichKeyDesc_git_commit = "<leader>gc Git Commit"
 let g:WhichKeyDesc_git_status = "<leader>gs Git status"
 let g:WhichKeyDesc_git_diff = "<leader>gd Git diff file"
 let g:WhichKeyDesc_git_ai= "<leader>ga AI commit message"
+let g:WhichKeyDesc_git_ai= "<leader>gb Git browse"
 nmap <leader>gp <Action>(Vcs.Push)
 nmap <leader>gu <Action>(Vcs.UpdateProject)
 nmap <leader>gc <Action>(ActivateCommitToolWindow)
 nmap <leader>gs <Action>(ActivateVersionControlToolWindow)
 nmap <leader>gd <Action>(Compare.SameVersion)
 nmap <leader>ga <Action>(Vcs.LLMCommitMessageAction)
+nmap <leader>gb <Action>(Github.Open.In.Browser)
+
+let g:WhichKeyDesc_hunk = "<leader>gh Git hunk"
+let g:WhichKeyDesc_hunk_reset = "<leader>ghr Reset hunk"
+let g:WhichKeyDesc_hunk_revert = "<leader>ghR Revert file changes"
+let g:WhichKeyDesc_hunk_diff = "<leader>ghd Diff hunk"
+let g:WhichKeyDesc_hunk_next = "<leader>ghn Next hunk"
+let g:WhichKeyDesc_hunk_prev = "<leader>ghp Previous hunk"
+nmap <leader>ghr <Action>(Vcs.RollbackChangedLines)
+nmap <leader>ghR <Action>(Vcs.RollbackChangedLines)
+nmap <leader>ghd <Action>(Vcs.ShowDiffChangedLines)
+nmap <leader>ghn <Action>(VcsShowNextChangeMarker)
+nmap <leader>ghp <Action>(VcsShowPrevChangeMarker)
 
 " Project navigation
 let g:WhichKeyDesc_project = "<leader>p Project"
 let g:WhichKeyDesc_project_projects = "<leader>pp Recent projects"
+let g:WhichKeyDesc_project_new = "<leader>pn New project"
 nmap <leader>pp <Action>(ManageRecentProjects)
+nmap <leader>pn <Action>(NewProject)
 
 " Debugger
 let g:WhichKeyDesc_debug_run = "<leader>dr Run debugger"
 let g:WhichKeyDesc_debug_breakpoint = "<leader>db Toggle breakpoint"
 map <leader>dr <Action>(Debug)
 map <leader>db <Action>(ToggleLineBreakpoint)
+
+" Testing
+let g:WhichKeyDesc_test = "<leader>t Testing"
+let g:WhichKeyDesc_test_run = "<leader>tr Run test class"
+let g:WhichKeyDesc_test_run_last = "<leader>tl Run last test"
+let g:WhichKeyDesc_test_failed = "<leader>tf Run failed tests"
+let g:WhichKeyDesc_test_coverage = "<leader>tc Run with coverage"
+nmap <leader>tr <Action>(RunClass)
+nmap <leader>tl <Action>(Rerun)
+nmap <leader>tf <action>(RerunFailedTests)
+nmap <leader>tc <Action>(RunCoverage)
+
+" TODO: multiple cursors
+" TODO: exchange plugin

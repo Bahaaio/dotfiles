@@ -37,16 +37,15 @@
     icon_path = /usr/share/icons/Papirus/16x16/
     sticky_history = no
     history_length = 50
-    dmenu = /usr/bin/dmenu -p dunst:
-    browser = /usr/bin/sensible-browser
+    dmenu = /usr/local/bin/rofi -dmenu -theme ~/.config/rofi/launcher/style.rasi -p dunst:
+    browser = /usr/bin/xdg-open
     always_run_script = true
     title = Dunst
     class = Dunst
     corner_radius = 20
     ignore_dbusclose = false
     force_xinerama = false
-    mouse_middle_click = do_action, close_current
-    mouse_right_click = close_all
+    mouse_left_click=do_action, close_current
 [experimental]
     per_monitor_dpi = false
 [urgency_low]

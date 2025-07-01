@@ -37,7 +37,7 @@ map({ "n", "x" }, "<leader>sW", LazyVim.pick("grep_word"), { desc = "Visual sele
 map({"n","t"}, "<C-'>", "<cmd>ToggleTerm direction=float<Cr>", { desc = "toggle floating terminal" })
 -- stylua: ignore
 map("n", "<c-/>", function() Snacks.terminal() end, { desc = "Terminal (cwd)" })
-map("t", "<esc>", "<c-\\><c-n>", {})
+map("t", "<C-x>", "<c-\\><c-n>", {})
 
 -- tab management
 map("n", "<leader>to", "<cmd>tabnew<Cr>", { desc = "open new tab" }) -- open new tab

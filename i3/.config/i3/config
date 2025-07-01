@@ -46,7 +46,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/changeVolume.sh 5
 bindsym XF86AudioMute exec --no-startup-id ~/.config/i3/changeVolume.sh toggleMute
 bindsym XF86AudioMicMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
-# play/pause media 
+# play/pause media
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 
 # previous/next media
@@ -234,6 +234,8 @@ for_window [class="copyq"] floating enable
 for_window [class="org.gnome.Nautilus"] floating enable
 for_window [window_type="normal"] border pixel 2
 for_window [class="Ulauncher"] border pixel 0
+for_window [class="discord"] move to workspace $ws9
+for_window [class="ZapZap"] move to workspace $ws10
 
 set $pref_width 1132
 set $pref_height 806

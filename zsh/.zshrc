@@ -78,7 +78,12 @@ exercism () {
         [[ -d "${out[-1]}" ]] && cd "${out[-1]}"
 
         # navigate to java main if exists
-        [[ -d "./src/main/java" ]] && command idea1 .
+        if [[ -d "./src/main/java" ]]; then
+            # enable all tests
+            find ./src/test/java/ -name '*.java' | xargs sed -i '/@Disabled/d'
+
+            command idea .
+        fi
     else
         command exercism "$@"
     fi

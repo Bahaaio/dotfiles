@@ -15,6 +15,23 @@ return {
   },
 
   {
+    "saghen/blink.cmp",
+    opts = {
+      sources = {
+        providers = {
+          copilot = {
+            name = "copilot",
+            module = "blink-cmp-copilot",
+            kind = "Copilot",
+            score_offset = -1,
+            async = true,
+          },
+        },
+      },
+    },
+  },
+
+  {
     "olimorris/codecompanion.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",

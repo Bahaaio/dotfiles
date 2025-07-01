@@ -1,2 +1,2 @@
 ! xrdb -merge ~/.Xresources when changing
-Xft.dpi: 120
+! Xft.dpi: 120

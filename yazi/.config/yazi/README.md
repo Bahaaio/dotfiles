@@ -7,8 +7,8 @@
 Install flavors
 
 ```sh
-ya pack --install
-ya pack --upgrade
+ya pkg install
+ya pkg upgrade
 ```
 
 ---

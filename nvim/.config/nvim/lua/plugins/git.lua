@@ -2,8 +2,8 @@ return {
   {
     "NeogitOrg/neogit",
     dependencies = {
-      "nvim-lua/plenary.nvim", -- required
-      "sindrets/diffview.nvim", -- optional - Diff integration
+      "nvim-lua/plenary.nvim",
+      "sindrets/diffview.nvim",
     },
     keys = {
       { "<leader>gn", "<cmd>Neogit<Cr>", desc = "Neogit" },
@@ -31,14 +31,5 @@ return {
         },
       })
     end,
-  },
-
-  {
-    "sindrets/diffview.nvim",
-    lazy = true,
-    cmd = { "DiffviewOpen" },
-    keys = {
-      { "<leader>gd", "<cmd>DiffviewOpen<Cr>", desc = "Git Diff" },
-    },
   },
 }

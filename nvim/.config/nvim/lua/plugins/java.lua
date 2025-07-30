@@ -1,7 +1,7 @@
 return {
   {
     "mfussenegger/nvim-jdtls",
-    version = false, -- always use the latest git commit
+    version = false,
   },
 
   {
@@ -9,9 +9,9 @@ return {
     ft = "java",
     dependencies = {
       "mfussenegger/nvim-jdtls",
-      "mfussenegger/nvim-dap", -- for the debugger
-      "rcarriga/nvim-dap-ui", -- recommended
-      "theHamsta/nvim-dap-virtual-text", -- recommended
+      "mfussenegger/nvim-dap",
+      "rcarriga/nvim-dap-ui",
+      "theHamsta/nvim-dap-virtual-text",
     },
   },
 }

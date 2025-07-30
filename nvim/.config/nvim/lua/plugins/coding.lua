@@ -12,8 +12,8 @@ return {
   {
     "Civitasv/cmake-tools.nvim",
     dependencies = { "akinsho/toggleterm.nvim" },
-    lazy = true,
     ft = { "c", "cpp", "h", "hpp", "cmake" },
+    lazy = true,
     keys = {
       { "<leader>mg", "<cmd>CMakeGenerate<Cr>", desc = "CMake generate" },
       { "<leader>mb", "<cmd>CMakeBuild<Cr>", desc = "CMake build" },

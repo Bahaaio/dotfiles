@@ -1,17 +1,18 @@
 return {
   {
-    "github/copilot.vim",
-    lazy = false,
-    enabled = false,
-  },
-
-  {
     "kylechui/nvim-surround",
     version = "*",
     event = "VeryLazy",
     config = function()
       require("nvim-surround").setup({})
     end,
+  },
+
+  {
+    "mbbill/undotree",
+    keys = {
+      { "<leader>U", "<cmd>UndotreeToggle<CR>", desc = "Undotree toggle" },
+    },
   },
 
   {
@@ -27,7 +28,6 @@ return {
     opts = {
       modes = {
         char = {
-          -- enabled = false,
           multi_line = false,
           highlight = { backdrop = false },
           char_actions = function()
@@ -113,14 +113,19 @@ return {
     },
   },
 
-  -- explorer (snacks picker)
   {
     "folke/snacks.nvim",
     opts = {
       picker = {
+        reverse = false,
         sources = {
+          files = {
+            layout = { preview = false },
+            hidden = true,
+          },
+          -- explorer (snacks picker)
           explorer = {
-            -- hidden = true,
+            hidden = true,
             win = {
               list = {
                 keys = {
@@ -143,12 +148,14 @@ return {
     keys = {
       { "<leader>e", mode = { "n", "v" }, "<cmd>Yazi<cr>", desc = "Open yazi at the current file" },
       { "<leader>E", "<cmd>Yazi cwd<cr>", desc = "Open yazi in current working directory" },
-      { "<c-up>", "<cmd>Yazi toggle<cr>", desc = "Resume the last yazi session" },
+      { "<tab>", "" },
     },
     opts = {
-      -- if you want to open yazi instead of netrw, see below for more info
-      open_for_directories = false,
+      open_for_directories = true,
       highlight_hovered_buffers_in_same_directory = false,
+      keymaps = {
+        cycle_open_buffers = false,
+      },
     },
   },
 }

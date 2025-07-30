@@ -3,7 +3,6 @@ return {
     "echasnovski/mini.animate",
     version = "*",
     event = "BufEnter",
-    -- enabled = false,
     config = function()
       require("mini.animate").setup({
         cursor = { enable = false },
@@ -22,21 +21,13 @@ return {
     lazy = true,
     event = "VeryLazy",
     version = "*",
-    opts = {},
     config = function()
       require("toggleterm").setup({
         float_opts = {
-          border = "curved", -- Set the border to 'curved' for rounded corners
+          border = "curved",
         },
       })
     end,
-  },
-
-  {
-    "folke/tokyonight.nvim",
-    opts = {
-      style = "night",
-    },
   },
 
   {

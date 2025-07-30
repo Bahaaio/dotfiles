@@ -3,8 +3,7 @@ return {
   dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.icons" },
   ---@module 'render-markdown'
   ---@type render.md.UserConfig
-  opts = {},
-  ft = { "markdown", "codecompanion" },
+  ft = { "markdown" },
   config = function()
     require("render-markdown").setup()
   end,

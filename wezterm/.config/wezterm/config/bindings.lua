@@ -140,7 +140,7 @@ local keys = {
    },
    {
       key = [[\]],
-      mods = mod.CTRL,
+      mods = mod.SUPER,
       action = act.SplitHorizontal({ domain = 'CurrentPaneDomain' }),
    },
 

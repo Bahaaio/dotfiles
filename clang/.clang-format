@@ -2,31 +2,8 @@
 Language: Cpp
 BasedOnStyle: Google
 AccessModifierOffset: -4
-AlignConsecutiveAssignments: None
-AlignConsecutiveBitFields:
-  Enabled: false
-  AcrossEmptyLines: false
-  AcrossComments: false
-  AlignCompound: false
-  AlignFunctionPointers: false
-  PadOperators: false
-AlignConsecutiveDeclarations: None
-AlignConsecutiveMacros:
-  Enabled: false
-  AcrossEmptyLines: false
-  AcrossComments: false
-  AlignCompound: false
-  AlignFunctionPointers: false
-  PadOperators: false
-AlignConsecutiveShortCaseStatements:
-  Enabled: false
-  AcrossEmptyLines: false
-  AcrossComments: false
-  AlignCaseArrows: false
-  AlignCaseColons: false
-AlignOperands: Align
-AlignTrailingComments: true
 AllowShortCompoundRequirementOnASingleLine: true
+AllowShortFunctionsOnASingleLine: None
 BraceWrapping:
   AfterCaseLabel: false
   AfterClass: false

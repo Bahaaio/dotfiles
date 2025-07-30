@@ -17,10 +17,8 @@ source ~/.aliases.zsh
 
 # Delete duplicate commands first when trimming history
 setopt hist_expire_dups_first
-
 # Ignore duplicated commands when adding to history
 setopt hist_ignore_dups
-
 # Share command history between all sessions
 setopt SHARE_HISTORY
 
@@ -50,11 +48,6 @@ export TERMINAL='wezterm'
 export BROWSER='brave-browser'
 export EDITOR='nvim'
 # export MANPAGER='nvim +Man!'
-
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # yazi
 function y() {
@@ -93,6 +86,11 @@ exercism () {
 bats() {
     BATS_RUN_SKIPPED=true command bats *.bats
 }
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"

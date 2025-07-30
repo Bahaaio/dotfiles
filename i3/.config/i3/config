@@ -4,16 +4,13 @@
 
 set $mod Mod4
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
 font pango:JetBrainsMono Nerd Font Bold 12
 
 # picom
 exec_always --no-startup-id picom
 
 # polybar
-exec_always --no-startup-id killall polybar
-exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh 
+exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 
 # feh
 exec_always --no-startup-id feh --bg-fill --randomize ~/Pictures/wallpapers/
@@ -77,7 +74,7 @@ bindsym $mod+q kill
 bindsym $mod+x exec --no-startup-id ~/.config/rofi/powermenu/powermenu.sh
 
 # file explorer
-# bindsym $mod+e exec --no-startup-id wezterm -e yazi
+bindsym $mod+e exec --no-startup-id nautilus &
 
 # startup
 exec --no-startup-id brave-browser
@@ -87,13 +84,9 @@ exec --no-startup-id wezterm start --class wezmain
 for_window [class="wezmain"] move to workspace $ws2
 
 # scratch pads
-exec --no-startup-id wezterm start --class wezbtop -e btop
+exec --no-startup-id wezterm --config font_size=13 start --class wezbtop -e btop
 for_window [class="wezbtop"] move scratchpad
 bindsym $mod+b [class="wezbtop"] scratchpad show; move position center
-
-exec --no-startup-id wezterm start --class wezyazi -e yazi
-for_window [class="wezyazi"] move scratchpad
-bindsym $mod+e [class="wezyazi"] scratchpad show; move position center
 
 exec --no-startup-id wezterm start --class wezscratch
 for_window [class="wezscratch"] move scratchpad
@@ -197,6 +190,8 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+# reload polybar
+bindsym $mod+p exec ~/.config/polybar/launch_polybar.sh
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
@@ -240,7 +235,7 @@ for_window [class="ZapZap"] move to workspace $ws10
 set $pref_width 1132
 set $pref_height 806
 for_window [class="wezbtop"] resize set $pref_width $pref_height
-for_window [class="wezyazi"] resize set $pref_width $pref_height
+for_window [class="org.gnome.Nautilus"] resize set $pref_width $pref_height
 for_window [class="wezscratch"] resize set $pref_width $pref_height
 
 # to focus when opening links

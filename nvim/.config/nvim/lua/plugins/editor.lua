@@ -49,33 +49,6 @@ return {
   },
 
   {
-    "nvim-telescope/telescope.nvim",
-    opts = {
-      defaults = {
-        prompt_prefix = "   ",
-        sorting_strategy = "ascending",
-        layout_config = {
-          horizontal = {
-            prompt_position = "top",
-            preview_width = 0.55,
-          },
-          width = 0.87,
-          height = 0.80,
-        },
-      },
-      pickers = {
-        find_files = {
-          previewer = false,
-        },
-      },
-    },
-    keys = {
-      -- disable the keymap to grep files
-      { "<leader>/", false },
-    },
-  },
-
-  {
     "folke/trouble.nvim",
     opts = {
       focus = true,

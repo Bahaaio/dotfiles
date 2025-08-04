@@ -1,5 +1,6 @@
 local baseUrl = "https://cht.sh/"
 local cheat_term = nil
+local cached_topics = {}
 
 local languages = {
   "go",
@@ -87,11 +88,16 @@ end
 
 local function pick_topic()
   pick_language(function(language)
-    local topics = vim.fn.systemlist("curl -s " .. baseUrl .. language .. "/:list")
+    local topics = cached_topics[language]
 
-    if not topics or #topics == 0 then
-      print("could not fetch topics")
-      return
+    if not topics then
+      topics = vim.fn.systemlist("curl -s " .. baseUrl .. language .. "/:list")
+
+      if not topics or #topics == 0 then
+        print("could not fetch topics")
+      else
+        cached_topics[language] = topics
+      end
     end
 
     vim.ui.select(topics, { prompt = "topic?" }, function(topic)

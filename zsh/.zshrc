@@ -82,11 +82,6 @@ exercism () {
     fi
 }
 
-# run bats tests
-bats() {
-    BATS_RUN_SKIPPED=true command bats *.bats
-}
-
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

@@ -16,6 +16,9 @@ map("n", "N", "Nzz", { desc = "previous search result" })
 map("n", "<leader>q", "<cmd>qa<cr>", { desc = "Quit all" })
 unmap("n", "<leader>qq")
 
+-- misc
+map("n", "<leader>\\", "<C-w>v", { desc = "Split window right" })
+
 -- Insert movement
 map("i", "<C-h>", "<Left>", { desc = "move left" })
 map("i", "<C-j>", "<Down>", { desc = "move down" })
@@ -48,6 +51,3 @@ map("v", "<leader>/", "gc", { desc = "toggle comment", remap = true })
 map({ "n", "v" }, "<leader>y", '"+y', { desc = "yank to the system clipboard" })
 map("n", "<leader>Y", '"+y$', { desc = "yank eol to the system clipboard" })
 map("n", "<C-c>", "<cmd>%y+<cr>", { desc = "yank file to the system clipboard" })
-
--- zoxide
-map("n", "<leader>z", Snacks.picker.zoxide, { desc = "zoxide" })

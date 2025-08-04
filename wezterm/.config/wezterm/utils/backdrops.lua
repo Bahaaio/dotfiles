@@ -1,5 +1,5 @@
 local wezterm = require('wezterm')
-local colors = require('colors.custom')
+local colors = wezterm.color.get_builtin_schemes()['Catppuccin Mocha']
 
 -- Seeding random numbers before generating for use
 -- Known issue with lua math library
@@ -86,7 +86,7 @@ function BackDrops:_create_focus_opts()
          width = '120%',
          vertical_offset = '-10%',
          horizontal_offset = '-10%',
-         opacity = 0.85,
+         opacity = 1,
       },
    }
 end

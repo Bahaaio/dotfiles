@@ -1,0 +1,24 @@
+{
+  "com.github.manahter.ulauncher-translate": {
+    "id": "com.github.manahter.ulauncher-translate",
+    "url": "https://github.com/manahter/ulauncher-translate",
+    "updated_at": "2025-05-31T16:40:27.215765",
+    "last_commit": "f81d32c583c7e3542bdba655e991a56e6d9a2c28",
+    "last_commit_time": "2021-04-09T18:12:40"
+  },
+  "com.github.tchar.ulauncher-albert-calculate-anything": {
+    "id": "com.github.tchar.ulauncher-albert-calculate-anything",
+    "url": "https://github.com/tchar/ulauncher-albert-calculate-anything",
+    "updated_at": "2025-05-31T16:43:23.767112",
+    "last_commit": "037965a44e6f6f496e7ad71ec1651b9edfcde32d",
+    "last_commit_time": "2024-05-29T21:57:26"
+  },
+  "com.github.ulauncher.ulauncher-emoji": {
+    "id": "com.github.ulauncher.ulauncher-emoji",
+    "url": "https://github.com/Ulauncher/ulauncher-emoji",
+    "updated_at": "2025-06-17T18:57:03.474762",
+    "last_commit": "af5806625e361ca4519b99755ccf0a557c1e894a",
+    "last_commit_time": "2025-06-03T19:05:58"
+  }
+}
+

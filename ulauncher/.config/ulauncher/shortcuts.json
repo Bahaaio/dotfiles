@@ -1,0 +1,52 @@
+{
+    "c8780dfc-605a-4a18-b85e-ab819583fa53": {
+        "id": "c8780dfc-605a-4a18-b85e-ab819583fa53",
+        "name": "DuckDuckGo",
+        "keyword": "d",
+        "cmd": "https://duckduckgo.com/?q=%s",
+        "icon": "~/Pictures/icons/duckduckgo.svg",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1748697054.3529272
+    },
+    "ba8e7e5c-4d85-48ca-8c4a-a55670a8ee03": {
+        "id": "ba8e7e5c-4d85-48ca-8c4a-a55670a8ee03",
+        "name": "YouTube",
+        "keyword": "y",
+        "cmd": "https://www.youtube.com/results?search_query=%s",
+        "icon": "~/Pictures/icons/youtube.png",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1748697515.3542013
+    },
+    "af42af1c-f9fd-4a15-bde4-b933005816ee": {
+        "id": "af42af1c-f9fd-4a15-bde4-b933005816ee",
+        "name": "github",
+        "keyword": "gh",
+        "cmd": "https://github.com/search?q=%s",
+        "icon": "~/Pictures/icons/github.svg",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1754211408.3344886
+    },
+    "1a5185fe-ee63-4d67-b387-78792f8e6cf9": {
+        "id": "1a5185fe-ee63-4d67-b387-78792f8e6cf9",
+        "name": "GitHub profile",
+        "keyword": "git",
+        "cmd": "https://github.com/BahaaMohamed98",
+        "icon": "~/Pictures/icons/github.svg",
+        "is_default_search": false,
+        "run_without_argument": true,
+        "added": 1748701119.6001396
+    },
+    "7822c7ff-2db4-4d69-b70f-a116c0483b8f": {
+        "id": "7822c7ff-2db4-4d69-b70f-a116c0483b8f",
+        "name": "dotfiles",
+        "keyword": "dot",
+        "cmd": "https://github.com/BahaaMohamed98/dotfiles",
+        "icon": "~/Pictures/icons/github.svg",
+        "is_default_search": false,
+        "run_without_argument": true,
+        "added": 1754119631.0855267
+    }
+}

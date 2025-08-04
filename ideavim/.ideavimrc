@@ -45,14 +45,13 @@ nmap <leader>q <Action>(HideAllWindows)
 nmap <C-S> :w<CR>
 nnoremap <expr> <Esc> v:hlsearch ? ':nohlsearch<CR>' : '<Esc>'
 
+let g:WhichKeyDesc_line_below = "]<space> add empty line below cursor"
+let g:WhichKeyDesc_line_above = "[<space> add empty line above cursor"
+nmap ]<space> o<Esc>k
+nmap [<space> O<Esc>j
+
 let g:WhichKeyDesc_run = "<leader>R Run"
 nmap <leader>R <Action>(Run)
-
-" Jump between methods
-let g:WhichKeyDesc_method_up = "[[ Method up"
-let g:WhichKeyDesc_method_down = "]] Method down"
-nmap [[ <Action>(MethodUp)
-nmap ]] <Action>(MethodDown)
 
 " Paste
 map <C-S-v> <Action>(EditorPaste)
@@ -80,11 +79,11 @@ nmap m <Plug>(easymotion-s)
 " Diagnostics
 let g:WhichKeyDesc_diagnostics = "<leader>d Diagnostics/Debugger"
 let g:WhichKeyDesc_diagnostics_file = "<leader>df file diagnostics"
-let g:WhichKeyDesc_diagnostics_next = "<leader>dn next diagnostic"
-let g:WhichKeyDesc_diagnostics_prev = "<leader>dp previous diagnostic"
+let g:WhichKeyDesc_diagnostics_next = "]d next diagnostic"
+let g:WhichKeyDesc_diagnostics_prev = "[d previous diagnostic"
 nmap <leader>df <Action>(ActivateProblemsViewToolWindow)
-nmap <leader>dn <Action>(GotoNextError)
-nmap <leader>dp <Action>(GotoPreviousError)
+nmap ]d <Action>(GotoNextError)
+nmap [d <Action>(GotoPreviousError)
 
 " Find
 let g:WhichKeyDesc_find = "<leader>f Find"
@@ -138,12 +137,12 @@ let g:WhichKeyDesc_code_format = "<leader>cf Format"
 let g:WhichKeyDesc_code_description = "<leader>cd Line diagnostics"
 let g:WhichKeyDesc_code_signature = "<leader>cs Surround"
 let g:WhichKeyDesc_code_generate = "<leader>cg Generate code"
-let g:WhichKeyDesc_run = "<leader>cc Code configuration"
-nmap <leader>ca <Action>(ShowIntentionActions)
+let g:WhichKeyDesc_code_configuration = "<leader>cc Code configuration"
+map <leader>ca <Action>(ShowIntentionActions)
 nmap <leader>cr <Action>(RenameElement)
 nmap <leader>cf <Action>(ReformatCode)
 nmap <leader>cd <Action>(ShowErrorDescription)
-nmap <leader>cg <Action>(Generate)
+map <leader>cg <Action>(Generate)
 map <leader>cs <Action>(Floating.CodeToolbar.Surround)
 nmap <leader>cc <Action>(RedesignedRunConfigurationSelector)
 
@@ -179,13 +178,13 @@ let g:WhichKeyDesc_buffers = "<leader>b Buffers"
 let g:WhichKeyDesc_buffers_delete = "<leader>bd Delete buffer"
 let g:WhichKeyDesc_buffers_close = "<leader>x Close buffer"
 let g:WhichKeyDesc_buffers_pin = "<leader>bp Pin buffer"
-let g:WhichKeyDesc_buffers_closeothers = "<leader>bP Close other buffers"
+let g:WhichKeyDesc_buffers_closeothers = "<leader>bo Close other buffers"
 let g:WhichKeyDesc_buffers_closeright = "<leader>br Close buffers to right"
 let g:WhichKeyDesc_buffers_closeleft = "<leader>bl Close buffers to left"
 nmap <leader>bd :bd<CR>
 nmap <leader>x :bd<CR>
 nmap <leader>bp <Action>(PinActiveEditorTab)
-nmap <leader>bP <Action>(CloseAllEditorsButActive)
+nmap <leader>bo <Action>(CloseAllEditorsButActive)
 nmap <leader>br <Action>(CloseAllToTheRight)
 nmap <leader>bl <Action>(CloseAllToTheLeft)
 
@@ -206,12 +205,13 @@ imap <C-l> <Right>
 inoremap <C-e> <End>
 inoremap <C-a> <Home>
 
-" Yank to system clipboard
+" Yanking
 let g:WhichKeyDesc_misc_yank = "<leader>y Yank to clipboard"
 let g:WhichKeyDesc_misc_yankline = "<leader>Y Yank eol to clipboard"
 nmap <C-c> :%y+<CR>
 map <leader>y "+y
 nmap <leader>Y "+y$
+nmap Y y$
 
 " Commenting
 let g:WhichKeyDesc_misc_comment = "<leader>/ Toggle comment"
@@ -278,6 +278,9 @@ nmap <leader>tr <Action>(RunClass)
 nmap <leader>tl <Action>(Rerun)
 nmap <leader>tf <action>(RerunFailedTests)
 nmap <leader>tc <Action>(RunCoverage)
+
+" remove easymotion space + space
+unmap <space><space>
 
 " TODO: multiple cursors
 " TODO: exchange plugin

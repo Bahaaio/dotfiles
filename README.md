@@ -34,7 +34,7 @@ cd dotfiles
 Then use the [install.sh](install.sh) to create the symlinks
 
 ```sh
-chmod +x install.sh 
+chmod +x install.sh
 ./install.sh
 ```
 

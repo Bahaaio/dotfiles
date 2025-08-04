@@ -32,7 +32,6 @@ return {
     },
     pickers = {
       find_files = { previewer = false },
-      git_files = { previewer = false },
     },
   },
   keys = {

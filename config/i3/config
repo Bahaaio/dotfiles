@@ -248,7 +248,7 @@ hide_edge_borders smart
 title_align center
 
 # set default layout
-# workspace_layout tabbed
+workspace_layout tabbed
 
 # Set inner/outer gaps
 gaps inner 0

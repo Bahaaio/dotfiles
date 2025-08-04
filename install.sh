@@ -1,9 +1,7 @@
-#!/bin/bash
+#!/bin/env bash
 
-# Iterate through each directory in dotfiles/
-for dir in */; do
-    echo "Stowing $dir"
-    stow "$dir"
-done
-
-echo "Dotfiles installation complete!"
+stow zsh
+stow home
+stow bin --target="$HOME/.local/bin/"
+stow config --target="$HOME/.config/"
+stow Pictures --target="$HOME/Pictures/"

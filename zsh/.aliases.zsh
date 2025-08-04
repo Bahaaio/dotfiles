@@ -42,4 +42,3 @@ alias charge='sudo tlp fullcharge'
 
 # nvim
 alias vim='nvim'
-alias cvim='NVIM_APPNAME=NvChad nvim'

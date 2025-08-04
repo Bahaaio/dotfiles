@@ -105,69 +105,70 @@ local keys = {
    {
       key = [[/]],
       mods = mod.SUPER,
-      action = wezterm.action_callback(function(window, _pane)
+      action = wezterm.action_callback(function(window, _)
          backdrops:random(window)
       end),
    },
    {
       key = [[,]],
       mods = mod.SUPER,
-      action = wezterm.action_callback(function(window, _pane)
+      action = wezterm.action_callback(function(window, _)
          backdrops:cycle_back(window)
       end),
    },
    {
       key = [[.]],
       mods = mod.SUPER,
-      action = wezterm.action_callback(function(window, _pane)
+      action = wezterm.action_callback(function(window, _)
          backdrops:cycle_forward(window)
       end),
    },
    {
       key = 'b',
       mods = mod.SUPER,
-      action = wezterm.action_callback(function(window, _pane)
+      action = wezterm.action_callback(function(window, _)
          backdrops:toggle_focus(window)
       end),
    },
 
-   -- panes --
-   -- panes: split panes
-   {
-      key = [[\]],
-      mods = mod.SUPER_REV,
-      action = act.SplitVertical({ domain = 'CurrentPaneDomain' }),
-   },
-   {
-      key = [[\]],
-      mods = mod.SUPER,
-      action = act.SplitHorizontal({ domain = 'CurrentPaneDomain' }),
-   },
-
-   -- panes: zoom+close pane
-   { key = 'Enter', mods = mod.SUPER, action = act.TogglePaneZoomState },
-   { key = 'w', mods = mod.SUPER, action = act.CloseCurrentPane({ confirm = false }) },
-
-   -- panes: resizing (SUPER)
-   split_nav('resize', 'h'),
-   split_nav('resize', 'j'),
-   split_nav('resize', 'k'),
-   split_nav('resize', 'l'),
-
-   -- panes: navigation (CTRL)
-   split_nav('move', 'h'),
-   split_nav('move', 'j'),
-   split_nav('move', 'k'),
-   split_nav('move', 'l'),
-   {
-      key = 'p',
-      mods = mod.SUPER,
-      action = act.PaneSelect({ alphabet = '1234567890', mode = 'SwapWithActiveKeepFocus' }),
-   },
-
-   -- panes: scroll pane
-   { key = 'u', mods = mod.SUPER, action = act.ScrollByLine(-5) },
-   { key = 'd', mods = mod.SUPER, action = act.ScrollByLine(5) },
+   -- -- panes --
+   -- -- panes: split panes
+   -- {
+   --    key = [[\]],
+   --    mods = mod.SUPER_REV,
+   --    action = act.SplitVertical({ domain = 'CurrentPaneDomain' }),
+   -- },
+   -- {
+   --    key = [[\]],
+   --    mods = mod.SUPER,
+   --    action = act.SplitHorizontal({ domain = 'CurrentPaneDomain' }),
+   -- },
+   --
+   -- -- panes: zoom+close pane
+   -- { key = 'Enter', mods = mod.SUPER, action = act.TogglePaneZoomState },
+   -- { key = 'w', mods = mod.SUPER, action = act.CloseCurrentPane({ confirm = false }) },
+   --
+   -- -- panes: resizing (SUPER)
+   -- split_nav('resize', 'h'),
+   -- split_nav('resize', 'j'),
+   -- split_nav('resize', 'k'),
+   -- split_nav('resize', 'l'),
+   --
+   -- -- panes: navigation (CTRL)
+   -- split_nav('move', 'h'),
+   -- split_nav('move', 'j'),
+   -- split_nav('move', 'k'),
+   -- split_nav('move', 'l'),
+   --
+   -- {
+   --    key = 'p',
+   --    mods = mod.SUPER,
+   --    action = act.PaneSelect({ alphabet = '1234567890', mode = 'SwapWithActiveKeepFocus' }),
+   -- },
+   --
+   -- -- panes: scroll pane
+   -- { key = 'u', mods = mod.SUPER, action = act.ScrollByLine(-5) },
+   -- { key = 'd', mods = mod.SUPER, action = act.ScrollByLine(5) },
 }
 
 local mouse_bindings = {

@@ -62,7 +62,7 @@ bindsym Shift+Print exec flameshot gui -c -p ~/Pictures/Screenshots/
 bindsym $mod+v exec --no-startup-id copyq show
 
 # start wezterm
-bindsym $mod+Return exec wezterm
+bindsym $mod+Return exec wezterm -e tmux
 
 # kill focused window
 bindsym $mod+q kill
@@ -80,7 +80,7 @@ bindsym $mod+e exec --no-startup-id nautilus &
 exec --no-startup-id brave-browser
 for_window [class="brave-browser"] move to workspace $ws1
 
-exec --no-startup-id wezterm start --class wezmain
+exec --no-startup-id wezterm start --class wezmain -e tmux new -A -s dev
 for_window [class="wezmain"] move to workspace $ws2
 
 # scratch pads
@@ -88,7 +88,7 @@ exec --no-startup-id wezterm --config font_size=13 start --class wezbtop -e btop
 for_window [class="wezbtop"] move scratchpad
 bindsym $mod+b [class="wezbtop"] scratchpad show; move position center
 
-exec --no-startup-id wezterm start --class wezscratch
+exec --no-startup-id wezterm start --class wezscratch -e tmux new -A -s scratch
 for_window [class="wezscratch"] move scratchpad
 bindsym $mod+o [class="wezscratch"] scratchpad show; move position center
 
@@ -246,6 +246,9 @@ hide_edge_borders smart
 
 # align window title
 title_align center
+
+# set default layout
+# workspace_layout tabbed
 
 # Set inner/outer gaps
 gaps inner 0

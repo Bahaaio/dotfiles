@@ -1,20 +1,26 @@
 # Dotfiles
 
-My personal configuration files for various tools.
+My personal setup for a clean and productive Linux environment.
 
-```
-       __      __  _____ __
-  ____/ /___  / /_/ __(_) /__  _____
- / __  / __ \/ __/ /_/ / / _ \/ ___/
-/ /_/ / /_/ / /_/ __/ / /  __(__  )
-\__,_/\____/\__/_/ /_/_/\___/____/
+## Screenshots
 
-BahaaMohamed98
-```
+## Desktop
+
+![Desktop](./assets/desktop.png)
+
+## Terminal
+
+![Terminal](./assets/terminal.png)
+
+## Neovim
+
+![Neovim](./assets/nvim.png)
+
+---
 
 ## Requirements
 
-Make sure you have [git](https://git-scm.com/) and [GNU stow](https://www.gnu.org/software/stow/) installed
+You'll need [git](https://git-scm.com/) and [GNU stow](https://www.gnu.org/software/stow/)
 
 ```sh
 sudo apt update
@@ -23,7 +29,7 @@ sudo apt install git stow
 
 ## Installation
 
-First, clone the repository into your home directory
+Clone the repository into your home directory
 
 ```sh
 cd ~
@@ -31,7 +37,7 @@ git clone https://github.com/BahaaMohamed98/dotfiles.git
 cd dotfiles
 ```
 
-Then use the [install.sh](install.sh) to create the symlinks
+Run [install.sh](install.sh) to symlink everything
 
 ```sh
 chmod +x install.sh

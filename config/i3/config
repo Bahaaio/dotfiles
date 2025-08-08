@@ -21,7 +21,7 @@ exec --no-startup-id dunst
 # start with numlock on
 exec --no-startup-id numlockx on
 
-# touchpad ($ xinput to find input devices)
+# touchpad ($ xinput list to find input devices)
 exec --no-startup-id xinput set-prop "ASUE1211:00 04F3:3211 Touchpad" "libinput Tapping Enabled" 1
 exec --no-startup-id xinput set-prop "ASUE1211:00 04F3:3211 Touchpad" "libinput Natural Scrolling Enabled" 1
 
@@ -36,6 +36,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 # exec --no-startup-id nm-applet
+
+# toggle touchpad
+bindsym XF86TouchpadToggle exec ~/.config/i3/toggleTouchpad.sh
 
 # volume control
 bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/changeVolume.sh 5%+

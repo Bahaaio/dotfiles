@@ -48,5 +48,15 @@
         "is_default_search": false,
         "run_without_argument": true,
         "added": 1754119631.0855267
+    },
+    "88a8a55d-32de-4b27-9355-596a0cdc4a05": {
+        "id": "88a8a55d-32de-4b27-9355-596a0cdc4a05",
+        "name": "Devhints",
+        "keyword": "h",
+        "cmd": "https://devhints.io/%s",
+        "icon": "~/Pictures/icons/devhints.png",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1754497609.5910635
     }
 }

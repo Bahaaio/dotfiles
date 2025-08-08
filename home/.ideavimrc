@@ -116,14 +116,14 @@ map gf <Action>(Forward)
 let g:WhichKeyDesc_search = "<leader>s Search/Replace"
 let g:WhichKeyDesc_search_todo = "<leader>st TODO"
 let g:WhichKeyDesc_search_grep = "<leader>sg grep"
-let g:WhichKeyDesc_search_current = "<leader>si Search in buffer"
+let g:WhichKeyDesc_search_current = "<leader>sb Search buffer"
 let g:WhichKeyDesc_search_symbol = "<leader>ss Go to symbol"
 let g:WhichKeyDesc_search_symbols = "<leader>sS Go to symbol (workspace)"
 let g:WhichKeyDesc_search_replace = "<leader>sr Search and replace"
 let g:WhichKeyDesc_search_replaceall = "<leader>sR Search and replace (workspace)"
 nmap <leader>st <Action>(ActivateTODOToolWindow)
 nmap <leader>sg <Action>(FindInPath)
-nmap <leader>si <Action>(Find)
+nmap <leader>sb <Action>(Find)
 nmap <leader>ss <Action>(FileStructurePopup)
 nmap <leader>sS <Action>(GotoSymbol)
 map <leader>sr <Action>(Replace)
@@ -247,13 +247,13 @@ let g:WhichKeyDesc_hunk = "<leader>gh Git hunk"
 let g:WhichKeyDesc_hunk_reset = "<leader>ghr Reset hunk"
 let g:WhichKeyDesc_hunk_revert = "<leader>ghR Revert file changes"
 let g:WhichKeyDesc_hunk_diff = "<leader>ghd Diff hunk"
-let g:WhichKeyDesc_hunk_next = "<leader>ghn Next hunk"
-let g:WhichKeyDesc_hunk_prev = "<leader>ghp Previous hunk"
+let g:WhichKeyDesc_hunk_next = "]h Next hunk"
+let g:WhichKeyDesc_hunk_prev = "[h Previous hunk"
 nmap <leader>ghr <Action>(Vcs.RollbackChangedLines)
 nmap <leader>ghR <Action>(Vcs.RollbackChangedLines)
 nmap <leader>ghd <Action>(Vcs.ShowDiffChangedLines)
-nmap <leader>ghn <Action>(VcsShowNextChangeMarker)
-nmap <leader>ghp <Action>(VcsShowPrevChangeMarker)
+nmap ]h <Action>(VcsShowNextChangeMarker)
+nmap [h <Action>(VcsShowPrevChangeMarker)
 
 " Project navigation
 let g:WhichKeyDesc_project = "<leader>p Project"

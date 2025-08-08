@@ -132,7 +132,7 @@ return {
     keys = {
       { "<leader>e", mode = { "n", "v" }, "<cmd>Yazi<cr>", desc = "Open yazi at the current file" },
       { "<leader>E", "<cmd>Yazi cwd<cr>", desc = "Open yazi in current working directory" },
-      { "<tab>", "" },
+      { "<tab>", false },
     },
     opts = {
       open_for_directories = true,

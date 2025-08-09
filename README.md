@@ -16,8 +16,6 @@ My personal setup for a clean and productive Linux environment.
 
 ![Neovim](./assets/nvim.png)
 
----
-
 ## Requirements
 
 You'll need [git](https://git-scm.com/) and [GNU stow](https://www.gnu.org/software/stow/)
@@ -33,7 +31,7 @@ Clone the repository into your home directory
 
 ```sh
 cd ~
-git clone https://github.com/BahaaMohamed98/dotfiles.git
+git clone https://github.com/Bahaaio/dotfiles.git
 cd dotfiles
 ```
 

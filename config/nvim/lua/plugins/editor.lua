@@ -24,17 +24,6 @@ return {
   },
 
   {
-    "saghen/blink.cmp",
-    opts = {
-      completion = {
-        menu = { border = "rounded" },
-        documentation = { window = { border = "rounded" } },
-      },
-      signature = { window = { border = "rounded" } },
-    },
-  },
-
-  {
     "folke/flash.nvim",
     opts = {
       modes = {
@@ -84,16 +73,6 @@ return {
     enabled = false,
     opts = {
       disable_mouse = false,
-    },
-  },
-
-  {
-    "folke/which-key.nvim",
-    opts = {
-      spec = {
-        { "<leader>m", group = "CMake", icon = { icon = " ", color = "blue" } },
-        { "<leader>a", group = "ai", icon = { icon = " ", color = "green" } },
-      },
     },
   },
 

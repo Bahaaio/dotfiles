@@ -2,7 +2,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "vague",
+      colorscheme = "kanso-zen",
     },
   },
 
@@ -14,9 +14,10 @@ return {
   },
 
   {
+    "webhooked/kanso.nvim",
+  },
+
+  {
     "vague2k/vague.nvim",
-    opts = {
-      -- transparent = true,
-    },
   },
 }

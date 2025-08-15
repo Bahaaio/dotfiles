@@ -43,4 +43,12 @@ return {
       })
     end,
   },
+  {
+    "folke/which-key.nvim",
+    opts = {
+      spec = {
+        { "<leader>m", group = "CMake", icon = { icon = " ", color = "blue" } },
+      },
+    },
+  },
 }

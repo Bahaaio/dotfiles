@@ -1,5 +1,6 @@
 local backdrops = require('utils.backdrops')
 local wezterm = require('wezterm')
+local colors = require('colors.kanso-zen')
 
 return {
    -- perfomance & rendering
@@ -9,7 +10,8 @@ return {
    webgpu_power_preference = 'HighPerformance',
 
    -- color scheme
-   color_scheme = 'Catppuccin Mocha',
+   -- color_scheme = 'Catppuccin Mocha',
+   colors = colors,
 
    -- background
    -- set to true to start on focus mode

@@ -1,5 +1,5 @@
 local wezterm = require('wezterm')
-local colors = wezterm.color.get_builtin_schemes()['Catppuccin Mocha']
+local colors = require('colors.kanso-zen')
 
 -- Seeding random numbers before generating for use
 -- Known issue with lua math library
@@ -81,7 +81,7 @@ end
 function BackDrops:_create_focus_opts()
    return {
       {
-         source = { Color = self.focus_color },
+         source = { Color = colors.background },
          height = '120%',
          width = '120%',
          vertical_offset = '-10%',

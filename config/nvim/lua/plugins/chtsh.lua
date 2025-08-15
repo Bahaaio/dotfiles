@@ -1,6 +1,6 @@
 local baseUrl = "https://cht.sh/"
-local cheat_term = nil
 local cached_topics = {}
+local cheat_term = nil
 
 local languages = {
   "go",
@@ -14,28 +14,30 @@ local languages = {
   "python",
 }
 
+local utils = {
+  "awk",
+  "sed",
+  "grep",
+  "xargs",
+  "find",
+  "mv",
+  "git",
+  "docker",
+  "docker-compose",
+  "chmod",
+  "chown",
+  "make",
+  "cargo",
+  "kill",
+}
+
 local function toggle()
   if cheat_term then
     cheat_term:toggle()
   end
 end
 
-local function open_in_buffer(query, language)
-  local lines = vim.fn.systemlist("curl -s '" .. baseUrl .. query .. "?T'")
-
-  vim.cmd("enew")
-  vim.api.nvim_buf_set_lines(0, 0, -1, false, lines)
-  vim.api.nvim_buf_set_name(0, query .. "." .. language)
-
-  vim.bo.buftype = "nofile"
-  vim.bo.swapfile = false
-  vim.bo.modifiable = false
-  vim.bo.filetype = language
-
-  vim.keymap.set("n", "q", "<cmd>bd<cr>", { buffer = true })
-end
-
-local function open_in_terminal(query)
+local function open(query)
   local Terminal = require("toggleterm.terminal").Terminal
   local direction = "float"
 
@@ -48,76 +50,102 @@ local function open_in_terminal(query)
     end,
   })
 
-  vim.keymap.set("t", "q", toggle, { buffer = true })
   toggle()
 end
 
-local function open(query, language)
-  local mode = "terminal"
-
-  if mode == "buffer" then
-    open_in_buffer(query, language)
-  else
-    open_in_terminal(query)
-  end
+local function pick(prompt, things, callback)
+  vim.ui.select(things, { prompt = prompt }, function(thing)
+    if not thing then
+      print("nothing selected")
+    else
+      callback(thing)
+    end
+  end)
 end
 
 local function pick_language(callback)
-  vim.ui.select(languages, { prompt = "language?" }, function(language)
-    if not language then
-      print("no language selected")
-    else
-      callback(language)
-    end
-  end)
+  local language = vim.bo.filetype
+
+  if not language or language == "" or not vim.tbl_contains(languages, language) then
+    pick("language?", languages, callback)
+  else
+    callback(language)
+  end
 end
 
-local function search()
-  pick_language(function(language)
-    local topic = vim.trim(vim.fn.input("topic?"))
-
-    if topic == "" then
-      print("no topic provided")
-    else
-      -- replace spaces with +
-      topic = topic:gsub(" ", "+")
-      open(language .. "/" .. topic, language)
-    end
-  end)
+local function pick_util(callback)
+  pick("util?", utils, callback)
 end
 
-local function pick_topic()
+local function prompt_topic(query)
+  local topic = vim.trim(vim.fn.input("topic?"))
+
+  if topic == "" then
+    print("no topic provided")
+  else
+    -- replace spaces with +
+    topic = topic:gsub(" ", "+")
+    open(query .. topic)
+  end
+end
+
+local function get_topics(language)
+  local topics = cached_topics[language]
+
+  if not topics then
+    topics = vim.fn.systemlist("curl -s " .. baseUrl .. language .. "/:list")
+
+    if not topics or #topics == 0 then
+      return nil
+    else
+      cached_topics[language] = topics
+    end
+  end
+
+  return cached_topics[language]
+end
+
+local function search_language_topics()
   pick_language(function(language)
-    local topics = cached_topics[language]
+    local topics = get_topics(language)
 
     if not topics then
-      topics = vim.fn.systemlist("curl -s " .. baseUrl .. language .. "/:list")
-
-      if not topics or #topics == 0 then
-        print("could not fetch topics")
-      else
-        cached_topics[language] = topics
-      end
+      print("could not fetch topics")
+      return
     end
 
     vim.ui.select(topics, { prompt = "topic?" }, function(topic)
       if topic then
-        open(language .. "/" .. topic, language)
+        open(language .. "/" .. topic)
       end
     end)
   end)
 end
 
-local function learn()
+local function search_language()
   pick_language(function(language)
-    open(language .. "/:learn", language)
+    prompt_topic(language .. "/")
   end)
 end
 
-vim.keymap.set("n", "<leader>h", "", { desc = "cheat.sh" })
-vim.keymap.set("n", "<leader>hs", search, { desc = "search" })
-vim.keymap.set("n", "<leader>hc", pick_topic, { desc = "topic" })
-vim.keymap.set("n", "<leader>hl", learn, { desc = "learn language" })
-vim.keymap.set({ "n", "t" }, "<C-;>", toggle, { desc = "hide/show cheat.sh" })
+local function search_util()
+  pick_util(function(util)
+    prompt_topic(util .. "~")
+  end)
+end
 
-return {}
+vim.keymap.set("n", "<leader>hs", search_language, { desc = "search" })
+vim.keymap.set("n", "<leader>hc", search_language_topics, { desc = "topic" })
+vim.keymap.set("n", "<leader>hu", search_util, { desc = "core util" })
+vim.keymap.set({ "n", "t" }, "<M-;>", toggle, { desc = "hide/show cheat.sh" })
+
+return {
+  {
+    "folke/which-key.nvim",
+    opts = {
+      spec = {
+        { "<leader>h", group = "cht.sh", icon = { icon = "󱀁", color = "blue" } },
+      },
+    },
+  },
+}

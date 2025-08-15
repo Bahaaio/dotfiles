@@ -32,9 +32,9 @@ map("n", "<leader>sg", LazyVim.pick("live_grep", { root = false }), { desc = "Gr
 map("n", "<leader>sG", LazyVim.pick("live_grep"), { desc = "Grep (Root Dir)" })
 
 -- floating terminal
-map({ "n", "t" }, "<C-'>", "<cmd>ToggleTerm direction=float<Cr>", { desc = "toggle floating terminal" })
+map({ "n", "t" }, "<M-'>", "<cmd>ToggleTerm direction=float<Cr>", { desc = "toggle floating terminal" })
 -- stylua: ignore
-map("n", "<c-/>", function() Snacks.terminal() end, { desc = "Terminal (cwd)" })
+map("n", "<c-_>", function() Snacks.terminal() end, { desc = "Terminal (cwd)" })
 map("t", "<C-x>", "<c-\\><c-n>", {})
 
 -- tab management

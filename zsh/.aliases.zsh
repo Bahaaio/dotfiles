@@ -1,3 +1,12 @@
+#
+#   █████╗ ██╗     ██╗ █████╗ ███████╗███████╗███████╗
+#  ██╔══██╗██║     ██║██╔══██╗██╔════╝██╔════╝██╔════╝
+#  ███████║██║     ██║███████║███████╗█████╗  ███████╗
+#  ██╔══██║██║     ██║██╔══██║╚════██║██╔══╝  ╚════██║
+#  ██║  ██║███████╗██║██║  ██║███████║███████╗███████║
+#  ╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝
+# Bahaaio
+
 # ls
 alias ls='lsd'
 alias l='ls -lh'
@@ -31,7 +40,7 @@ alias copy='clipcopy'
 alias paste='clippaste'
 alias clock='tty-clock -c -s -b -t -C 6'
 alias leet='nvim leetcode.nvim'
-alias ai='acli rovodev'
+alias ai='opencode'
 
 # exercism
 alias es='exercism submit'

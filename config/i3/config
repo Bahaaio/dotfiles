@@ -238,7 +238,6 @@ for_window [class="ZapZap"] move to workspace $ws10
 set $pref_width 1132
 set $pref_height 806
 for_window [class="wezbtop"] resize set $pref_width $pref_height
-for_window [class="org.gnome.Nautilus"] resize set $pref_width $pref_height
 for_window [class="wezscratch"] resize set $pref_width $pref_height
 
 # to focus when opening links

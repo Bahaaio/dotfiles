@@ -41,6 +41,7 @@ alias paste='clippaste'
 alias clock='tty-clock -c -s -b -t -C 6'
 alias leet='nvim leetcode.nvim'
 alias ai='opencode'
+alias rest='pomo break'
 
 # exercism
 alias es='exercism submit'

@@ -16,7 +16,7 @@ set smartcase
 set ideajoin
 set number
 set relativenumber
-set hlsearch
+"set hlsearch
 set notimeout
 
 " -- plugins --
@@ -178,24 +178,32 @@ let g:WhichKeyDesc_buffers = "<leader>b Buffers"
 let g:WhichKeyDesc_buffers_delete = "<leader>bd Delete buffer"
 let g:WhichKeyDesc_buffers_close = "<leader>x Close buffer"
 let g:WhichKeyDesc_buffers_pin = "<leader>bp Pin buffer"
-let g:WhichKeyDesc_buffers_closeothers = "<leader>bo Close other buffers"
-let g:WhichKeyDesc_buffers_closeright = "<leader>br Close buffers to right"
-let g:WhichKeyDesc_buffers_closeleft = "<leader>bl Close buffers to left"
+let g:WhichKeyDesc_buffers_close_others = "<leader>bo Close other buffers"
+let g:WhichKeyDesc_buffers_close_right = "<leader>br Close buffers to right"
+let g:WhichKeyDesc_buffers_close_left = "<leader>bl Close buffers to left"
+let g:WhichKeyDesc_buffers_move_right = "]B Move buffer right"
+let g:WhichKeyDesc_buffers_move_left = "]B Move buffer left"
 nmap <leader>bd :bd<CR>
 nmap <leader>x :bd<CR>
 nmap <leader>bp <Action>(PinActiveEditorTab)
 nmap <leader>bo <Action>(CloseAllEditorsButActive)
 nmap <leader>br <Action>(CloseAllToTheRight)
 nmap <leader>bl <Action>(CloseAllToTheLeft)
+nmap ]B :tabm +1<CR>
+nmap [B :tabm -1<CR>
 
 " Window management
 let g:WhichKeyDesc_windows = "<leader>w Windows"
 let g:WhichKeyDesc_windows_delete = "<leader>wd Close window"
-let g:WhichKeyDesc_windows_split = "<leader>ws Split horizontally"
-let g:WhichKeyDesc_windows_vsplit = "<leader>wv Split vertically"
+let g:WhichKeyDesc_windows_split_h = "<leader>ws Split horizontally"
+let g:WhichKeyDesc_windows_split_v = "<leader>wv Split vertically"
+let g:WhichKeyDesc_windows_split_h2 = "<leader>\\ Split vertically"
+let g:WhichKeyDesc_windows_split_v2 = "<leader>- Split horizontally"
 nmap <leader>wd :close<CR>
 nmap <leader>ws :split<CR>
 nmap <leader>wv :vsplit<CR>
+nmap <leader>\\ :vsplit<CR>
+nmap <leader>- :split<CR>
 
 " Insert mode keymaps
 imap <C-h> <Left>
@@ -215,9 +223,9 @@ nmap Y y$
 
 " Commenting
 let g:WhichKeyDesc_misc_comment = "<leader>/ Toggle comment"
-let g:WhichKeyDesc_misc_doc = "<leader>\\ Toggle documentation"
+let g:WhichKeyDesc_misc_doc = "<leader>? Toggle documentation"
 map <leader>/ <Action>(CommentByLineComment)
-nmap <leader>\\ <Action>(ToggleRenderedDocPresentation)
+nmap <leader>? <Action>(ToggleRenderedDocPresentation)
 
 " .ideavimrc
 let g:WhichKeyDesc_vim = "<leader>v ideavim"

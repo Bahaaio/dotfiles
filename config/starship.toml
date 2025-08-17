@@ -10,7 +10,6 @@ $git_metrics\
 $fill\
 $c\
 $cmake\
-$dart\
 $golang\
 $java\
 $lua\
@@ -70,9 +69,6 @@ symbol = ' '
 
 [lua]
 format = '[ ](blue)'
-
-[dart]
-symbol = ' '
 
 [golang]
 format = '[ ](bold cyan)'

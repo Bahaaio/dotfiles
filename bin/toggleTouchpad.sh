@@ -1,4 +1,8 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
+
+# Script to toggle the touchpad on/off and set preferred properties when enabled.
+# Requires: xinput
+# Usage: toggleTouchpad.sh
 
 # id=$(xinput list | grep -Poi 'Touchpad.*id=\K\d+')
 device='ASUE1211:00 04F3:3211 Touchpad'

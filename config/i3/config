@@ -61,9 +61,6 @@ bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/changeBrightness
 bindsym Print exec flameshot full -c -p ~/Pictures/Screenshots/
 bindsym Shift+Print exec flameshot gui -c -p ~/Pictures/Screenshots/
 
-# show copyq
-bindsym $mod+v exec --no-startup-id copyq show
-
 # start wezterm
 bindsym $mod+Return exec wezterm -e tmux
 

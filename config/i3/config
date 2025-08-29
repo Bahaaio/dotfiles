@@ -21,9 +21,8 @@ exec --no-startup-id dunst
 # start with numlock on
 exec --no-startup-id numlockx on
 
-# touchpad ($ xinput list to find input devices)
-exec --no-startup-id xinput set-prop "ASUE1211:00 04F3:3211 Touchpad" "libinput Tapping Enabled" 1
-exec --no-startup-id xinput set-prop "ASUE1211:00 04F3:3211 Touchpad" "libinput Natural Scrolling Enabled" 1
+# disable touchpad on startup
+exec --no-startup-id ~/.config/i3/toggleTouchpad.sh
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart

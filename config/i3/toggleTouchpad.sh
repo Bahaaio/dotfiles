@@ -8,4 +8,6 @@ if [ "$enabled" -eq 1 ]; then
     xinput set-prop "$device" "Device Enabled" 0
 else
     xinput set-prop "$device" "Device Enabled" 1
+    xinput set-prop "ASUE1211:00 04F3:3211 Touchpad" "libinput Tapping Enabled" 1
+    xinput set-prop "ASUE1211:00 04F3:3211 Touchpad" "libinput Natural Scrolling Enabled" 1
 fi

@@ -21,7 +21,6 @@ return {
       -- misc/useful --
       { key = 'v', mods = mod.SUPER, action = 'ActivateCopyMode' },
       { key = 'F11', mods = mod.NONE, action = act.ToggleFullScreen },
-      { key = 'f', mods = mod.SUPER, action = act.Search({ CaseInSensitiveString = '' }) },
       {
          key = 'u',
          mods = mod.SUPER_REV,

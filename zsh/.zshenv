@@ -9,7 +9,7 @@
 
 # default applications
 export TERMINAL='wezterm'
-export BROWSER='brave-browser'
+export BROWSER='zen'
 export EDITOR='nvim'
 # export MANPAGER='nvim +Man!'
 

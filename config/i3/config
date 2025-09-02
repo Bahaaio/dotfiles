@@ -6,6 +6,8 @@ set $mod Mod4
 
 font pango:JetBrainsMono Nerd Font Bold 12
 
+set $browser flatpak run app.zen_browser.zen
+
 # picom
 exec_always --no-startup-id picom
 
@@ -76,14 +78,13 @@ bindsym $mod+x exec --no-startup-id ~/.config/rofi/powermenu/powermenu.sh
 bindsym $mod+e exec --no-startup-id nautilus &
 
 # startup
-exec --no-startup-id brave-browser
-for_window [class="brave-browser"] move to workspace $ws1
+exec --no-startup-id $browser
 
 exec --no-startup-id wezterm start --class wezmain -e tmux new -A -s dev
 for_window [class="wezmain"] move to workspace $ws2
 
 # scratch pads
-exec --no-startup-id wezterm --config font_size=13 start --class wezbtop -e btop
+exec --no-startup-id wezterm --config font_size=12 start --class wezbtop -e btop
 for_window [class="wezbtop"] move scratchpad
 bindsym $mod+b [class="wezbtop"] scratchpad show; move position center
 

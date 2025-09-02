@@ -1,8 +1,12 @@
-local Config = require('config')
+local config = require("wezterm").config_builder()
 
-require('utils.backdrops'):set_images():random()
+local keys = require("config.keys")
+local appearance = require("config.appearance")
 
--- stylua: ignore
-return Config:init()
-   :append(require('config.appearance'))
-   :append(require('config.keys')).options
+for _, module in ipairs({ keys, appearance }) do
+	for k, v in pairs(module) do
+		config[k] = v
+	end
+end
+
+return config

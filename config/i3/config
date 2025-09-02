@@ -224,10 +224,11 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # window rules
-for_window [class="gnome-control-center"] floating enable
+default_border none
+default_floating_border none
 for_window [class="copyq"] floating enable
-for_window [class="org.gnome.Nautilus"] floating enable
-for_window [window_type="normal"] border pixel 2
+for_window [class="gnome-control-center"] floating enable
+for_window [class="Nautilus"] floating enable
 for_window [class="Ulauncher"] border pixel 0
 for_window [class="discord"] move to workspace $ws9
 for_window [class="ZapZap"] move to workspace $ws10
@@ -250,8 +251,8 @@ title_align center
 workspace_layout tabbed
 
 # Set inner/outer gaps
-gaps inner 0
-gaps outer 0
+gaps inner 6
+gaps outer 6
 
 # catpuccin
 set $rosewater #f5e0dc

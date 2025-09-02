@@ -13,8 +13,7 @@ export BROWSER='zen'
 export EDITOR='nvim'
 # export MANPAGER='nvim +Man!'
 
-# binaries
-export PATH="$HOME/bin:$PATH"
+# bin
 export PATH="$HOME/.local/bin:$PATH"
 
 # rofi

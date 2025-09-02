@@ -23,8 +23,8 @@ alias cat='batcat'
 alias rg='rg --hidden'
 
 # nala
-alias i='sudo nala install'
-alias u='sudo nala upgrade'
+alias install='sudo nala install'
+alias update='sudo nala upgrade'
 alias purge='sudo nala purge'
 alias list='sudo nala list -u'
 alias remove='sudo nala remove'
@@ -33,6 +33,7 @@ alias autoremove='sudo nala autoremove --purge'
 # zsh
 alias src='source ~/.zshrc'
 alias e='nvim ~/.zshrc'
+alias ee='nvim ~/.zshenv'
 alias ea='nvim ~/.aliases.zsh'
 
 # utils

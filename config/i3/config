@@ -6,7 +6,7 @@ set $mod Mod4
 
 font pango:JetBrainsMono Nerd Font Bold 12
 
-set $browser flatpak run app.zen_browser.zen
+set $browser ~/.local/bin/zen
 
 # picom
 exec_always --no-startup-id picom
@@ -44,8 +44,8 @@ bindsym XF86TouchpadToggle exec ~/.local/bin/toggleTouchpad.sh
 # volume control
 bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.local/bin/changeVolume.sh 5%+
 bindsym XF86AudioLowerVolume exec --no-startup-id ~/.local/bin/changeVolume.sh 5%-
-bindsym XF86AudioMute exec --no-startup-id ~/.local/bin/changeVolume.sh toggleMute
-bindsym XF86AudioMicMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+bindsym XF86AudioMute        exec --no-startup-id ~/.local/bin/changeVolume.sh toggleMute
+bindsym XF86AudioMicMute     exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
 # play/pause media
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
@@ -55,21 +55,18 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # brightness control
-bindsym XF86MonBrightnessUp exec --no-startup-id ~/.local/bin/changeBrightness.sh 2%+
+bindsym XF86MonBrightnessUp   exec --no-startup-id ~/.local/bin/changeBrightness.sh 2%+
 bindsym XF86MonBrightnessDown exec --no-startup-id ~/.local/bin/changeBrightness.sh 2%-
 
 # screenshots
-bindsym Print exec flameshot full -c -p ~/Pictures/Screenshots/
-bindsym Shift+Print exec flameshot gui -c -p ~/Pictures/Screenshots/
+bindsym Print       exec flameshot full -c -p ~/Pictures/Screenshots/
+bindsym Shift+Print exec flameshot gui  -c -p ~/Pictures/Screenshots/
 
 # start wezterm
 bindsym $mod+Return exec wezterm -e tmux
 
 # kill focused window
 bindsym $mod+q kill
-
-# rofi app launcher
-# bindsym Mod1+space exec --no-startup-id ~/.config/rofi/launcher/launcher.sh
 
 # rofi powermenu
 bindsym $mod+x exec --no-startup-id ~/.config/rofi/powermenu/powermenu.sh
@@ -85,11 +82,11 @@ for_window [class="wezmain"] move to workspace $ws2
 
 # scratch pads
 exec --no-startup-id wezterm --config font_size=12 start --class wezbtop -e btop
-for_window [class="wezbtop"] move scratchpad
+for_window     [class="wezbtop"] move scratchpad
 bindsym $mod+b [class="wezbtop"] scratchpad show; move position center
 
 exec --no-startup-id wezterm start --class wezscratch -e tmux new -A -s scratch
-for_window [class="wezscratch"] move scratchpad
+for_window     [class="wezscratch"] move scratchpad
 bindsym $mod+o [class="wezscratch"] scratchpad show; move position center
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -106,9 +103,9 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
+bindsym $mod+Left  focus left
+bindsym $mod+Down  focus down
+bindsym $mod+Up    focus up
 bindsym $mod+Right focus right
 
 # move focused window
@@ -118,9 +115,9 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Left  move left
+bindsym $mod+Shift+Down  move down
+bindsym $mod+Shift+Up    move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
@@ -209,9 +206,9 @@ mode "resize" {
         bindsym l resize shrink width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize grow width 10 px or 10 ppt
-        bindsym Down resize shrink height 10 px or 10 ppt
-        bindsym Up resize grow height 10 px or 10 ppt
+        bindsym Left  resize grow width 10 px or 10 ppt
+        bindsym Down  resize shrink height 10 px or 10 ppt
+        bindsym Up    resize grow height 10 px or 10 ppt
         bindsym Right resize shrink width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
@@ -235,7 +232,7 @@ for_window [class="ZapZap"] move to workspace $ws10
 
 set $pref_width 1132
 set $pref_height 806
-for_window [class="wezbtop"] resize set $pref_width $pref_height
+for_window [class="wezbtop"]    resize set $pref_width $pref_height
 for_window [class="wezscratch"] resize set $pref_width $pref_height
 
 # to focus when opening links

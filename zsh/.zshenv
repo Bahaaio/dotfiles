@@ -27,4 +27,4 @@ export PATH=$PATH:$HOME/go/bin
 export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
 
 # rust
-. "$HOME/.cargo/env"
+[ -f $HOME/.cargo/env ] && source $HOME/.cargo/env

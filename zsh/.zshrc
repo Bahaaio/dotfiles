@@ -60,15 +60,32 @@ export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
 # zoxide
 eval "$(zoxide init --cmd cd zsh)"
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
 # SDKMAN (lazy loaded)
 export SDKMAN_DIR="$HOME/.sdkman"
 sdk() {
     unset -f sdk # prevents sdk from being loaded twice
     [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
     sdk "$@"
+}
+
+# fnm
+FNM_PATH="$HOME/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
+
+# pnpm
+export PNPM_HOME="$HOME/local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# lazy load pnpm completions
+pnpm() {
+    unset -f pnpm
+    eval "$(command pnpm completion zsh)"
+    pnpm "$@"
 }

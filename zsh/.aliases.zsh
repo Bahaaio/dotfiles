@@ -25,8 +25,10 @@ alias rg='rg --hidden'
 # nala
 alias install='sudo nala install'
 alias update='sudo nala upgrade'
-alias purge='sudo nala purge'
 alias list='sudo nala list -u'
+alias show='nala show'
+alias search='nala search'
+alias purge='sudo nala purge'
 alias remove='sudo nala remove'
 alias autoremove='sudo nala autoremove --purge'
 

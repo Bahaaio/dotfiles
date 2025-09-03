@@ -27,10 +27,11 @@ sudo apt install -y playerctl brightnessctl pavucontrol
 ## Components
 
 Status bar, compositor, wallpaper manager, screenshot tool,
-notifications, and file manager.
+notifications, file manager, blue light filter, and rofi launcher.
 
 ```sh
-sudo apt install -y polybar picom feh flameshot dunst nautilus
+sudo apt install -y polybar picom feh flameshot dunst \
+    nautilus redshift btop rofi
 ```
 
 ## prayer-times

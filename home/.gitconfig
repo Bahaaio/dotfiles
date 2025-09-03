@@ -1,0 +1,15 @@
+[user]
+	name = Bahaa Mohamed
+	email = bahaa-dev@proton.me
+	signingkey = 7427A4ABCCFD30AB
+[core]
+	autocrlf = input
+	excludesfile = /home/bahaa/.gitignore_global
+[commit]
+	gpgsign = true
+[credential "https://github.com"]
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = !/usr/bin/gh auth git-credential
+[init]
+	defaultbranch = main

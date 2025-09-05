@@ -4,7 +4,7 @@
         "name": "DuckDuckGo",
         "keyword": "d",
         "cmd": "https://duckduckgo.com/?q=%s",
-        "icon": "~/Pictures/icons/duckduckgo.svg",
+        "icon": "~/.config/ulauncher/icons/duckduckgo.svg",
         "is_default_search": true,
         "run_without_argument": false,
         "added": 1748697054.3529272
@@ -14,7 +14,7 @@
         "name": "YouTube",
         "keyword": "y",
         "cmd": "https://www.youtube.com/results?search_query=%s",
-        "icon": "~/Pictures/icons/youtube.png",
+        "icon": "~/.config/ulauncher/icons/youtube.png",
         "is_default_search": false,
         "run_without_argument": false,
         "added": 1748697515.3542013
@@ -24,7 +24,7 @@
         "name": "github",
         "keyword": "gh",
         "cmd": "https://github.com/search?q=%s",
-        "icon": "~/Pictures/icons/github.svg",
+        "icon": "~/.config/ulauncher/icons/github.svg",
         "is_default_search": true,
         "run_without_argument": false,
         "added": 1754211408.3344886
@@ -34,7 +34,7 @@
         "name": "GitHub profile",
         "keyword": "git",
         "cmd": "https://github.com/Bahaaio",
-        "icon": "~/Pictures/icons/github.svg",
+        "icon": "~/.config/ulauncher/icons/github.svg",
         "is_default_search": false,
         "run_without_argument": true,
         "added": 1748701119.6001396
@@ -44,7 +44,7 @@
         "name": "dotfiles",
         "keyword": "dot",
         "cmd": "https://github.com/Bahaaio/dotfiles",
-        "icon": "~/Pictures/icons/github.svg",
+        "icon": "~/.config/ulauncher/icons/github.svg",
         "is_default_search": false,
         "run_without_argument": true,
         "added": 1754119631.0855267
@@ -54,7 +54,7 @@
         "name": "Devhints",
         "keyword": "h",
         "cmd": "https://devhints.io/%s",
-        "icon": "~/Pictures/icons/devhints.png",
+        "icon": "~/.config/ulauncher/icons/devhints.png",
         "is_default_search": false,
         "run_without_argument": false,
         "added": 1754497609.5910635

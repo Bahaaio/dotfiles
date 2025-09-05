@@ -10,14 +10,14 @@ return {
     "folke/tokyonight.nvim",
     opts = {
       style = "night",
+      -- transparent = true,
     },
   },
 
   {
     "webhooked/kanso.nvim",
-  },
-
-  {
-    "vague2k/vague.nvim",
+    opts = {
+      -- transparent = true,
+    },
   },
 }

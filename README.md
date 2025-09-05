@@ -43,3 +43,11 @@ Run [install.sh](install.sh) to symlink everything
 chmod +x install.sh
 ./install.sh
 ```
+
+## Wallpapers
+
+Clone wallpapers into `~/Pictures/wallpapers`
+
+```sh
+git clone https://github.com/Bahaaio/wallpapers ~/Pictures/wallpapers
+```

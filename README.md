@@ -6,15 +6,15 @@ My personal setup for a clean and productive Linux environment.
 
 ## Desktop
 
-![Desktop](./assets/desktop.png)
+![Desktop](https://github.com/Bahaaio/wallpapers/raw/main/.github/screenshots/desktop.png)
 
 ## Terminal
 
-![Terminal](./assets/terminal.png)
+![Terminal](https://github.com/Bahaaio/wallpapers/raw/main/.github/screenshots/terminal.png)
 
 ## Neovim
 
-![Neovim](./assets/nvim.png)
+![Neovim](https://github.com/Bahaaio/wallpapers/raw/main/.github/screenshots/nvim.png)
 
 ---
 

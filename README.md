@@ -8,15 +8,9 @@ My personal setup for a clean and productive Linux environment.
 
 ![Desktop](https://github.com/Bahaaio/wallpapers/raw/main/.github/screenshots/desktop.png)
 
-## Terminal
-
-![Terminal](https://github.com/Bahaaio/wallpapers/raw/main/.github/screenshots/terminal.png)
-
 ## Neovim
 
 ![Neovim](https://github.com/Bahaaio/wallpapers/raw/main/.github/screenshots/nvim.png)
-
----
 
 ## Requirements
 

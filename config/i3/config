@@ -227,12 +227,13 @@ for_window [class="copyq"] floating enable
 for_window [class="gnome-control-center"] floating enable
 for_window [class="Nautilus"] floating enable
 for_window [class="Ulauncher"] border pixel 0
+for_window [class="Yad"] floating enable
 for_window [class="discord"] move to workspace $ws9
 for_window [class="ZapZap"] move to workspace $ws10
 
 set $pref_width 1132
 set $pref_height 806
-for_window [class="wezbtop"]    resize set $pref_width $pref_height
+for_window [class="wezbtop"]    resize set 1182 896
 for_window [class="wezscratch"] resize set $pref_width $pref_height
 
 # to focus when opening links

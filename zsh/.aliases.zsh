@@ -20,7 +20,7 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 alias cl='clear'
 alias cat='batcat'
-alias rg='rg --hidden'
+alias rg='rg --hidden --follow'
 
 # nala
 alias install='sudo nala install'

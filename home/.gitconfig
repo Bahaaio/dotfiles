@@ -4,7 +4,7 @@
 	signingkey = 7427A4ABCCFD30AB
 [core]
 	autocrlf = input
-	excludesfile = /home/bahaa/.gitignore_global
+	excludesfile = $HOME/.gitignore_global
 [commit]
 	gpgsign = true
 [credential "https://github.com"]

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "theme": "github",
+  "command": {
+    "git": {
+      "agent": "plan",
+      "description": "Creates a git commit message",
+      "template": "Create a conventional commit message in plain text."
+    }
+  },
+  "agent": {
+    "code-reviewer": {
+      "mode": "subagent",
+      "description": "Reviews code for best practices and potential issues",
+      "prompt": "You are a code reviewer. Focus on security, performance, and maintainability.",
+      "tools": {
+        "write": false,
+        "edit": false
+      }
+    }
+  }
+}

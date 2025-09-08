@@ -6,6 +6,9 @@ My Zsh configuration setup
 
 ```sh
 sudo apt install zsh
+
+# Set zsh as default shell
+chsh -s $(which zsh)
 ```
 
 ## Requirements
@@ -20,6 +23,18 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 ```sh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+```
+
+### [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+
+```sh
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+### [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+
+```sh
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
 ### [fzf](https://github.com/junegunn/fzf)
@@ -38,7 +53,7 @@ curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh 
 ### Utilities
 
 ```sh
-sudo apt install lsd xclip bat fzf nala ripgrep
+sudo apt install lsd xclip bat nala ripgrep
 ```
 
 ## Optional

@@ -4,44 +4,21 @@ My personal setup for a clean and productive Linux environment.
 
 ## Screenshots
 
-## Desktop
+### Desktop
 
 ![Desktop](https://github.com/Bahaaio/wallpapers/raw/main/.github/screenshots/desktop.png)
 
-## Neovim
+### Neovim
 
 ![Neovim](https://github.com/Bahaaio/wallpapers/raw/main/.github/screenshots/nvim.png)
 
-## Requirements
-
-You'll need [git](https://git-scm.com/) and [GNU stow](https://www.gnu.org/software/stow/)
-
-```sh
-sudo apt update
-sudo apt install git stow
-```
-
 ## Installation
 
-Clone the repository into your home directory
+Uses [setup.sh](setup.sh) to install dotfiles.
 
 ```sh
-cd ~
-git clone https://github.com/Bahaaio/dotfiles.git
-cd dotfiles
+curl -fsSL https://raw.githubusercontent.com/Bahaaio/dotfiles/main/setup.sh | bash
 ```
 
-Run [install.sh](install.sh) to symlink everything
-
-```sh
-chmod +x install.sh
-./install.sh
-```
-
-## Wallpapers
-
-Clone wallpapers into `~/Pictures/wallpapers`
-
-```sh
-git clone https://github.com/Bahaaio/wallpapers ~/Pictures/wallpapers
-```
+> [!NOTE]
+> Use [install.sh](install.sh) to symlink dotfiles manually.

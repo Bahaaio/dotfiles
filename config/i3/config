@@ -132,7 +132,6 @@ bindsym $mod+f fullscreen toggle
 # change container layout (tabbed, split, and stacked)
 bindsym $mod+t layout tabbed
 bindsym $mod+s layout toggle split
-bindsym $mod+w layout stacking
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -189,6 +188,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # reload polybar
 bindsym $mod+p exec ~/.config/polybar/launch_polybar.sh
+# change wallpaper
+bindsym $mod+w exec ~/.config/rofi/wallpaper/changeWallpaper.sh
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 

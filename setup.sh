@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+# Automated dotfiles installation script
+# https://github.com/Bahaaio/dotfiles
+#
+# Installs dotfiles, fonts, and wallpapers
+# Doesn't install software - only symlinks dotfiles and downloads assets
+# Uses stow for symlink management and supports minimal installation mode
+# Compatible with apt, pacman, and dnf package managers
+# Author: Bahaaio
+
 set -e
 trap 'echo "ERROR: Setup failed at line $LINENO"' ERR
 
@@ -35,7 +44,7 @@ dotfiles_repo="https://github.com/Bahaaio/dotfiles.git"
 wallpapers_dir="$HOME/Pictures/wallpapers"
 wallpapers_repo="https://github.com/Bahaaio/wallpapers.git"
 
-# Install packages
+# Install dependencies
 echo "Updating package index..."
 sudo apt update >/dev/null 2>&1
 

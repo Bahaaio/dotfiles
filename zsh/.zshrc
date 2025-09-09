@@ -16,25 +16,59 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Oh My Zsh setup
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(sudo zsh-autosuggestions zsh-syntax-highlighting zsh-interactive-cd)
-source $ZSH/oh-my-zsh.sh
+# zinit
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+if [ ! -d $ZINIT_HOME ]; then
+  mkdir -p "$(dirname $ZINIT_HOME)"
+  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+source "${ZINIT_HOME}/zinit.zsh"
+autoload -Uz compinit && compinit # completions
+
+# p10k
+zinit ice depth=1; zinit light romkatv/powerlevel10k
+
+# plugins
+zinit light Aloxaf/fzf-tab
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions
+
+# snippets
+zinit snippet OMZP::sudo
+
+# prompt
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Completion styling
+eval "$(dircolors -b)" # Enable colors
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} # Enable ls colors
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # Case-insensitive matching
+# zstyle ':completion:*' menu select # Enable menu selection
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd --tree --depth=1 --color=always $realpath'
+
+# keybindings
+bindkey -e # emacs key bindings
+# bindkey -v # vi key bindings
+bindkey '^n' history-search-forward
+bindkey '^p' history-search-backward
 
 # ============================================================================
 # SHELL OPTIONS & HISTORY
 # ============================================================================
 
-# Delete duplicate commands first when trimming history
-setopt hist_expire_dups_first
-# Ignore duplicated commands when adding to history
-setopt hist_ignore_dups
-# Share command history between all sessions
-setopt SHARE_HISTORY
+HISTSIZE=100000                      # maximum history lines kept in memory
+SAVEHIST=$HISTSIZE                   # maximum history lines saved to histfile
+HISTFILE="$HOME/.cache/.zsh_history" # move histfile to cache
+setopt hist_expire_dups_first        # delete duplicate commands first when trimming history
+setopt hist_ignore_dups              # ignore duplicated commands when adding to history
+setopt SHARE_HISTORY                 # share command history between all sessions
+setopt HIST_REDUCE_BLANKS            # strip extra spaces before saving
+setopt autocd                        # auto-cd when typing dir name
+setopt globdots                      # include dotfiles
+setopt interactive_comments          # allow comments in interactive shell
 
 # ============================================================================
 # EXTERNAL CONFIGS
@@ -48,10 +82,8 @@ source ~/.functions.zsh
 # TOOL INITIALIZATION (keep at end for performance)
 # ============================================================================
 
-# Set up fzf key bindings and fuzzy completion
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# fzf configuration
+# fzf
+source <(fzf --zsh)
 export FZF_DEFAULT_OPTS='--layout reverse --border'
 export FZF_ALT_C_OPTS="--preview 'tree -c {}'"
 export FZF_ALT_C_COMMAND="fd --type d"

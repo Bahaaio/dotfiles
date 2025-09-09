@@ -18,7 +18,7 @@ alias lta='ls --tree -a'
 # core-utils
 alias cp='cp -iv'
 alias mv='mv -iv'
-alias cl='clear'
+alias c='clear'
 alias cat='batcat'
 alias rg='rg --hidden --follow'
 
@@ -39,12 +39,12 @@ alias ee='nvim ~/.zshenv'
 alias ea='nvim ~/.aliases.zsh'
 
 # utils
-alias copy='clipcopy'
-alias paste='clippaste'
-alias clock='tty-clock -c -s -b -t -C 6'
-alias leet='nvim leetcode.nvim'
 alias ai='opencode'
+alias vim='nvim'
+alias copy='clipcopy'
+alias leet='nvim leetcode.nvim'
 alias rest='pomo break'
+alias clock='tty-clock -c -s -b -t -C 6'
 
 # exercism
 alias es='exercism submit'
@@ -52,6 +52,3 @@ alias ej='exercism submit ./src/main/java/*.java'
 
 # tlp
 alias charge='sudo tlp fullcharge'
-
-# nvim
-alias vim='nvim'

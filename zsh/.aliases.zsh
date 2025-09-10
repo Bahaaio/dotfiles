@@ -41,7 +41,7 @@ alias ea='nvim ~/.aliases.zsh'
 # utils
 alias ai='opencode'
 alias vim='nvim'
-alias copy='clipcopy'
+alias copy='xclip -selection clipboard'
 alias leet='nvim leetcode.nvim'
 alias rest='pomo break'
 alias clock='tty-clock -c -s -b -t -C 6'

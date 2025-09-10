@@ -59,16 +59,16 @@ bindkey '^p' history-search-backward
 # SHELL OPTIONS & HISTORY
 # ============================================================================
 
-HISTSIZE=100000                      # maximum history lines kept in memory
-SAVEHIST=$HISTSIZE                   # maximum history lines saved to histfile
-HISTFILE="$HOME/.cache/.zsh_history" # move histfile to cache
-setopt hist_expire_dups_first        # delete duplicate commands first when trimming history
-setopt hist_ignore_dups              # ignore duplicated commands when adding to history
-setopt SHARE_HISTORY                 # share command history between all sessions
-setopt HIST_REDUCE_BLANKS            # strip extra spaces before saving
-setopt autocd                        # auto-cd when typing dir name
-setopt globdots                      # include dotfiles
-setopt interactive_comments          # allow comments in interactive shell
+HISTSIZE=100000                         # maximum history lines kept in memory
+SAVEHIST=$HISTSIZE                      # maximum history lines saved to histfile
+HISTFILE="$XDG_CACHE_HOME/.zsh_history" # move histfile to cache
+setopt hist_expire_dups_first           # delete duplicate commands first when trimming history
+setopt hist_ignore_dups                 # ignore duplicated commands when adding to history
+setopt SHARE_HISTORY                    # share command history between all sessions
+setopt HIST_REDUCE_BLANKS               # strip extra spaces before saving
+setopt autocd                           # auto-cd when typing dir name
+setopt globdots                         # include dotfiles
+setopt interactive_comments             # allow comments in interactive shell
 
 # ============================================================================
 # EXTERNAL CONFIGS
@@ -96,19 +96,19 @@ eval "$(zoxide init --cmd cd zsh)"
 export SDKMAN_DIR="$HOME/.sdkman"
 sdk() {
     unset -f sdk # prevents sdk from being loaded twice
-    [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+    [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
     sdk "$@"
 }
 
 # fnm
-FNM_PATH="$HOME/.local/share/fnm"
+FNM_PATH="$XDG_DATA_HOME/fnm"
 if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
   eval "$(fnm env)"
 fi
 
 # pnpm
-export PNPM_HOME="$HOME/.local/share/pnpm"
+export PNPM_HOME="$XDG_DATA_HOME/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
 # lazy load pnpm completions

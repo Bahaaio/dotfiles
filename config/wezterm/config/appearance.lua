@@ -21,6 +21,7 @@ return {
 	window_decorations = "RESIZE",
 
 	-- window
+	window_background_opacity = 0.85,
 	window_close_confirmation = "NeverPrompt",
 	adjust_window_size_when_changing_font_size = false,
 	inactive_pane_hsb = { saturation = 1, brightness = 1 },

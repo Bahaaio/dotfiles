@@ -48,15 +48,14 @@ return {
 
 		-- toggle transparency
 		{
-			key = "b",
-			mods = mod.SUPER,
+			key = "o", mods = mod.SUPER,
 			action = wezterm.action_callback(function(window, _)
 				local overrides = window:get_config_overrides() or {}
 
-				if not overrides.window_background_opacity then
-					overrides.window_background_opacity = 0.85
+				if overrides.window_background_opacity == 0.85 then
+					overrides.window_background_opacity = 1.0
 				else
-					overrides.window_background_opacity = nil
+					overrides.window_background_opacity = 0.85
 				end
 
 				window:set_config_overrides(overrides)

@@ -19,7 +19,7 @@ fi
 
 # Download the latest JetBrainsMono Nerd Font
 echo "Downloading JetBrainsMono Nerd Font..."
-wget -q https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
 
 # Create local fonts directory if it doesn't exist
 echo "Creating local fonts directory..."
@@ -27,7 +27,7 @@ mkdir -p ~/.local/share/fonts
 
 # Extract into the fonts directory
 echo "Extracting JetBrainsMono Nerd Font..."
-unzip -q JetBrainsMono.zip -d ~/.local/share/fonts/JetBrainsMono
+unzip JetBrainsMono.zip -d ~/.local/share/fonts/JetBrainsMono
 
 # Remove the archive
 echo "Removing JetBrainsMono Nerd Font archive..."
@@ -35,6 +35,6 @@ rm JetBrainsMono.zip
 
 # Update the font cache
 echo "Updating font cache..."
-fc-cache -f
+fc-cache -fv
 
 echo "JetBrainsMono Nerd Font installed successfully!"

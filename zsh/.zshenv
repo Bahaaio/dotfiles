@@ -21,6 +21,13 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # bin
 export PATH="$HOME/.local/bin:$PATH"
 
+# sdkman
+export SDKMAN_DIR="$HOME/.sdkman"
+
+# java
+export JAVA_HOME="$SDKMAN_DIR/candidates/java/current"
+export PATH="$JAVA_HOME/bin:$PATH"
+
 # golang
 export GOPATH="$HOME/.local/share/go"
 export PATH="/usr/local/go/bin:$PATH"

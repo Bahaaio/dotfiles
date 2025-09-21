@@ -9,13 +9,13 @@
 
 # ls
 alias ls='lsd'
-alias l='ls -lh'
+alias l='ls -lah'
 alias la='ls -A'
-alias lla='ls -lAh'
 alias lt='ls --tree'
 alias lta='ls --tree -a'
 
 # core-utils
+alias rm='trash'
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias c='clear'
@@ -37,11 +37,13 @@ alias src='source ~/.zshrc'
 alias e='nvim ~/.zshrc'
 alias ee='nvim ~/.zshenv'
 alias ea='nvim ~/.aliases.zsh'
+alias ef='nvim ~/.functions.zsh'
 
 # utils
 alias ai='opencode'
 alias vim='nvim'
 alias copy='xclip -selection clipboard'
+alias paste='xclip -selection clipboard -o'
 alias leet='nvim leetcode.nvim'
 alias rest='pomo break'
 alias clock='tty-clock -c -s -b -t -C 6'

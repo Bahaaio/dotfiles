@@ -7,6 +7,18 @@
 #  ╚═╝      ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 # Bahaaio
 
+# create a directory and cd into it
+function take() {
+    mkdir -p "$1" && cd "$1"
+}
+
+# remove all docker containers, images and volumes
+function dclear() {
+    docker rm -f $(docker ps -a -q) >/dev/null 2>&1 || true   # remove all containers
+    docker rmi -f $(docker images -q) >/dev/null 2>&1 || true # remove all images
+    docker volume prune -f                                    # remove all volumes
+}
+
 # yazi
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd

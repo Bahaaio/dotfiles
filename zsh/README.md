@@ -5,7 +5,7 @@ My Zsh configuration setup
 ## Installation
 
 ```sh
-sudo apt install -y zsh nala lsd ripgrep fd-find fzf xclip bat
+sudo apt install -y zsh nala lsd ripgrep fd-find fzf xclip bat trash-cli
 
 # symlink to fd (debian thing)
 ln -s $(which fdfind) ~/.local/bin/fd

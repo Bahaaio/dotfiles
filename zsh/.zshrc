@@ -51,9 +51,11 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd --tree --depth=1 --color=always
 
 # keybindings
 bindkey -e # emacs key bindings
-# bindkey -v # vi key bindings
+bindkey -v # vi key bindings
 bindkey '^n' history-search-forward
 bindkey '^p' history-search-backward
+bindkey '^a' beginning-of-line
+bindkey '^e' end-of-line
 
 # ============================================================================
 # SHELL OPTIONS & HISTORY
@@ -93,7 +95,6 @@ export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
 eval "$(zoxide init --cmd cd zsh)"
 
 # SDKMAN (lazy loaded)
-export SDKMAN_DIR="$HOME/.sdkman"
 sdk() {
     unset -f sdk # prevents sdk from being loaded twice
     [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"

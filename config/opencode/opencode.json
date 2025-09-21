@@ -5,7 +5,7 @@
     "git": {
       "agent": "plan",
       "description": "Creates a git commit message",
-      "template": "Create a conventional commit message in plain text."
+      "template": "Create a concise conventional commit message in plain text. Check the staging area for more information. if needed, use dashes as bullets to list multiple changes. Don't capitalize the first character."
     }
   },
   "agent": {

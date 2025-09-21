@@ -6,11 +6,11 @@ My personal setup for a clean and productive Linux environment.
 
 ### Desktop
 
-![Desktop](https://github.com/Bahaaio/wallpapers/raw/main/.github/screenshots/desktop.png)
+![Desktop](https://raw.githubusercontent.com/Bahaaio/wallpapers/main/.github/screenshots/desktop.png)
 
 ### Neovim
 
-![Neovim](https://github.com/Bahaaio/wallpapers/raw/main/.github/screenshots/nvim.png)
+![Neovim](https://raw.githubusercontent.com/Bahaaio/wallpapers/main/.github/screenshots/nvim.png)
 
 ## Installation
 

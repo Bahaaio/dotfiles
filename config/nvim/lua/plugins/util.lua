@@ -29,25 +29,4 @@ return {
       }
     end,
   },
-
-  { "folke/persistence.nvim", enabled = false },
-
-  {
-    "rmagatti/auto-session",
-    lazy = false,
-
-    ---@module "auto-session"
-    ---@type AutoSession.Config
-    opts = {
-      suppressed_dirs = { "~/", "~/Downloads", "/" },
-    },
-    keys = {
-      { "<leader>p", "", desc = "session" },
-      { "<leader>pa", "<cmd>SessionToggleAutoSave<CR>", desc = "Toggle autosave" },
-      { "<leader>ps", "<cmd>SessionSearch<cr>", desc = "Select session" },
-      { "<leader>pS", "<cmd>SessionSave<cr>", desc = "Save session" },
-      { "<leader>pr", "<cmd>SessionRestore<cr>", desc = "Restore session" },
-      { "<leader>pd", "<cmd>SessionDelete<cr>", desc = "Delete session" },
-    },
-  },
 }

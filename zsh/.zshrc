@@ -44,7 +44,7 @@ zinit snippet OMZP::sudo
 # Completion styling
 eval "$(dircolors -b)" # Enable colors
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} # Enable ls colors
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # Case-insensitive matching
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' 'l:|=* r:|=*' # Case-insensitive + substring matching
 # zstyle ':completion:*' menu select # Enable menu selection
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd --tree --depth=1 --color=always $realpath'
@@ -94,12 +94,9 @@ export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
 # zoxide
 eval "$(zoxide init --cmd cd zsh)"
 
-# SDKMAN (lazy loaded)
-sdk() {
-    unset -f sdk # prevents sdk from being loaded twice
-    [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
-    sdk "$@"
-}
+# SDKMAN
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
 
 # fnm
 FNM_PATH="$XDG_DATA_HOME/fnm"

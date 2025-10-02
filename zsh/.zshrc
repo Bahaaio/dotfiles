@@ -51,11 +51,8 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd --tree --depth=1 --color=always
 
 # keybindings
 bindkey -e # emacs key bindings
-bindkey -v # vi key bindings
 bindkey '^n' history-search-forward
 bindkey '^p' history-search-backward
-bindkey '^a' beginning-of-line
-bindkey '^e' end-of-line
 
 # ============================================================================
 # SHELL OPTIONS & HISTORY

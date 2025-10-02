@@ -32,7 +32,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -e --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -81,7 +81,7 @@ exec --no-startup-id wezterm start --class wezmain -e tmux new -A -s dev
 for_window [class="wezmain"] move to workspace $ws2
 
 # scratch pads
-exec --no-startup-id wezterm --config font_size=12 start --class wezbtop -e btop
+exec --no-startup-id wezterm --config font_size=13 start --class wezbtop -e btop
 for_window     [class="wezbtop"] move scratchpad
 bindsym $mod+b [class="wezbtop"] scratchpad show; move position center
 

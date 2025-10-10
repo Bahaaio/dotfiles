@@ -32,4 +32,4 @@ export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export PATH="$CARGO_HOME/bin:$PATH"
 
 # Toolbox
-export PATH="$XDG_CONFIG_HOME/JetBrains/Toolbox/scripts:$PATH"
+export PATH="$XDG_DATA_HOME/JetBrains/Toolbox/scripts:$PATH"

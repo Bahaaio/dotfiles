@@ -31,7 +31,7 @@ notifications, file manager, blue light filter, rofi launcher , and btop.
 
 ```sh
 sudo apt install -y polybar picom feh flameshot dunst \
-    nautilus redshift btop rofi btop xsensors
+    nautilus redshift-gtk btop rofi btop xsensors
 ```
 
 ## prayer-times

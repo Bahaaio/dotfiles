@@ -128,6 +128,7 @@ keymap = [
 	{ on = [ "g", "c" ],       run = "cd ~/dotfiles",    desc = "Go ~/dotfiles" },
 	{ on = [ "g", "d" ],       run = "cd ~/Downloads",   desc = "Go ~/Downloads" },
 	{ on = [ "g", "i" ],       run = "cd ~/Pictures",    desc = "Go ~/Pictures" },
+	{ on = [ "g", "s" ],       run = "cd ~/Documents",    desc = "Go ~/Documents" },
 	{ on = [ "g", "p" ],       run = "cd ~/code",        desc = "Go ~/code" },
     { on = [ "g", "b" ],       run = "cd ~/.local/bin",  desc = "Go ~/.local/bin" },
 	{ on = [ "g", "f" ],       run = "follow",           desc = "Follow hovered symlink" },

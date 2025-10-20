@@ -19,4 +19,4 @@ dunstify -a "changeBrightness" -u low -i display-brightness -h string:x-dunst-st
     -h int:value:"$brightness_percentage" "🔆 Brightness: ${brightness_percentage}%"
 
 # Play a brightness change sound
-paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga &
+# paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga &

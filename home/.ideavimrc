@@ -9,14 +9,14 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""               
 
 " -- options --
-set scrolloff=10
+set scrolloff=5
 set incsearch
 set ignorecase
 set smartcase
 set ideajoin
 set number
 set relativenumber
-"set hlsearch
+set hlsearch
 set notimeout
 
 " -- plugins --
@@ -51,7 +51,9 @@ nmap ]<space> o<Esc>k
 nmap [<space> O<Esc>j
 
 let g:WhichKeyDesc_run = "<leader>R Run"
+let g:WhichKeyDesc_stop = "<leader>S Stop"
 nmap <leader>R <Action>(Run)
+nmap <leader>S <Action>(Stop)
 
 " Paste
 map <C-S-v> <Action>(EditorPaste)
@@ -90,18 +92,17 @@ let g:WhichKeyDesc_find = "<leader>f Find"
 let g:WhichKeyDesc_find_files = "<leader>ff Find files"
 let g:WhichKeyDesc_find_recent_files = "<leader>fr Find recent files"
 let g:WhichKeyDesc_find_locations= "<leader>fl Find recent locations"
-let g:WhichKeyDesc_find_usages= "gr Find usages"
 nmap <leader>ff <Action>(GotoFile)
 nmap <leader>fr <Action>(RecentFiles)
 map <leader>fl <action>(RecentLocations)
 
 " Goto
-let g:WhichKeyDesc_goto = "g Go to"
-let g:WhichKeyDesc_goto_declaration = "gd Go to definition"
-let g:WhichKeyDesc_goto_type_declaration = "gy Go to type definition"
-let g:WhichKeyDesc_goto_implementation = "gi Go to implementation"
-let g:WhichKeyDesc_goto_usages = "gr Go to references"
-let g:WhichKeyDesc_goto_test = "gt Go to test"
+let g:WhichKeyDesc_goto = "g Goto"
+let g:WhichKeyDesc_goto_declaration = "gd Goto definition"
+let g:WhichKeyDesc_goto_type_declaration = "gy Goto type definition"
+let g:WhichKeyDesc_goto_implementation = "gi Goto implementation"
+let g:WhichKeyDesc_goto_usages = "gr Goto references"
+let g:WhichKeyDesc_goto_test = "gt Goto test"
 let g:WhichKeyDesc_goto_back = "gb Go back"
 let g:WhichKeyDesc_goto_forward = "gf Go forward"
 map gr <Action>(FindUsages)
@@ -138,6 +139,8 @@ let g:WhichKeyDesc_code_description = "<leader>cd Line diagnostics"
 let g:WhichKeyDesc_code_signature = "<leader>cs Surround"
 let g:WhichKeyDesc_code_generate = "<leader>cg Generate code"
 let g:WhichKeyDesc_code_configuration = "<leader>cc Code configuration"
+let g:WhichKeyDesc_code_implement = "<leader>ci Implement function"
+let g:WhichKeyDesc_code_override = "<leader>co Override function"
 map <leader>ca <Action>(ShowIntentionActions)
 nmap <leader>cr <Action>(RenameElement)
 nmap <leader>cf <Action>(ReformatCode)
@@ -145,6 +148,8 @@ nmap <leader>cd <Action>(ShowErrorDescription)
 map <leader>cg <Action>(Generate)
 map <leader>cs <Action>(Floating.CodeToolbar.Surround)
 nmap <leader>cc <Action>(RedesignedRunConfigurationSelector)
+map <leader>ci <Action>(ImplementMethods)
+map <leader>co <Action>(OverrideMethods)
 
 " Refactoring
 let g:WhichKeyDesc_refactor = "<leader>r Refactor"
@@ -237,14 +242,14 @@ nnoremap <leader>vr :action IdeaVim.ReloadVimRc.reload<CR>
 " Git
 let g:WhichKeyDesc_git = "<leader>g Git"
 let g:WhichKeyDesc_git_push = "<leader>gp Git push"
-let g:WhichKeyDesc_git_update = "<leader>gu Git Update/Pull"
-let g:WhichKeyDesc_git_commit = "<leader>gc Git Commit"
+let g:WhichKeyDesc_git_update = "<leader>gP Git pull"
+let g:WhichKeyDesc_git_commit = "<leader>gc Git commit"
 let g:WhichKeyDesc_git_status = "<leader>gs Git status"
 let g:WhichKeyDesc_git_diff = "<leader>gd Git diff file"
 let g:WhichKeyDesc_git_ai= "<leader>ga AI commit message"
-let g:WhichKeyDesc_git_ai= "<leader>gb Git browse"
+let g:WhichKeyDesc_git_browse= "<leader>gb Git browse"
 nmap <leader>gp <Action>(Vcs.Push)
-nmap <leader>gu <Action>(Vcs.UpdateProject)
+nmap <leader>gP <Action>(Vcs.UpdateProject)
 nmap <leader>gc <Action>(ActivateCommitToolWindow)
 nmap <leader>gs <Action>(ActivateVersionControlToolWindow)
 nmap <leader>gd <Action>(Compare.SameVersion)

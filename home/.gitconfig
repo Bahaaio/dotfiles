@@ -13,3 +13,5 @@
 	helper = !/usr/bin/gh auth git-credential
 [init]
 	defaultbranch = main
+[diff]
+	algorithm = histogram

@@ -14,9 +14,9 @@ function take() {
 
 # remove all docker containers, images and volumes
 function dclear() {
-    docker rm -f $(docker ps -a -q) >/dev/null 2>&1 || true   # remove all containers
-    docker rmi -f $(docker images -q) >/dev/null 2>&1 || true # remove all images
-    docker volume prune -f                                    # remove all volumes
+    docker rm -f $(docker ps -a -q) >/dev/null 2>&1 || true            # remove all containers
+    docker rmi -f $(docker images -q) >/dev/null 2>&1 || true          # remove all images
+    docker volume rm -f $(docker volume ls -q) >/dev/null 2>&1 || true # remove all volumes
 }
 
 # yazi

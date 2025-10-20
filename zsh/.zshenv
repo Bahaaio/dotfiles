@@ -11,7 +11,6 @@
 export TERMINAL='wezterm'
 export BROWSER='zen'
 export EDITOR='nvim'
-# export MANPAGER='nvim +Man!'
 
 # XDG base directories
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -20,6 +19,20 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 # bin
 export PATH="$HOME/.local/bin:$PATH"
+
+# fzf
+export FZF_DEFAULT_OPTS='--layout reverse --border'
+export FZF_ALT_C_OPTS="--preview 'tree -c {}'"
+export FZF_ALT_C_COMMAND="fd --type d"
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
+
+# SDKMAN
+export SDKMAN_DIR="$HOME/.sdkman"
+
+# node.js
+export NPM_CONFIG_CACHE="$XDG_DATA_HOME/npm"
+export FNM_PATH="$XDG_DATA_HOME/fnm"
+export PATH="$FNM_PATH:$PATH"
 
 # golang
 export GOPATH="$HOME/.local/share/go"

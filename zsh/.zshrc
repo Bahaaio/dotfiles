@@ -83,32 +83,12 @@ source ~/.functions.zsh
 
 # fzf
 source <(fzf --zsh)
-export FZF_DEFAULT_OPTS='--layout reverse --border'
-export FZF_ALT_C_OPTS="--preview 'tree -c {}'"
-export FZF_ALT_C_COMMAND="fd --type d"
-export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
 
 # zoxide
 eval "$(zoxide init --cmd cd zsh)"
 
 # SDKMAN
-export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
 
 # fnm
-FNM_PATH="$XDG_DATA_HOME/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="$FNM_PATH:$PATH"
-  eval "$(fnm env)"
-fi
-
-# pnpm
-export PNPM_HOME="$XDG_DATA_HOME/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-
-# lazy load pnpm completions
-pnpm() {
-    unset -f pnpm
-    eval "$(command pnpm completion zsh)"
-    pnpm "$@"
-}
+eval "$(fnm env)"

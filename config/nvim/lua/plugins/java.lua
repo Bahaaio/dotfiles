@@ -1,10 +1,5 @@
 return {
   {
-    "mfussenegger/nvim-jdtls",
-    branch = "master",
-  },
-
-  {
     "elmcgill/springboot-nvim",
     ft = "java",
     dependencies = {

@@ -1,5 +1,4 @@
 {
-  "FixCursorHold.nvim": { "branch": "master", "commit": "1900f89dc17c603eec29960f57c00bd9ae696495" },
   "LazyVim": { "branch": "main", "commit": "a65d5d530d372b39a468dfbb2ce633f344770c5c" },
   "SchemaStore.nvim": { "branch": "main", "commit": "960a5cf992c033170499ccc7003df59734ed40a8" },
   "auto-session": { "branch": "main", "commit": "517a75727d28a4d1ee9c79b56dde239a5408778f" },

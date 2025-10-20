@@ -4,7 +4,6 @@ return {
   {
     "rmagatti/auto-session",
     lazy = false,
-    version = false,
 
     ---@module "auto-session"
     ---@type AutoSession.Config

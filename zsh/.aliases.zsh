@@ -47,6 +47,9 @@ alias paste='xclip -selection clipboard -o'
 alias leet='nvim leetcode.nvim'
 alias rest='pomo break'
 alias clock='tty-clock -c -s -b -t -C 6'
+alias ld='lazydocker'
+alias lg='lazygit'
+alias t='~/.local/bin/tmux-sessionizer.sh'
 
 # exercism
 alias es='exercism submit'

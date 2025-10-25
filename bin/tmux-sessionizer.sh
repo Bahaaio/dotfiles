@@ -2,13 +2,17 @@
 
 # Script to manage tmux sessions
 
-DIRECTORIES=(~/code ~/dotfiles ~/github)
+DIRECTORIES=(~/code ~/dotfiles ~/github) # to be searched for projects
+PATHS=(~/dotfiles/ ~/.config/)           # specific paths to include
 
 if [[ $# -eq 1 ]]; then
     selected="$1"
 else
     selected=$(
-        fd . "${DIRECTORIES[@]}" --max-depth=2 --type=d |
+        {
+            printf '%s\n' "${PATHS[@]}"
+            fd . "${DIRECTORIES[@]}" --max-depth=2 --type=d
+        } |
             sed "s|^$HOME/||" |
             fzf --preview "lsd --tree --depth=1 --color=always --icon=always $HOME/{}"
     )

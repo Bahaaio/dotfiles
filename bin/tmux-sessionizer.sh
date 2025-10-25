@@ -24,6 +24,11 @@ fi
 
 session_name=$(basename "$selected" | tr . _)
 
+if [[ -z "$TMUX" ]]; then
+    exec tmux new -A -s "$session_name" -c "$selected"
+    exit 0
+fi
+
 if ! tmux has -t "$session_name" 2>/dev/null; then
     tmux new -ds "$session_name" -c "$selected"
 fi

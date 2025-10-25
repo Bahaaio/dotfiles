@@ -22,7 +22,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # fzf
 export FZF_DEFAULT_OPTS='--layout reverse --border'
-export FZF_ALT_C_OPTS="--preview 'tree -c {}'"
+export FZF_ALT_C_OPTS="--preview 'lsd --tree --color=always --icon=always --depth=1 {}'"
 export FZF_ALT_C_COMMAND="fd --type d"
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
 

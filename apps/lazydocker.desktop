@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=LazyDocker
+Comment=Simple terminal UI for Docker
+Exec=bash -c 'wezterm -e ~/.local/share/go/bin/lazydocker'
+Icon=docker
+Type=Application
+Categories=Development;Utility;
+Terminal=false

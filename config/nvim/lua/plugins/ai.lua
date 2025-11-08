@@ -1,15 +1,20 @@
 return {
   {
     "NickvanDyke/opencode.nvim",
-    dependencies = { { "folke/snacks.nvim", opts = { input = { enabled = true } } } },
+    dependencies = {
+      { "folke/snacks.nvim", opts = { input = {}, picker = {}, terminal = {} } },
+    },
     config = function()
       ---@type opencode.Opts
       vim.g.opencode_opts = {
         auto_reload = true,
-        ---@diagnostic disable-next-line: missing-fields
-        terminal = {
-          win = {
-            enter = true,
+        enabled = "snacks",
+        ---@type opencode.provider.Snacks
+        provider = {
+          snacks = {
+            win = {
+              enter = true,
+            },
           },
         },
       }
@@ -19,11 +24,9 @@ return {
     end,
     -- stylua: ignore
     keys = {
-      { "<M-;>", mode = { "n", "t" }, function() require("opencode").toggle() end, desc = "Toggle embedded opencode", },
-      { "<M-i>", function() require("opencode").ask() end, desc = "Ask opencode" },
-      { "<M-i>", function() require("opencode").ask("@selection: ") end, desc = "Ask opencode about selection", mode = "v", },
-      { "<leader>ap", function() require("opencode").select() end, desc = "Select prompt", mode = { "n", "v" }, },
-      { "<leader>ay", function() require("opencode").command("messages_copy") end, desc = "Copy last message", },
+      { "<M-;>", mode = { "n", "t" }, function() require("opencode").toggle() end, desc = "Toggle embedded opencode" },
+      { "<M-i>", mode = {"n", "x"}, function() require("opencode").ask("@this: ", { submit = true }) end, desc = "Ask about this" },
+      { "<leader>ap", mode = { "n", "x" }, function() require("opencode").select() end, desc = "Select prompt" },
     },
   },
 

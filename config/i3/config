@@ -58,8 +58,10 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # brightness control
-bindsym XF86MonBrightnessUp   exec --no-startup-id ~/.local/bin/changeBrightness.sh 2%+
-bindsym XF86MonBrightnessDown exec --no-startup-id ~/.local/bin/changeBrightness.sh 2%-
+bindsym XF86MonBrightnessUp         exec --no-startup-id ~/.local/bin/changeBrightness.sh 2%+
+bindsym XF86MonBrightnessDown       exec --no-startup-id ~/.local/bin/changeBrightness.sh 2%-
+bindsym Shift+XF86MonBrightnessUp   exec --no-startup-id ~/.local/bin/changeBrightness.sh 50%
+bindsym Shift+XF86MonBrightnessDown exec --no-startup-id ~/.local/bin/changeBrightness.sh 0%
 
 # screenshots
 bindsym Print       exec flameshot full -c -p ~/Pictures/Screenshots/
@@ -77,11 +79,15 @@ bindsym $mod+x exec --no-startup-id ~/.config/rofi/powermenu/powermenu.sh
 # file explorer
 bindsym $mod+e exec --no-startup-id nautilus &
 
-# startup
+# startup and workspace rules
 exec --no-startup-id $browser
+for_window [class="zen"] move to workspace $ws1
 
 exec --no-startup-id wezterm start --class wezmain -e tmux new -A -s dev
 for_window [class="wezmain"] move to workspace $ws2
+
+exec --no-startup-id ticktick
+for_window [class="ticktick"] move to workspace $ws5
 
 # scratch pads
 exec --no-startup-id wezterm --config font_size=13 start --class wezbtop -e btop
@@ -231,13 +237,13 @@ for_window [class="copyq"] floating enable
 for_window [class="gnome-control-center"] floating enable
 for_window [class="Nautilus"] floating enable
 for_window [class="Ulauncher"] border pixel 0
-for_window [class="Yad"] floating enable
+for_window [class="Localsend"] floating enable
 for_window [class="discord"] move to workspace $ws9
 for_window [class="ZapZap"] move to workspace $ws10
 
 set $pref_width 1132
 set $pref_height 806
-for_window [class="wezbtop"]    resize set 1182 896
+for_window [class="wezbtop"]    resize set 1182 828
 for_window [class="wezscratch"] resize set $pref_width $pref_height
 
 # to focus when opening links

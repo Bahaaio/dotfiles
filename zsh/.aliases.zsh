@@ -14,6 +14,12 @@ alias la='ls -A'
 alias lt='ls --tree'
 alias lta='ls --tree -a'
 
+# cd
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+-() { cd - }
+
 # core-utils
 alias rm='trash'
 alias cp='cp -iv'

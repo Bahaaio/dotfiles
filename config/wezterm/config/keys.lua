@@ -19,7 +19,7 @@ return {
 		{ key = "F11", mods = mod.NONE, action = action.ToggleFullScreen },
 		{ key = "F12", mods = mod.NONE, action = action.ShowDebugOverlay },
 
-        -- open url
+		-- open url
 		{
 			key = "O", mods = mod.ALT,
 			action = wezterm.action.QuickSelectArgs({
@@ -48,10 +48,10 @@ return {
 				local blur_opacity = 0.85
 				local overrides = window:get_config_overrides() or {}
 
-				if overrides.window_background_opacity == blur_opacity then
-					overrides.window_background_opacity = 1.0
-				else
+				if overrides.window_background_opacity == 1.0 then
 					overrides.window_background_opacity = blur_opacity
+				else
+					overrides.window_background_opacity = 1.0
 				end
 
 				window:set_config_overrides(overrides)

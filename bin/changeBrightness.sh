@@ -15,8 +15,5 @@ brightnessctl set "$@" >/dev/null
 brightness_percentage=$(brightnessctl | awk -F'[()]' '/Current brightness/ {print $2}' | tr -d '%')
 
 # Show the brightness notification
-dunstify -a "changeBrightness" -u low -i display-brightness -h string:x-dunst-stack-tag:$msgTag \
+dunstify -a "changeBrightness" -u low -h string:x-dunst-stack-tag:$msgTag \
     -h int:value:"$brightness_percentage" "🔆 Brightness: ${brightness_percentage}%"
-
-# Play a brightness change sound
-# paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga &

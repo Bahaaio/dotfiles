@@ -28,10 +28,10 @@ mute_status=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $3}')
 
 if [[ $volume == 0 || "$mute_status" == "[MUTED]" ]]; then
     # Show the sound muted notification
-    dunstify -a "changeVolume" -u low -i audio-volume-muted -h string:x-dunst-stack-tag:$msgTag "🔇 Volume muted"
+    dunstify -a "changeVolume" -u low -h string:x-dunst-stack-tag:$msgTag "🔇 Volume muted"
 else
     # Show the volume notification
-    dunstify -a "changeVolume" -u low -i audio-volume-high -h string:x-dunst-stack-tag:$msgTag \
+    dunstify -a "changeVolume" -u low -h string:x-dunst-stack-tag:$msgTag \
         -h int:value:"$volume" "🔊  Volume: ${volume}%"
 fi
 

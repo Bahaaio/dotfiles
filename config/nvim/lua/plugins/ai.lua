@@ -2,14 +2,13 @@ return {
   {
     "NickvanDyke/opencode.nvim",
     dependencies = {
-      { "folke/snacks.nvim", opts = { input = {}, picker = {}, terminal = {} } },
+      { "folke/snacks.nvim" },
     },
     config = function()
       ---@type opencode.Opts
       vim.g.opencode_opts = {
         auto_reload = true,
         enabled = "snacks",
-        ---@type opencode.provider.Snacks
         provider = {
           snacks = {
             win = {

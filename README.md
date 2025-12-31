@@ -14,10 +14,10 @@ My personal setup for a clean and productive Linux environment.
 
 ## Installation
 
-Uses [setup.sh](setup.sh) to install dotfiles.
+Uses [install.sh](install.sh) to install dotfiles.
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/Bahaaio/dotfiles/main/setup.sh | bash
+curl -fsSL https://raw.githubusercontent.com/Bahaaio/dotfiles/main/install.sh | bash
 ```
 
 > [!NOTE]

@@ -1,5 +1,6 @@
 return {
   "3rd/image.nvim",
+  enabled = true,
   build = false,
   ft = { "markdown" },
   opts = {

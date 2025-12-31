@@ -27,12 +27,10 @@ return {
     },
 
     config = function()
-      local neotest_golang_opts = {}
-
       ---@diagnostic disable-next-line: missing-fields
       require("neotest").setup({
         adapters = {
-          require("neotest-golang")(neotest_golang_opts), -- Registration
+          require("neotest-golang")({}), -- Registration
         },
       })
     end,

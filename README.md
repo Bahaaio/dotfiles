@@ -21,4 +21,4 @@ curl -fsSL https://raw.githubusercontent.com/Bahaaio/dotfiles/main/install.sh | 
 ```
 
 > [!NOTE]
-> Use [install.sh](install.sh) to symlink dotfiles manually.
+> Use [link.sh](link.sh) to symlink dotfiles manually.

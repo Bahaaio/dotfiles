@@ -1,26 +1,8 @@
 return {
   {
-    "nvim-mini/mini.animate",
-    version = "*",
-    event = "BufEnter",
-    config = function()
-      require("mini.animate").setup({
-        cursor = { enable = false },
-        resize = {
-          timing = require("mini.animate").gen_timing.linear({ duration = 50, unit = "total" }),
-        },
-        scroll = {
-          timing = require("mini.animate").gen_timing.linear({ duration = 150, unit = "total" }),
-        },
-      })
-    end,
-  },
-
-  {
     "akinsho/toggleterm.nvim",
     lazy = true,
     event = "VeryLazy",
-    version = "*",
     config = function()
       require("toggleterm").setup({
         float_opts = {

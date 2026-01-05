@@ -50,6 +50,6 @@ map("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })
 map("v", "<leader>/", "gc", { desc = "toggle comment", remap = true })
 
 -- yanking
-map({ "n", "v" }, "<leader>y", '"+y', { desc = "yank to the system clipboard" })
-map("n", "<leader>Y", '"+y$', { desc = "yank eol to the system clipboard" })
+map({ "n", "x" }, "y", '"+y', { desc = "yank to the system clipboard" })
+map("n", "Y", '"+y$', { desc = "yank eol to the system clipboard" })
 map("n", "<C-c>", "<cmd>%y+<cr>", { desc = "yank file to the system clipboard" })

@@ -219,12 +219,9 @@ inoremap <C-e> <End>
 inoremap <C-a> <Home>
 
 " Yanking
-let g:WhichKeyDesc_misc_yank = "<leader>y Yank to clipboard"
-let g:WhichKeyDesc_misc_yankline = "<leader>Y Yank eol to clipboard"
+map y "+y
+nmap Y "+y$
 nmap <C-c> :%y+<CR>
-map <leader>y "+y
-nmap <leader>Y "+y$
-nmap Y y$
 
 " Commenting
 let g:WhichKeyDesc_misc_comment = "<leader>/ Toggle comment"

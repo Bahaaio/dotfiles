@@ -27,6 +27,7 @@ alias mv='mv -iv'
 alias c='clear'
 alias cat='batcat'
 alias rg='rg --hidden --follow'
+alias less='less -R'
 
 # nala
 alias install='sudo nala install'
@@ -48,6 +49,7 @@ alias ef='nvim ~/.functions.zsh'
 # utils
 alias ai='opencode'
 alias vim='nvim'
+alias y='yazi'
 alias copy='xclip -selection clipboard'
 alias paste='xclip -selection clipboard -o'
 alias leet='nvim leetcode.nvim'

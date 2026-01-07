@@ -1,15 +1,5 @@
 return {
   {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        html = {},
-        cssls = {},
-      },
-    },
-  },
-
-  {
     "Civitasv/cmake-tools.nvim",
     dependencies = { "akinsho/toggleterm.nvim" },
     ft = { "c", "cpp", "h", "hpp", "cmake" },

@@ -18,6 +18,9 @@ return {
     "webhooked/kanso.nvim",
     opts = {
       -- transparent = true,
+      background = {
+        dark = "zen",
+      },
     },
   },
 }

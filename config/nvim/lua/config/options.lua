@@ -9,7 +9,7 @@
 
 local opt = vim.o
 
-opt.spell = true
+-- opt.spell = true
 
 -- don't use system clipboard
 vim.o.clipboard = ""

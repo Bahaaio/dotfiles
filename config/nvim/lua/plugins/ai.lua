@@ -31,7 +31,7 @@ return {
     "folke/which-key.nvim",
     opts = {
       spec = {
-        { "<leader>a", group = "ai", icon = { icon = " ", color = "green" } },
+        { "<leader>a", group = "ai", icon = { icon = LazyVim.config.icons.kinds.Copilot, color = "green" } },
       },
     },
   },

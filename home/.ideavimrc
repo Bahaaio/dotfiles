@@ -219,7 +219,8 @@ inoremap <C-e> <End>
 inoremap <C-a> <Home>
 
 " Yanking
-map y "+y
+nnoremap y "+y
+vnoremap y "+y
 nmap Y "+y$
 nmap <C-c> :%y+<CR>
 

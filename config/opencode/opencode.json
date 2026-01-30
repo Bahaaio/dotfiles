@@ -2,6 +2,8 @@
   "$schema": "https://opencode.ai/config.json",
   "theme": "github",
   "autoupdate": false,
+  "tui": { "diff_style": "stacked" },
+  "experimental": { "disable_paste_summary": true },
   "command": {
     "git": {
       "agent": "plan",

@@ -2,7 +2,6 @@
 
 # Script to toggle the touchpad on/off and set preferred properties when enabled.
 # Requires: xinput
-# Usage: toggleTouchpad.sh
 
 # id=$(xinput list | grep -Poi 'Touchpad.*id=\K\d+')
 msgTag="touchpad"

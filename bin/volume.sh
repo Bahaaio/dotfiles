@@ -3,9 +3,9 @@
 # Script to adjust system volume, show a notification, and play a sound.
 # Requires: wpctl (PipeWire), dunstify, paplay (with freedesktop sound theme)
 # Usage:
-#   changeVolume.sh 5%+         # Increase volume by 5%
-#   changeVolume.sh 5%-         # Decrease volume by 5%
-#   changeVolume.sh toggleMute  # Toggle mute state
+#   volume.sh 5%+         # Increase volume by 5%
+#   volume.sh 5%-         # Decrease volume by 5%
+#   volume.sh toggleMute  # Toggle mute state
 
 # Arbitrary but unique message tag
 msgTag="myvolume"
@@ -28,10 +28,10 @@ mute_status=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $3}')
 
 if [[ $volume == 0 || "$mute_status" == "[MUTED]" ]]; then
     # Show the sound muted notification
-    dunstify -a "changeVolume" -u low -h string:x-dunst-stack-tag:$msgTag "🔇 Volume muted"
+    dunstify -a "volume" -u low -h string:x-dunst-stack-tag:$msgTag "🔇 Volume muted"
 else
     # Show the volume notification
-    dunstify -a "changeVolume" -u low -h string:x-dunst-stack-tag:$msgTag \
+    dunstify -a "volume" -u low -h string:x-dunst-stack-tag:$msgTag \
         -h int:value:"$volume" "🔊  Volume: ${volume}%"
 fi
 

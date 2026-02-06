@@ -1,0 +1,19 @@
+- name: Install lazydocker via go
+  command: go install github.com/jesseduffield/lazydocker@latest
+  args:
+    creates: "{{ gopath }}/bin/lazydocker"
+
+- name: Install pomo via go
+  command: go install github.com/Bahaaio/pomo@latest
+  args:
+    creates: "{{ gopath }}/bin/pomo"
+
+- name: Install vhs via go
+  command: go install github.com/charmbracelet/vhs@latest
+  args:
+    creates: "{{ gopath }}/bin/vhs"
+
+- name: Install goreleaser via go
+  command: go install github.com/goreleaser/goreleaser@latest
+  args:
+    creates: "{{ gopath }}/bin/goreleaser"

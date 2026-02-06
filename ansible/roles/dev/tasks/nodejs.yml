@@ -1,0 +1,8 @@
+- name: Install FNM via cargo
+  community.general.cargo:
+    name: fnm
+
+- name: Install Node.js LTS via FNM
+  command: fnm install --lts
+  args:
+    creates: "{{ fnm_path }}/node-versions"

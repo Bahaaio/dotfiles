@@ -1,0 +1,7 @@
+- name: Install rofi and ulauncher
+  apt:
+    name:
+      - rofi
+      - ulauncher
+    state: present
+  become: true

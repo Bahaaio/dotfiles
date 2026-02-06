@@ -1,0 +1,48 @@
+- name: Setup Debian environment
+  hosts: local
+
+  # Global environment variables for all tasks
+  environment:
+    XDG_DATA_HOME: "{{ xdg_data_home }}"
+    XDG_CONFIG_HOME: "{{ xdg_config_home }}"
+    XDG_CACHE_HOME: "{{ xdg_cache_home }}"
+
+    SDKMAN_DIR: "{{ sdkman_dir }}"
+    NPM_CONFIG_CACHE: "{{ npm_cache }}"
+    FNM_DIR: "{{ fnm_path }}"
+    GOPATH: "{{ gopath }}"
+    CARGO_HOME: "{{ cargo_home }}"
+    RUSTUP_HOME: "{{ rustup_home }}"
+
+  pre_tasks:
+    - name: Ensure we're running on Debian-based system
+      fail:
+        msg: "This playbook is designed for Debian-based systems only"
+      when: ansible_os_family != "Debian"
+
+  roles:
+    - role: system
+      tags: ["system"]
+      become: true
+
+    - role: fonts
+      tags: ["fonts"]
+
+    - role: audio
+      tags: ["audio"]
+
+    - role: dev
+      tags: ["dev"]
+
+    - role: cli
+      tags: ["cli"]
+
+    - role: wm
+      tags: ["wm"]
+      become: true
+
+    - role: gui
+      tags: ["gui"]
+
+    - role: dotfiles
+      tags: ["dotfiles"]

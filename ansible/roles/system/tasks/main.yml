@@ -1,0 +1,55 @@
+- name: Update apt cache
+  apt:
+    update_cache: true
+    cache_valid_time: 3600
+  become: true
+
+- name: Install base packages
+  apt:
+    name:
+      - git
+      - zsh
+      - stow
+      - curl
+      - wget
+      - nala
+      - g++
+      - build-essential
+      - zip
+      - unzip
+      - jq
+      - ca-certificates
+      - gnupg
+      - apt-transport-https
+      - software-properties-common
+    state: present
+  become: true
+
+- name: Install system utilities
+  apt:
+    name:
+      - tlp
+      - tlp-rdw
+      - playerctl
+      - brightnessctl
+    state: present
+  become: true
+
+- name: Set zsh as default shell
+  user:
+    name: "{{ ansible_user_id }}"
+    shell: /usr/bin/zsh
+  become: true
+
+- name: Ensure ~/.local/bin directory exists
+  file:
+    path: "{{ bin_dir }}"
+    state: directory
+    mode: "0755"
+
+- name: Enable TLP service
+  systemd:
+    name: tlp
+    enabled: true
+    state: started
+  become: true

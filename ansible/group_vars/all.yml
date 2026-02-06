@@ -1,0 +1,26 @@
+# User configuration
+dotfiles_dir: "{{ ansible_env.HOME }}/dotfiles"
+wallpapers_dir: "{{ ansible_env.HOME }}/Pictures/wallpapers"
+wallpapers_repo: "https://github.com/Bahaaio/wallpapers.git"
+
+# XDG Base Directories
+xdg_data_home: "{{ ansible_env.HOME }}/.local/share"
+xdg_config_home: "{{ ansible_env.HOME }}/.config"
+xdg_cache_home: "{{ ansible_env.HOME }}/.cache"
+
+# Directories
+bin_dir: "{{ ansible_env.HOME }}/.local/bin"
+fonts_dir: "{{ xdg_data_home }}/fonts"
+toolbox_dir: "{{ xdg_data_home }}/JetBrains/Toolbox"
+
+# XDG-compliant tool paths
+cargo_home: "{{ xdg_data_home }}/cargo"
+rustup_home: "{{ xdg_data_home }}/rustup"
+gopath: "{{ xdg_data_home }}/go"
+fnm_path: "{{ xdg_data_home }}/fnm"
+npm_cache: "{{ xdg_data_home }}/npm"
+sdkman_dir: "{{ ansible_env.HOME }}/.sdkman"
+
+# System architecture
+arch: "{{ ansible_architecture }}"
+deb_arch: "{{ 'amd64' if arch == 'x86_64' else 'arm64' if arch == 'aarch64' else arch }}"

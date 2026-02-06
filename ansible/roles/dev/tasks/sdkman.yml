@@ -1,0 +1,16 @@
+- name: Check if SDKMAN is installed
+  stat:
+    path: "{{ sdkman_dir }}/bin/sdkman-init.sh"
+  register: sdkman_check
+
+- name: Install SDKMAN
+  shell: curl -s "https://get.sdkman.io" | bash
+  when: not sdkman_check.stat.exists
+
+- name: Install Java via SDKMAN
+  shell: |
+    source {{ sdkman_dir }}/bin/sdkman-init.sh
+    sdk install java
+  args:
+    executable: /bin/bash
+    creates: "{{ sdkman_dir }}/candidates/java/current"

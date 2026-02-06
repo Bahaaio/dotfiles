@@ -1,0 +1,49 @@
+- name: Install PipeWire audio stack
+  apt:
+    name:
+      - pipewire
+      - pipewire-audio
+      - pipewire-pulse
+      - pipewire-alsa
+      - wireplumber
+      - pavucontrol
+    state: present
+  become: true
+
+- name: Ensure PipeWire user services directory exists
+  file:
+    path: "{{ ansible_env.HOME }}/.config/systemd/user"
+    state: directory
+    mode: "0755"
+
+- name: Enable PipeWire socket
+  systemd:
+    name: pipewire.socket
+    enabled: true
+    state: started
+    scope: user
+  ignore_errors: true
+
+- name: Enable PipeWire service
+  systemd:
+    name: pipewire.service
+    enabled: true
+    state: started
+    scope: user
+  ignore_errors: true
+
+- name: Enable WirePlumber service
+  systemd:
+    name: wireplumber.service
+    enabled: true
+    state: started
+    scope: user
+  ignore_errors: true
+
+- name: Enable PipeWire-Pulse socket
+  systemd:
+    name: pipewire-pulse.socket
+    enabled: true
+    state: started
+    scope: user
+  ignore_errors: true

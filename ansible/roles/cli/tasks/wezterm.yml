@@ -1,0 +1,25 @@
+- name: Add wezterm GPG key
+  shell: |
+    curl -fsSL https://apt.fury.io/wez/gpg.key | gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
+    chmod 644 /usr/share/keyrings/wezterm-fury.gpg
+  args:
+    creates: /usr/share/keyrings/wezterm-fury.gpg
+  become: true
+
+- name: Add wezterm repository
+  shell: |
+    echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | tee /etc/apt/sources.list.d/wezterm.list
+  args:
+    creates: /etc/apt/sources.list.d/wezterm.list
+  become: true
+
+- name: Update apt cache for wezterm
+  apt:
+    update_cache: true
+  become: true
+
+- name: Install wezterm
+  apt:
+    name: wezterm
+    state: present
+  become: true

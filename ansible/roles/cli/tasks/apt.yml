@@ -1,0 +1,24 @@
+- name: Install CLI tools from apt
+  apt:
+    name:
+      - tmux
+      - btop
+      - lsd
+      - fd-find
+      - ripgrep
+      - bat
+      - trash-cli
+      - nautilus
+      - jq
+      - zip
+      - unzip
+      - gh
+      - gdu
+    state: present
+  become: true
+
+- name: Symlink fdfind to fd in ~/.local/bin
+  file:
+    src: /usr/bin/fdfind
+    dest: "{{ bin_dir }}/fd"
+    state: link

@@ -1,0 +1,14 @@
+- name: Include Docker installation
+  include_tasks: docker.yml
+
+- name: Include Rust installation
+  include_tasks: rust.yml
+
+- name: Include Go installation
+  include_tasks: go.yml
+
+- name: Include Node.js installation
+  include_tasks: nodejs.yml
+
+- name: Include SDKMAN and Java installation
+  include_tasks: sdkman.yml

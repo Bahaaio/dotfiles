@@ -1,0 +1,17 @@
+- name: Include apt-based CLI tools
+  include_tasks: apt.yml
+
+- name: Include cargo-based CLI tools
+  include_tasks: cargo.yml
+
+- name: Include Go tools installation
+  include_tasks: go-tools.yml
+
+- name: Include npm tools installation
+  include_tasks: npm-tools.yml
+
+- name: Include neovim installation
+  include_tasks: neovim.yml
+
+- name: Include wezterm installation
+  include_tasks: wezterm.yml

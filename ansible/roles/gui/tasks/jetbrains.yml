@@ -1,0 +1,85 @@
+- name: Install JetBrains Toolbox dependencies
+  apt:
+    name:
+      - tar
+      - libxi6
+      - libxrender1
+      - libxtst6
+      - mesa-utils
+      - libfontconfig
+      - libgtk-3-bin
+      - dbus-user-session
+    state: present
+  become: true
+
+- name: Check if JetBrains Toolbox is installed
+  stat:
+    path: "{{ toolbox_dir }}/bin/jetbrains-toolbox"
+  register: toolbox_check
+
+- name: Get latest JetBrains Toolbox download URL
+  uri:
+    url: "https://data.services.jetbrains.com/products/releases?code=TBA&latest=true&type=release"
+    return_content: true
+  register: toolbox_releases
+  when: not toolbox_check.stat.exists
+
+- name: Set Toolbox download URL
+  set_fact:
+    toolbox_download_url: "{{ toolbox_releases.json.TBA[0].downloads.linux.link }}"
+  when: not toolbox_check.stat.exists
+
+- name: Download JetBrains Toolbox
+  get_url:
+    url: "{{ toolbox_download_url }}"
+    dest: "/tmp/jetbrains-toolbox.tar.gz"
+    mode: "0644"
+  when: not toolbox_check.stat.exists
+
+- name: Create Toolbox directory
+  file:
+    path: "{{ toolbox_dir }}"
+    state: directory
+    mode: "0755"
+  when: not toolbox_check.stat.exists
+
+- name: Extract JetBrains Toolbox
+  unarchive:
+    src: "/tmp/jetbrains-toolbox.tar.gz"
+    dest: "{{ toolbox_dir }}"
+    remote_src: true
+    extra_opts: [--strip-components=1]
+  when: not toolbox_check.stat.exists
+
+- name: Make Toolbox executable
+  file:
+    path: "{{ toolbox_dir }}/bin/jetbrains-toolbox"
+    mode: "0755"
+  when: not toolbox_check.stat.exists
+
+- name: Cleanup Toolbox tarball
+  file:
+    path: "/tmp/jetbrains-toolbox.tar.gz"
+    state: absent
+  when: not toolbox_check.stat.exists
+
+- name: Create JetBrains Toolbox desktop entry
+  copy:
+    dest: "{{ ansible_env.HOME }}/.local/share/applications/jetbrains-toolbox.desktop"
+    content: |
+      [Desktop Entry]
+      Icon={{ toolbox_dir }}/bin/toolbox.svg
+      Exec={{ toolbox_dir }}/bin/jetbrains-toolbox %u
+      Version=1.0
+      Type=Application
+      Categories=Development
+      Name=JetBrains Toolbox
+      StartupWMClass=jetbrains-toolbox
+      Terminal=false
+      MimeType=x-scheme-handler/jetbrains;
+      X-GNOME-Autostart-enabled=true
+      StartupNotify=false
+      X-GNOME-Autostart-Delay=10
+      X-MATE-Autostart-Delay=10
+      X-KDE-autostart-after=panel
+    mode: "0744"

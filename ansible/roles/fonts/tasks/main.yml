@@ -1,0 +1,54 @@
+- name: Check if JetBrains Mono Nerd Font is installed
+  shell: fc-list | grep -qi "JetBrainsMono Nerd Font"
+  register: font_check
+  changed_when: false
+  failed_when: false
+
+- name: Install font dependencies
+  apt:
+    name:
+      - unzip
+      - wget
+      - fontconfig
+    state: present
+  become: true
+  when: font_check.rc != 0
+
+- name: Create fonts directory
+  file:
+    path: "{{ fonts_dir }}"
+    state: directory
+    mode: "0755"
+  when: font_check.rc != 0
+
+- name: Download JetBrains Mono Nerd Font
+  get_url:
+    url: "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip"
+    dest: "/tmp/JetBrainsMono.zip"
+    mode: "0644"
+  when: font_check.rc != 0
+
+- name: Create font subdirectory
+  file:
+    path: "{{ fonts_dir }}/JetBrainsMono"
+    state: directory
+    mode: "0755"
+  when: font_check.rc != 0
+
+- name: Extract JetBrains Mono Nerd Font
+  unarchive:
+    src: "/tmp/JetBrainsMono.zip"
+    dest: "{{ fonts_dir }}/JetBrainsMono"
+    remote_src: true
+  when: font_check.rc != 0
+
+- name: Refresh font cache
+  command: fc-cache -fv
+  when: font_check.rc != 0
+  changed_when: true
+
+- name: Cleanup font archive
+  file:
+    path: "/tmp/JetBrainsMono.zip"
+    state: absent
+  when: font_check.rc != 0

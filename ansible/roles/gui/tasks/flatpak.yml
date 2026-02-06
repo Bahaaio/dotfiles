@@ -1,0 +1,36 @@
+- name: Install flatpak
+  apt:
+    name: flatpak
+    state: present
+  become: true
+
+- name: Add Flathub repository
+  community.general.flatpak_remote:
+    name: flathub
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+    state: present
+
+- name: Install Discord via flatpak
+  community.general.flatpak:
+    name: com.discordapp.Discord
+    state: present
+
+- name: Install Postman via flatpak
+  community.general.flatpak:
+    name: com.getpostman.Postman
+    state: present
+
+- name: Install Zen Browser via flatpak
+  community.general.flatpak:
+    name: app.zen_browser.Zen
+    state: present
+
+- name: Install ZapZap via flatpak
+  community.general.flatpak:
+    name: com.rtosta.zapzap
+    state: present
+
+- name: Install LocalSend via flatpak
+  community.general.flatpak:
+    name: org.localsend.localsend_app
+    state: present

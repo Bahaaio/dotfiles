@@ -1,0 +1,9 @@
+- name: Install GUI apps from apt
+  apt:
+    name:
+      - vlc
+      - mpv
+      - nautilus
+      - obs-studio
+    state: present
+  become: true

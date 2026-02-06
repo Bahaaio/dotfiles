@@ -1,0 +1,5 @@
+- name: Install opencode via npm
+  npm:
+    name: opencode-ai
+    global: true
+    state: present

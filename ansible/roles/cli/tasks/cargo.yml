@@ -1,0 +1,7 @@
+- name: Install cargo tools
+  community.general.cargo:
+    name:
+      - zoxide
+      - yazi-build
+      - impala
+      - bluetui

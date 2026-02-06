@@ -1,0 +1,21 @@
+- name: Install i3 window manager and related packages
+  apt:
+    name:
+      - i3-wm
+      - i3lock
+      - xss-lock
+      - polybar
+      - picom
+      - dunst
+      - libnotify-bin
+      - feh
+      - flameshot
+      - copyq
+      - xclip
+      - xsensors
+      - redshift-gtk
+      - xsensors
+      - network-manager
+      - numlockx
+    state: present
+  become: true

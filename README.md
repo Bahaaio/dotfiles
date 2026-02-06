@@ -14,10 +14,10 @@ My personal setup for a clean and productive Linux environment.
 
 ## Installation
 
-Uses [install.sh](install.sh) to install dotfiles.
+Uses [bootstrap.sh](bootstrap.sh) to automate the setup process.
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/Bahaaio/dotfiles/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/Bahaaio/dotfiles/main/bootstrap.sh | bash
 ```
 
 > [!NOTE]

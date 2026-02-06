@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=localsend_app
+Comment=localsend_app startup script
+Exec=flatpak run org.localsend.localsend_app --hidden
+StartupNotify=false
+Terminal=false

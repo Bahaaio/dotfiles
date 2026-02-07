@@ -1,14 +1,8 @@
-- name: Check if wallpapers directory exists
-  stat:
-    path: "{{ wallpapers_dir }}"
-  register: wallpapers_check
-
 - name: Clone wallpapers repository
   git:
     repo: "{{ wallpapers_repo }}"
     dest: "{{ wallpapers_dir }}"
-    depth: 1
-  when: not wallpapers_check.stat.exists
+    version: main
 
 - name: Run dotfiles link script
   command: bash {{ dotfiles_dir }}/link.sh

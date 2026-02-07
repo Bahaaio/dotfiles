@@ -1,9 +1,3 @@
-- name: Update apt cache
-  apt:
-    update_cache: true
-    cache_valid_time: 3600
-  become: true
-
 - name: Install base packages
   apt:
     name:
@@ -23,6 +17,7 @@
       - apt-transport-https
       - software-properties-common
     state: present
+    update_cache: true
   become: true
 
 - name: Install system utilities

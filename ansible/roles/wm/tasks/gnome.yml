@@ -2,6 +2,7 @@
   apt:
     name:
       - gnome-core
+      - gnome-tweaks
       - gnome-shell-extensions
       - gnome-shell-extension-manager
       - gnome-shell-extension-system-monitor

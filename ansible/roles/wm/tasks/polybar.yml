@@ -1,5 +1,0 @@
-- name: Install polybar from apt
-  apt:
-    name: polybar
-    state: present
-  become: true

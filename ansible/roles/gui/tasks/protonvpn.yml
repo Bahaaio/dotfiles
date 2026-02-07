@@ -1,40 +1,18 @@
-- name: Check if Proton VPN is already installed
-  apt:
-    name: proton-vpn-gnome-desktop
-    state: present
-  check_mode: true
-  register: protonvpn_check
-  failed_when: false
-
 - name: Download Proton VPN repository package
   get_url:
     url: https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.8_all.deb
-    dest: "/tmp/protonvpn.deb"
+    dest: /tmp/protonvpn.deb
     mode: "0644"
-  when: protonvpn_check is changed
 
 - name: Install Proton VPN repository package
   apt:
-    deb: "/tmp/protonvpn.deb"
+    deb: /tmp/protonvpn.deb
     state: present
   become: true
-  when: protonvpn_check is changed
-
-- name: Update apt cache for Proton VPN repo
-  apt:
-    update_cache: true
-  become: true
-  when: protonvpn_check is changed
 
 - name: Install Proton VPN GNOME Desktop
   apt:
     name: proton-vpn-gnome-desktop
     state: present
+    update_cache: true
   become: true
-  when: protonvpn_check is changed
-
-- name: Cleanup Proton VPN repository package
-  file:
-    path: "/tmp/protonvpn.deb"
-    state: absent
-  when: protonvpn_check is changed

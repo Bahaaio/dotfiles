@@ -1,11 +1,8 @@
-- name: Include GNOME desktop
-  include_tasks: gnome.yml
-
 - name: Include i3 window manager setup
   include_tasks: i3.yml
 
-- name: Include polybar setup
-  include_tasks: polybar.yml
+- name: Include GNOME desktop
+  include_tasks: gnome.yml
 
 - name: Include launchers setup
   include_tasks: launchers.yml

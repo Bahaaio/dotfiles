@@ -1,17 +1,10 @@
-- name: Check if Docker is installed
-  command: docker --version
-  register: docker_check
-  changed_when: false
-  failed_when: false
-
-- name: Install ca-certificates and curl
+- name: Install Docker dependencies
   apt:
     name:
-      - ca-certificates
       - curl
+      - ca-certificates
     state: present
   become: true
-  when: docker_check.rc != 0
 
 - name: Create keyrings directory
   file:
@@ -19,7 +12,6 @@
     state: directory
     mode: "0755"
   become: true
-  when: docker_check.rc != 0
 
 - name: Add Docker GPG key
   get_url:
@@ -27,7 +19,6 @@
     dest: /etc/apt/keyrings/docker.asc
     mode: "0644"
   become: true
-  when: docker_check.rc != 0
 
 - name: Add Docker repository
   shell: |
@@ -41,13 +32,6 @@
   args:
     creates: /etc/apt/sources.list.d/docker.sources
   become: true
-  when: docker_check.rc != 0
-
-- name: Update apt cache for Docker repo
-  apt:
-    update_cache: true
-  become: true
-  when: docker_check.rc != 0
 
 - name: Install Docker packages
   apt:
@@ -58,8 +42,8 @@
       - docker-buildx-plugin
       - docker-compose-plugin
     state: present
+    update_cache: true
   become: true
-  when: docker_check.rc != 0
 
 - name: Add user to docker group
   user:

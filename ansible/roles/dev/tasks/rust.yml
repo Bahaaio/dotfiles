@@ -1,10 +1,6 @@
-- name: Check if rustup is installed
-  stat:
-    path: "{{ cargo_home }}/bin/rustup"
-  register: rustup_check
-
 - name: Install rustup
   shell: |
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
     rustup update
-  when: not rustup_check.stat.exists
+  args:
+    creates: "{{ cargo_home }}/bin/rustup"

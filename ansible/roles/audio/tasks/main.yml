@@ -10,40 +10,21 @@
     state: present
   become: true
 
-- name: Ensure PipeWire user services directory exists
-  file:
-    path: "{{ ansible_env.HOME }}/.config/systemd/user"
-    state: directory
-    mode: "0755"
+- name: Ensure user is in audio and video groups
+  user:
+    name: "{{ ansible_user_id }}"
+    groups: audio,video
+    append: true
+  become: true
 
-- name: Enable PipeWire socket
+- name: Enable PipeWire services
   systemd:
-    name: pipewire.socket
+    name: "{{ item }}"
     enabled: true
     state: started
     scope: user
-  ignore_errors: true
-
-- name: Enable PipeWire service
-  systemd:
-    name: pipewire.service
-    enabled: true
-    state: started
-    scope: user
-  ignore_errors: true
-
-- name: Enable WirePlumber service
-  systemd:
-    name: wireplumber.service
-    enabled: true
-    state: started
-    scope: user
-  ignore_errors: true
-
-- name: Enable PipeWire-Pulse socket
-  systemd:
-    name: pipewire-pulse.socket
-    enabled: true
-    state: started
-    scope: user
-  ignore_errors: true
+  loop:
+    - pipewire.socket
+    - wireplumber.service
+    - pipewire-pulse.socket
+  fail_when: false

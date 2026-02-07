@@ -27,4 +27,4 @@
     - pipewire.socket
     - wireplumber.service
     - pipewire-pulse.socket
-  fail_when: false
+  failed_when: false

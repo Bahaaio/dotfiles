@@ -3,6 +3,7 @@
     url: https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.8_all.deb
     dest: /tmp/protonvpn.deb
     mode: "0644"
+  changed_when: false
 
 - name: Install Proton VPN repository package
   apt:

@@ -10,27 +10,13 @@
     flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
     state: present
 
-- name: Install Discord via flatpak
+- name: Install applications via flatpak
   community.general.flatpak:
-    name: com.discordapp.Discord
-    state: present
-
-- name: Install Postman via flatpak
-  community.general.flatpak:
-    name: com.getpostman.Postman
-    state: present
-
-- name: Install Zen Browser via flatpak
-  community.general.flatpak:
-    name: app.zen_browser.Zen
-    state: present
-
-- name: Install ZapZap via flatpak
-  community.general.flatpak:
-    name: com.rtosta.zapzap
-    state: present
-
-- name: Install LocalSend via flatpak
-  community.general.flatpak:
-    name: org.localsend.localsend_app
+    name:
+      - com.discordapp.Discord
+      - com.getpostman.Postman
+      - app.zen_browser.Zen
+      - com.rtosta.zapzap
+      - org.localsend.localsend_app
+      - io.dbeaver.DBeaverCommunity
     state: present

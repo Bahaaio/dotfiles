@@ -4,6 +4,7 @@
       - tmux
       - btop
       - lsd
+      - fzf
       - fd-find
       - ripgrep
       - bat
@@ -14,6 +15,7 @@
       - unzip
       - gh
       - gdu
+      - tokei
     state: present
   become: true
 

@@ -40,5 +40,5 @@
 
 - name: Refresh font cache
   command: fc-cache -fv
-  changed_when: true
+  changed_when: not font_file.stat.exists
   when: not font_file.stat.exists

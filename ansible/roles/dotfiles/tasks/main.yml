@@ -6,4 +6,6 @@
 
 - name: Run dotfiles link script
   command: bash {{ dotfiles_dir }}/link.sh
+  args:
+    chdir: "{{ dotfiles_dir }}"
   changed_when: false

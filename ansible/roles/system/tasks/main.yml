@@ -62,3 +62,6 @@
     mode: "0644"
   become: true
   notify: restart keyd
+
+- name: Configure firewall
+  import_tasks: ufw.yml

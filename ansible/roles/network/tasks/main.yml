@@ -1,0 +1,29 @@
+- name: Install network TUI tools
+  community.general.cargo:
+    name:
+      - impala
+      - bluetui
+
+- name: Install iwd
+  apt:
+    name: iwd
+    state: present
+  become: true
+
+- name: Disable wpa_supplicant
+  systemd:
+    name: wpa_supplicant
+    enabled: false
+    state: stopped
+  become: true
+
+- name: Configure NetworkManager to use iwd
+  ini_file:
+    path: /etc/NetworkManager/NetworkManager.conf
+    section: device
+    option: wifi.backend
+    value: iwd
+    no_extra_spaces: true
+    mode: "0644"
+  become: true
+  notify: restart NetworkManager

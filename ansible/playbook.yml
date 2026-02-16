@@ -25,6 +25,9 @@
       tags: ["system"]
       become: true
 
+    - role: network
+      tags: ["network"]
+
     - role: fonts
       tags: ["fonts"]
 

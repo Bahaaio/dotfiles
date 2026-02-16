@@ -3,6 +3,4 @@
     name:
       - zoxide
       - yazi-build
-      - impala
-      - bluetui
   notify: install yazi packages

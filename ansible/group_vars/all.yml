@@ -20,7 +20,3 @@ gopath: "{{ xdg_data_home }}/go"
 fnm_path: "{{ xdg_data_home }}/fnm"
 npm_cache: "{{ xdg_data_home }}/npm"
 sdkman_dir: "{{ ansible_env.HOME }}/.sdkman"
-
-# System architecture
-arch: "{{ ansible_architecture }}"
-deb_arch: "{{ 'amd64' if arch == 'x86_64' else 'arm64' if arch == 'aarch64' else arch }}"

@@ -23,7 +23,6 @@
   roles:
     - role: system
       tags: ["system"]
-      become: true
 
     - role: network
       tags: ["network"]
@@ -42,7 +41,6 @@
 
     - role: wm
       tags: ["wm"]
-      become: true
 
     - role: gui
       tags: ["gui"]

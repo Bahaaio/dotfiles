@@ -5,6 +5,4 @@
       - yazi-build
       - impala
       - bluetui
-  handlers:
-    - name: Install yazi packages
-      command: ya pkg install
+  notify: install yazi packages

@@ -8,7 +8,7 @@
     horizontal_padding = 12
     frame_width = 2
     idle_threshold = 120
-    frame_color = "#343746"
+    frame_color = "#343746b3"
     font = Roboto mono 12
     markup = full
     show_indicators = false
@@ -20,15 +20,15 @@
     corner_radius = 20
     mouse_left_click = do_action, close_current
 [urgency_low]
-    background = "#1b1b25"
+    background = "#1b1b25b3"
     foreground = "#dedede"
     timeout = 5
 [urgency_normal]
-    background = "#1b1b25"
+    background = "#1b1b25b3"
     foreground = "#dedede"
     timeout = 5
 [urgency_critical]
-    background = "#1b1b25"
+    background = "#1b1b25b3"
     foreground = "#dedede"
     frame_color = "#f07178"
     timeout = 0

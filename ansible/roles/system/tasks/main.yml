@@ -25,6 +25,7 @@
     name:
       - tlp
       - tlp-rdw
+      - keyd
       - playerctl
       - brightnessctl
     state: present
@@ -48,3 +49,16 @@
     enabled: true
     state: started
   become: true
+
+- name: Deploy keyd configuration
+  copy:
+    content: |
+      [ids]
+      *
+      [main]
+      capslock = esc
+      esc = capslock
+    dest: /etc/keyd/default.conf
+    mode: "0644"
+  become: true
+  notify: restart keyd

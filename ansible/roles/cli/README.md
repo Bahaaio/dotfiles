@@ -5,7 +5,7 @@ Installs command-line tools and terminal applications.
 ## What it does
 
 - **APT tools**: tmux, btop, lsd, gh, fd, bat, ripgrep, and more
-- **Cargo tools**: zoxide, yazi, impala (WiFi TUI), bluetui
+- **Cargo tools**: zoxide, yazi
 - **Go tools**: lazydocker, pomo, vhs, goreleaser
 - **NPM tools**: opencode-ai
 - **Neovim**: Builds latest from source

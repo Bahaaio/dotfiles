@@ -18,6 +18,7 @@ alias lta='ls --tree -a'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+alias .....='cd ../../../..'
 -() { cd - }
 
 # core-utils
@@ -28,6 +29,7 @@ alias c='clear'
 alias cat='batcat'
 alias rg='rg --hidden --follow'
 alias less='less -R'
+man() { command man "$@" | batcat -pl man; }
 
 # nala
 alias install='sudo nala install'

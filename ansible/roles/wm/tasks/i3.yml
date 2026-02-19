@@ -2,7 +2,6 @@
   apt:
     name:
       - i3-wm
-      - i3lock
       - xss-lock
       - polybar
       - picom
@@ -27,3 +26,6 @@
     src: "{{ ansible_env.HOME }}/.zshenv"
     dest: "{{ ansible_env.HOME }}/.profile"
     state: link
+
+- name: Include betterlockscreen setup
+  include_tasks: betterlockscreen.yml

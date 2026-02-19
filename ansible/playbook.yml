@@ -24,6 +24,9 @@
     - role: system
       tags: ["system"]
 
+    - role: dotfiles
+      tags: ["dotfiles"]
+
     - role: network
       tags: ["network"]
 
@@ -44,6 +47,3 @@
 
     - role: gui
       tags: ["gui"]
-
-    - role: dotfiles
-      tags: ["dotfiles"]

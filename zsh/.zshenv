@@ -35,7 +35,7 @@ export FNM_PATH="$XDG_DATA_HOME/fnm"
 export PATH="$FNM_PATH:$PATH"
 
 # golang
-export GOPATH="$HOME/.local/share/go"
+export GOPATH="$XDG_DATA_HOME/go"
 export PATH="/usr/local/go/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 

@@ -1,0 +1,11 @@
+- name: Set GTK theme to dark
+  ini_file:
+    path: "{{ item }}"
+    section: Settings
+    option: gtk-application-prefer-dark-theme
+    value: "1"
+    no_extra_spaces: true
+    mode: "0644"
+  loop:
+    - "{{ ansible_env.HOME }}/.config/gtk-3.0/settings.ini"
+    - "{{ ansible_env.HOME }}/.config/gtk-4.0/settings.ini"

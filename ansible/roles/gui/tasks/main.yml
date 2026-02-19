@@ -1,3 +1,6 @@
+- name: Include gtk dark theme
+  include_tasks: dark-theme.yml
+
 - name: Include apt-based GUI apps
   include_tasks: apt.yml
 

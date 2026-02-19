@@ -33,12 +33,13 @@ man() { command man "$@" | batcat -pl man; }
 
 # nala
 alias install='sudo nala install'
+alias remove='sudo nala remove'
 alias update='sudo nala upgrade'
-alias list='sudo nala list -u'
+alias undo='sudo nala undo'
 alias show='nala show'
 alias search='nala search'
 alias purge='sudo nala purge'
-alias remove='sudo nala remove'
+alias list='sudo nala list -u'
 alias autoremove='sudo nala autoremove --purge'
 
 # zsh

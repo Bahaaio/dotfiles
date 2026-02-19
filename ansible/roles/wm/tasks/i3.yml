@@ -17,5 +17,13 @@
       - xsensors
       - network-manager
       - numlockx
+      - gnome-calendar
+      - gnome-weather
     state: present
   become: true
+
+- name: Symlink .zshenv to .profile
+  file:
+    src: "{{ ansible_env.HOME }}/.zshenv"
+    dest: "{{ ansible_env.HOME }}/.profile"
+    state: link

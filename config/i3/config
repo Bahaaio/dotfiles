@@ -234,9 +234,10 @@ bindsym $mod+r mode "resize"
 default_border none
 default_floating_border none
 for_window [class="copyq"] floating enable
+for_window [class="pavucontrol"] floating enable
+for_window [class="wezfloat"] floating enable
 for_window [class="gnome-control-center"] floating enable
 for_window [class="Nautilus"] floating enable
-for_window [class="Ulauncher"] border pixel 0
 for_window [class="Localsend"] floating enable
 for_window [class="discord"] move to workspace $ws9
 for_window [class="ZapZap"] move to workspace $ws10

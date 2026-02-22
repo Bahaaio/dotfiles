@@ -41,21 +41,19 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen --lock -
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 # exec --no-startup-id nm-applet
 
-# toggle touchpad
-bindsym XF86TouchpadToggle exec ~/.local/bin/toggle-touchpad.sh
+# touchpad toggle
+bindsym XF86TouchpadToggle exec --no-startup-id ~/.local/bin/toggle-touchpad.sh
+
+# media control
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # volume control
 bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.local/bin/volume.sh 5%+
 bindsym XF86AudioLowerVolume exec --no-startup-id ~/.local/bin/volume.sh 5%-
 bindsym XF86AudioMute        exec --no-startup-id ~/.local/bin/volume.sh toggleMute
 bindsym XF86AudioMicMute     exec --no-startup-id ~/.local/bin/toggle-mic.sh
-
-# play/pause media
-bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
-
-# previous/next media
-bindsym XF86AudioNext exec --no-startup-id playerctl next
-bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # brightness control
 bindsym XF86MonBrightnessUp         exec --no-startup-id ~/.local/bin/brightness.sh 2%+
@@ -73,11 +71,11 @@ bindsym $mod+Return exec wezterm -e tmux
 # kill focused window
 bindsym $mod+q kill
 
-# rofi powermenu
-bindsym $mod+x exec --no-startup-id ~/.config/rofi/powermenu/powermenu.sh
-
 # file explorer
 bindsym $mod+e exec --no-startup-id nautilus &
+
+# rofi powermenu
+bindsym $mod+x exec --no-startup-id ~/.config/rofi/powermenu/powermenu.sh
 
 # startup and workspace rules
 exec --no-startup-id $browser

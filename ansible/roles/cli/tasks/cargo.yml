@@ -1,3 +1,14 @@
+- name: Install yazi dependencies
+  apt:
+    name:
+      - imagemagick
+      - resvg
+      - 7zip
+      - poppler-utils
+      - ffmpeg
+    state: present
+  become: true
+
 - name: Install cargo tools
   community.general.cargo:
     name:

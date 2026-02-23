@@ -26,6 +26,7 @@ set surround
 set which-key
 set highlightedyank
 set argtextobj
+set textobj-indent
 set functiontextobj
 set easymotion
 
@@ -94,7 +95,7 @@ let g:WhichKeyDesc_find_recent_files = "<leader>fr Find recent files"
 let g:WhichKeyDesc_find_locations= "<leader>fl Find recent locations"
 nmap <leader>ff <Action>(GotoFile)
 nmap <leader>fr <Action>(RecentFiles)
-map <leader>fl <action>(RecentLocations)
+map <leader>fl <Action>(RecentLocations)
 
 " Goto
 let g:WhichKeyDesc_goto = "g Goto"
@@ -293,5 +294,4 @@ nmap <leader>tc <Action>(RunCoverage)
 " remove easymotion space + space
 unmap <space><space>
 
-" TODO: multiple cursors
 " TODO: exchange plugin

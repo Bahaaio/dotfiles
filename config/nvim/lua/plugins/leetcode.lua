@@ -4,7 +4,6 @@ return {
   "kawre/leetcode.nvim",
   build = ":TSUpdate html",
   dependencies = {
-    "nvim-telescope/telescope.nvim",
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
     "folke/tokyonight.nvim",
@@ -17,9 +16,9 @@ return {
   lazy = leet_arg ~= vim.fn.argv(0, -1),
   opts = {
     arg = leet_arg,
+    image_support = true,
     lang = "cpp",
     storage = { home = "~/code/competetive/leetcode/" },
-    picker = { provider = "telescope" },
     injector = {
       ["cpp"] = {
         imports = function()

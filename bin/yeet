@@ -1,0 +1,86 @@
+#!/usr/bin/env bash
+
+# Yeet all changes to the current branch with a single command.
+
+set -e
+
+RED='\033[0;31m'
+GRAY='\033[0;90m'
+CLEAR='\033[0m'
+ALT_SCREEN_ON='\033[?1049h'
+ALT_SCREEN_OFF='\033[?1049l'
+
+abort() {
+  echo ""
+  echo -e "${RED}Aborting.${CLEAR}"
+  exit 1
+}
+
+trap abort SIGINT
+
+usage() {
+  echo "Usage: yeet [commit-message]"
+  echo "Yeets all changes to the current branch."
+  echo "Press Enter to yeet, or C to view changes."
+}
+
+if [[ "$1" == "--help" ]]; then
+  usage
+  exit 0
+fi
+
+if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+  echo -e "${RED}Error: not in a git repository.${CLEAR}"
+  echo ""
+  usage
+  exit 1
+fi
+
+git add --all
+
+if git diff --cached --quiet; then
+  echo "No changes to commit."
+  exit 0
+fi
+
+git diff --compact-summary --cached
+
+echo ""
+echo -e "${GRAY}[Enter] Yeet changes [C] View changes [Q] Cancel${CLEAR}"
+
+while true; do
+  read -n 1 -s -r key
+
+  case "$key" in
+  "")
+    break
+    ;;
+  'c' | 'C')
+    echo -e "${ALT_SCREEN_ON}"
+    git diff --cached --color | less -RX
+    echo -ne "${ALT_SCREEN_OFF}"
+    ;;
+  'q' | 'Q')
+    echo ""
+    echo "Cancelled."
+    exit 0
+    ;;
+  *)
+    abort
+    ;;
+  esac
+done
+
+echo ""
+
+if [ -z "$1" ]; then
+  git commit
+else
+  git commit -m "$1"
+fi
+
+if ! git push >/dev/null 2>&1; then
+  echo ""
+  echo -e "${RED}Error: failed to push changes.${CLEAR}"
+  exit 1
+fi

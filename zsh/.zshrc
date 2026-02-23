@@ -46,10 +46,11 @@ zinit snippet OMZP::sudo
 # Completion styling
 eval "$(dircolors -b)" # Enable colors
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} # Enable ls colors
+zstyle ':completion:*' menu no # disable zsh menu
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' 'l:|=* r:|=*' # Case-insensitive + substring matching
-# zstyle ':completion:*' menu select # Enable menu selection
-zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd --tree --depth=1 --color=always $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd --tree --depth=1 --color=always --icon=always $realpath'
+zstyle ':completion:*' sort false # disable sorting (preserve order)
+zstyle ':completion:*:cd:*' sort true # enable sorting for cd completions
 
 # keybindings
 bindkey -e # emacs key bindings

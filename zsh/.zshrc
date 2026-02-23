@@ -85,6 +85,7 @@ source ~/.functions.zsh
 # ============================================================================
 
 # fzf
+export FZF_DEFAULT_OPTS='--reverse --border'
 source <(fzf --zsh)
 
 # zoxide

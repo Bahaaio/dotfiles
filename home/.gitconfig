@@ -3,6 +3,7 @@
 	email = bahaa-dev@proton.me
 	signingkey = 7427A4ABCCFD30AB
 [core]
+	pager = delta
 	autocrlf = input
 	excludesfile = $HOME/.gitignore_global
 [commit]
@@ -15,3 +16,7 @@
 	defaultbranch = main
 [diff]
 	algorithm = histogram
+[delta]
+    dark = true
+    navigate = true
+    hunk-header-style = syntax

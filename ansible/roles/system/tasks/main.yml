@@ -2,6 +2,7 @@
   apt:
     name:
       - git
+      - git-delta
       - zsh
       - stow
       - curl

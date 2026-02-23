@@ -28,6 +28,7 @@ alias mv='mv -iv'
 alias c='clear'
 alias cat='batcat'
 alias rg='rg --hidden --follow'
+alias diff='delta --dark'
 alias less='less -R'
 man() { command man "$@" | batcat -pl man; }
 

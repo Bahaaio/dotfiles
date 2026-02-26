@@ -13,5 +13,5 @@ sudo apt install -y python3-pint python3-simpleeval python3-parsedatetime python
 ### Emoji
 
 ```bash
-sudo apt install -y python3-requests python3-requests python3-lxml
+sudo apt install -y python3-requests python3-lxml
 ```

@@ -12,6 +12,16 @@ return {
     end,
   },
 
+  -- silence hover not available
+  {
+    "folke/noice.nvim",
+    opts = {
+      lsp = {
+        hover = { silent = true },
+      },
+    },
+  },
+
   {
     "akinsho/bufferline.nvim",
     opts = {

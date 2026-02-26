@@ -5,3 +5,18 @@
       - ulauncher
     state: present
   become: true
+
+- name: Install ulauncher extension dependencies
+  apt:
+    name:
+      # calculate anything
+      - python3-pint
+      - python3-simpleeval
+      - python3-parsedatetime
+      - python3-pytz
+
+      # emoji
+      - python3-requests
+      - python3-lxml
+    state: present
+  become: true

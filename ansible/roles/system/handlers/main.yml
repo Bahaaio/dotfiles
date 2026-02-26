@@ -1,5 +1,6 @@
-- name: restart keyd
+- name: enable and restart keyd
   systemd:
     name: keyd
+    enabled: true
     state: restarted
   become: true

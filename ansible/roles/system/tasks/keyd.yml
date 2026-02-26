@@ -1,0 +1,24 @@
+- name: Clone keyd repository
+  git:
+    repo: "https://github.com/rvaiya/keyd"
+    dest: "{{ xdg_data_home }}/keyd"
+    version: "master"
+
+- name: Build and install keyd
+  community.general.make:
+    chdir: "{{ xdg_data_home }}/keyd"
+    target: "install"
+  become: true
+
+- name: Deploy keyd configuration
+  copy:
+    content: |
+      [ids]
+      *
+      [main]
+      capslock = esc
+      esc = capslock
+    dest: /etc/keyd/default.conf
+    mode: "0644"
+  become: true
+  notify: enable and restart keyd

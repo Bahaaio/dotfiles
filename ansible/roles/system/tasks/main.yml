@@ -26,7 +26,6 @@
     name:
       - tlp
       - tlp-rdw
-      - keyd
       - playerctl
       - brightnessctl
     state: present
@@ -51,18 +50,8 @@
     state: started
   become: true
 
-- name: Deploy keyd configuration
-  copy:
-    content: |
-      [ids]
-      *
-      [main]
-      capslock = esc
-      esc = capslock
-    dest: /etc/keyd/default.conf
-    mode: "0644"
-  become: true
-  notify: restart keyd
+- name: Include keyd installation
+  import_tasks: keyd.yml
 
 - name: Configure firewall
   import_tasks: ufw.yml

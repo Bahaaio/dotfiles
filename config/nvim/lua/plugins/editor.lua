@@ -2,9 +2,6 @@ return {
   {
     "kylechui/nvim-surround",
     event = "VeryLazy",
-    config = function()
-      require("nvim-surround").setup({})
-    end,
   },
 
   {
@@ -59,12 +56,19 @@ return {
     opts = {
       picker = {
         reverse = false,
+        win = {
+          input = {
+            keys = {
+              ["<Esc>"] = { "close", mode = { "n", "i" } },
+            },
+          },
+        },
         sources = {
           files = {
             layout = { preview = false },
             hidden = true,
           },
-          -- explorer (snacks picker)
+          -- explorer
           explorer = {
             hidden = true,
             win = {

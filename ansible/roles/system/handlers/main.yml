@@ -1,4 +1,4 @@
-- name: enable and restart keyd
+- name: enable keyd
   systemd:
     name: keyd
     enabled: true

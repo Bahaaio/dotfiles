@@ -4,7 +4,12 @@
     dest: "{{ xdg_data_home }}/keyd"
     version: "master"
 
-- name: Build and install keyd
+- name: Build keyd
+  community.general.make:
+    chdir: "{{ xdg_data_home }}/keyd"
+  become: true
+
+- name: Install keyd
   community.general.make:
     chdir: "{{ xdg_data_home }}/keyd"
     target: "install"
@@ -21,4 +26,4 @@
     dest: /etc/keyd/default.conf
     mode: "0644"
   become: true
-  notify: enable and restart keyd
+  notify: enable keyd

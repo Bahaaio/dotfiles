@@ -1,5 +1,6 @@
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "go",
+  once = true,
 
   callback = function()
     local go_term = require("toggleterm.terminal").Terminal:new({
@@ -11,7 +12,7 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.keymap.set("n", "<leader>r", function()
       vim.cmd("write")
       go_term:toggle()
-    end, { buffer = true, noremap = true, silent = true, desc = "Run golang project" })
+    end, { noremap = true, silent = true, desc = "Run golang project" })
   end,
 })
 

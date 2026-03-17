@@ -16,7 +16,6 @@
       - ca-certificates
       - gnupg
       - apt-transport-https
-      - software-properties-common
     state: present
     update_cache: true
   become: true

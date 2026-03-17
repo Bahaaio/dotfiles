@@ -11,3 +11,11 @@
   args:
     executable: /bin/bash
     creates: "{{ sdkman_dir }}/candidates/java/current"
+
+- name: Install Maven via SDKMAN
+  shell: |
+    source {{ sdkman_dir }}/bin/sdkman-init.sh
+    sdk install maven
+  args:
+    executable: /bin/bash
+    creates: "{{ sdkman_dir }}/candidates/maven/current"

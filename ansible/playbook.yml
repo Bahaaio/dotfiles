@@ -13,6 +13,7 @@
     GOPATH: "{{ gopath }}"
     CARGO_HOME: "{{ cargo_home }}"
     RUSTUP_HOME: "{{ rustup_home }}"
+    PATH: "{{ cargo_home }}/bin:{{ ansible_env.PATH }}"
 
   pre_tasks:
     - name: Ensure we're running on Debian-based system
@@ -27,6 +28,9 @@
     - role: dotfiles
       tags: ["dotfiles"]
 
+    - role: dev
+      tags: ["dev"]
+
     - role: network
       tags: ["network"]
 
@@ -35,9 +39,6 @@
 
     - role: audio
       tags: ["audio"]
-
-    - role: dev
-      tags: ["dev"]
 
     - role: cli
       tags: ["cli"]

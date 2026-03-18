@@ -7,13 +7,13 @@
 - name: Configure ufw defaults - deny incoming
   ufw:
     direction: incoming
-    policy: deny
+    default: deny
   become: true
 
 - name: Configure ufw defaults - allow outgoing
   ufw:
     direction: outgoing
-    policy: allow
+    default: allow
   become: true
 
 - name: Allow LocalSend UDP

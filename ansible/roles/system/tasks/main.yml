@@ -54,3 +54,5 @@
 
 - name: Configure firewall
   import_tasks: ufw.yml
+  environment:
+    PATH: "/sbin:{{ ansible_env.PATH }}"

@@ -8,7 +8,7 @@
 
 - name: Uninstall wpa_supplicant
   apt:
-    name: wpa_supplicant
+    name: wpasupplicant
     state: absent
   become: true
 

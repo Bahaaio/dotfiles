@@ -4,7 +4,15 @@
     state: present
   become: true
 
-- name: Install Bluetui
+- name: Install bluetui dependencies
+  apt:
+    name:
+      - libdbus-1-dev
+      - pkg-config
+    state: present
+  become: true
+
+- name: Install bluetui
   community.general.cargo:
     name:
       - bluetui

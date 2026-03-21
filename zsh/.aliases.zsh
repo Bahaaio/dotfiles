@@ -27,7 +27,7 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 alias c='clear'
 alias cat='batcat'
-alias rg='rg --hidden --follow'
+alias rg='rg --glob="!.git" --hidden --follow'
 alias diff='delta --dark'
 alias less='less -R'
 man() { command man "$@" | batcat -pl man; }
@@ -42,6 +42,10 @@ alias search='nala search'
 alias purge='sudo nala purge'
 alias list='sudo nala list -u'
 alias autoremove='sudo nala autoremove --purge'
+
+# apt
+alias depends='apt depends'
+alias rdepends='apt rdepends'
 
 # zsh
 alias src='source ~/.zshrc'

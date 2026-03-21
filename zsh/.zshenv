@@ -26,7 +26,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # node.js
 export NPM_CONFIG_CACHE="$XDG_DATA_HOME/npm"
 export FNM_PATH="$XDG_DATA_HOME/fnm"
-export PATH="$FNM_PATH:$PATH"
 
 # golang
 export GOPATH="$XDG_DATA_HOME/go"

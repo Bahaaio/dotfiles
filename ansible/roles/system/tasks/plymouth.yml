@@ -1,0 +1,59 @@
+- name: Install plymouth
+  apt:
+    name:
+      - plymouth
+      - plymouth-themes
+    state: present
+  become: true
+
+- name: Check current Plymouth theme
+  command: plymouth-set-default-theme
+  register: current_theme
+  changed_when: false
+  become: true
+
+- name: Set Plymouth {{ plymouth_theme }} theme
+  command: plymouth-set-default-theme -R {{ plymouth_theme }}
+  when: current_theme.stdout != plymouth_theme
+  changed_when: true
+  become: true
+
+- name: Ensure GRUB_CMDLINE_LINUX_DEFAULT has quiet
+  lineinfile:
+    backup: true
+    path: /etc/default/grub
+    regexp: '^GRUB_CMDLINE_LINUX_DEFAULT=".*\bquiet\b'
+    state: absent
+  check_mode: true
+  register: grub_quiet_check
+  changed_when: false
+
+- name: Insert quiet if missing
+  lineinfile:
+    backrefs: true
+    path: /etc/default/grub
+    regexp: '^(GRUB_CMDLINE_LINUX_DEFAULT=".*)"$'
+    line: '\1 quiet"'
+  when: grub_quiet_check.found == 0
+  become: true
+  notify: update grub
+
+- name: Ensure GRUB_CMDLINE_LINUX_DEFAULT has splash
+  lineinfile:
+    backup: true
+    path: /etc/default/grub
+    regexp: '^GRUB_CMDLINE_LINUX_DEFAULT=".*\bsplash\b'
+    state: absent
+  check_mode: true
+  register: grub_splash_check
+  changed_when: false
+
+- name: Insert splash if missing
+  lineinfile:
+    backrefs: true
+    path: /etc/default/grub
+    regexp: '^(GRUB_CMDLINE_LINUX_DEFAULT=".*)"$'
+    line: '\1 splash"'
+  when: grub_splash_check.found == 0
+  become: true
+  notify: update grub

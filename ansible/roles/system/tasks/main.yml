@@ -49,10 +49,11 @@
     state: started
   become: true
 
+- name: Include plymouth installation
+  import_tasks: plymouth.yml
+
 - name: Include keyd installation
   import_tasks: keyd.yml
 
 - name: Configure firewall
   import_tasks: ufw.yml
-  environment:
-    PATH: "/sbin:{{ ansible_env.PATH }}"

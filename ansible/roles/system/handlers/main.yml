@@ -4,3 +4,8 @@
     enabled: true
     state: restarted
   become: true
+
+- name: update grub
+  command: update-grub
+  changed_when: true
+  become: true

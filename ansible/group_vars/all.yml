@@ -2,6 +2,7 @@
 dotfiles_dir: "{{ ansible_env.HOME }}/dotfiles"
 wallpapers_dir: "{{ ansible_env.HOME }}/Pictures/wallpapers"
 wallpapers_repo: "https://github.com/Bahaaio/wallpapers.git"
+plymouth_theme: "bgrt"
 
 # XDG Base Directories
 xdg_data_home: "{{ ansible_env.HOME }}/.local/share"
@@ -20,3 +21,4 @@ gopath: "{{ xdg_data_home }}/go"
 fnm_path: "{{ xdg_data_home }}/fnm"
 npm_cache: "{{ xdg_data_home }}/npm"
 sdkman_dir: "{{ ansible_env.HOME }}/.sdkman"
+path: "{{ cargo_home }}/bin:/sbin:/usr/sbin:{{ ansible_env.PATH }}"

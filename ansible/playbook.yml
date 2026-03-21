@@ -13,7 +13,7 @@
     GOPATH: "{{ gopath }}"
     CARGO_HOME: "{{ cargo_home }}"
     RUSTUP_HOME: "{{ rustup_home }}"
-    PATH: "{{ cargo_home }}/bin:{{ ansible_env.PATH }}"
+    PATH: "{{ path }}"
 
   pre_tasks:
     - name: Ensure we're running on Debian-based system

@@ -1,0 +1,17 @@
+- name: Install Bluetooth
+  apt:
+    name: bluetooth
+    state: present
+  become: true
+
+- name: Install Bluetui
+  community.general.cargo:
+    name:
+      - bluetui
+
+- name: Enable Bluetooth service
+  systemd:
+    name: bluetooth
+    enabled: true
+    state: started
+  become: true

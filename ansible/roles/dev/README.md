@@ -8,6 +8,6 @@ Installs development tools and language runtimes.
 - **Rust**: Installs Rustup and Rust toolchain (XDG-compliant paths)
 - **Go**: Installs Go from apt repositories
 - **Node.js**: Installs FNM (Fast Node Manager) and Node.js LTS
-- **Java**: Installs SDKMAN and Java via SDKMAN
+- **Java**: Installs Java and Maven from apt repositories
 
 All tools use XDG Base Directory specification for configuration and data.

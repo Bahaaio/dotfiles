@@ -20,8 +20,8 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # bin
 export PATH="$HOME/.local/bin:$PATH"
 
-# SDKMAN
-export SDKMAN_DIR="$HOME/.sdkman"
+# java
+export JAVA_HOME="/usr/lib/jvm/java-25-openjdk-amd64/"
 
 # node.js
 export NPM_CONFIG_CACHE="$XDG_DATA_HOME/npm"

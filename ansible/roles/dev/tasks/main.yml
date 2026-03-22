@@ -10,5 +10,5 @@
 - name: Include Node.js installation
   include_tasks: nodejs.yml
 
-- name: Include SDKMAN and Java installation
-  include_tasks: sdkman.yml
+- name: Include Java installation
+  include_tasks: java.yml

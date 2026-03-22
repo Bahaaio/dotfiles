@@ -91,8 +91,5 @@ source <(fzf --zsh)
 # zoxide
 eval "$(zoxide init --cmd cd zsh)"
 
-# SDKMAN
-[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
-
 # fnm
 eval "$(fnm env)"

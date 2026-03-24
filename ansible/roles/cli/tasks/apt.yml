@@ -9,7 +9,6 @@
       - ripgrep
       - bat
       - trash-cli
-      - nautilus
       - jq
       - zip
       - unzip

@@ -1,8 +1,3 @@
-- name: Check if JetBrains Mono Nerd Font is already installed
-  stat:
-    path: "{{ fonts_dir }}/JetBrainsMono/JetBrains-Mono-Nerd-Font-Complete.ttf"
-  register: font_file
-
 - name: Install font dependencies
   apt:
     name:
@@ -10,6 +5,11 @@
       - fontconfig
     state: present
   become: true
+
+- name: Check if JetBrains Mono Nerd Font is already installed
+  stat:
+    path: "{{ fonts_dir }}/JetBrainsMono"
+  register: font_file
 
 - name: Create fonts directory
   file:
@@ -39,6 +39,6 @@
   when: not font_file.stat.exists
 
 - name: Refresh font cache
-  command: fc-cache -fv
+  command: fc-cache -f
   changed_when: not font_file.stat.exists
   when: not font_file.stat.exists

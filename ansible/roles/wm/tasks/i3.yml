@@ -11,7 +11,7 @@
       - flameshot
       - copyq
       - xclip
-      - xsensors
+      - xinput
       - redshift-gtk
       - xsensors
       - network-manager

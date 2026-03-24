@@ -1,8 +1,3 @@
-- name: Check if nvim is installed
-  stat:
-    path: /usr/local/bin/nvim
-  register: nvim_binary
-
 - name: Install nvim build dependencies
   apt:
     name:
@@ -19,7 +14,11 @@
       - pkg-config
     state: present
   become: true
-  when: not nvim_binary.stat.exists
+
+- name: Check if nvim is installed
+  stat:
+    path: /usr/local/bin/nvim
+  register: nvim_binary
 
 - name: Clone neovim repository
   git:

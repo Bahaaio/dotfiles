@@ -1,42 +1,29 @@
-- name: Install nvim build dependencies
+- name: Install neovim build dependencies
   apt:
     name:
       - g++
-      - cmake
       - curl
-      - unzip
-      - ninja-build
+      - cmake
       - gettext
-      - libtool
-      - libtool-bin
-      - autoconf
-      - automake
-      - pkg-config
+      - ninja-build
+      - build-essential
     state: present
   become: true
-
-- name: Check if nvim is installed
-  stat:
-    path: /usr/local/bin/nvim
-  register: nvim_binary
 
 - name: Clone neovim repository
   git:
     repo: https://github.com/neovim/neovim
     dest: "{{ ansible_env.HOME }}/github/neovim"
     version: master
-  when: not nvim_binary.stat.exists
 
-- name: Build nvim release version
+- name: Build neovim
   community.general.make:
     chdir: "{{ ansible_env.HOME }}/github/neovim"
     params:
       CMAKE_BUILD_TYPE: Release
-  when: not nvim_binary.stat.exists
 
-- name: Install nvim release version
+- name: Install neovim
   community.general.make:
     chdir: "{{ ansible_env.HOME }}/github/neovim"
     target: install
   become: true
-  when: not nvim_binary.stat.exists

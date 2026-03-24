@@ -1,10 +1,10 @@
 - name: Install GNOME Desktop
   apt:
     name:
+      - desktop-base
       - gnome-core
       - gnome-tweaks
       - gnome-shell-extensions
       - gnome-shell-extension-manager
-      - gnome-shell-extension-system-monitor
     state: present
   become: true

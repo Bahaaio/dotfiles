@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Script to adjust screen brightness, show a notification, and play a sound.
-# Requires: brightnessctl, dunstify, and paplay with freedesktop sound theme
+# Requires: brightnessctl, dunstify
 # Usage: brightness.sh [brightnessctl arguments]
 # Example: brightness.sh 10%+   # increases brightness by 10%
 
@@ -16,4 +16,4 @@ brightness_percentage=$(brightnessctl | awk -F'[()]' '/Current brightness/ {prin
 
 # Show the brightness notification
 dunstify -a "brightness" -u low -h string:x-dunst-stack-tag:$msgTag \
-    -h int:value:"$brightness_percentage" "🔆 Brightness: ${brightness_percentage}%"
+  -h int:value:"$brightness_percentage" "🔆 Brightness: ${brightness_percentage}%"

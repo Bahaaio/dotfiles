@@ -22,28 +22,28 @@
 
   roles:
     - role: system
-      tags: ["system"]
+      tags: system
 
     - role: dotfiles
-      tags: ["dotfiles"]
+      tags: dotfiles
 
     - role: dev
-      tags: ["dev"]
+      tags: dev
 
     - role: network
-      tags: ["network"]
+      tags: network
 
     - role: fonts
-      tags: ["fonts"]
+      tags: fonts
 
     - role: audio
-      tags: ["audio"]
+      tags: audio
 
     - role: cli
-      tags: ["cli"]
+      tags: cli
 
     - role: wm
-      tags: ["wm"]
+      tags: wm
 
     - role: gui
-      tags: ["gui"]
+      tags: gui

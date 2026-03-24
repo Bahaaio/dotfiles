@@ -1,0 +1,50 @@
+- name: Install base packages
+  apt:
+    name:
+      - git
+      - git-delta
+      - zsh
+      - stow
+      - curl
+      - wget
+      - nala
+      - g++
+      - build-essential
+      - zip
+      - unzip
+      - jq
+      - ca-certificates
+      - gnupg
+      - apt-transport-https
+    state: present
+    update_cache: true
+  become: true
+
+- name: Install system utilities
+  apt:
+    name:
+      - tlp
+      - tlp-rdw
+      - playerctl
+      - brightnessctl
+    state: present
+  become: true
+
+- name: Set zsh as default shell
+  user:
+    name: "{{ ansible_user_id }}"
+    shell: /usr/bin/zsh
+  become: true
+
+- name: Ensure ~/.local/bin directory exists
+  file:
+    path: "{{ bin_dir }}"
+    state: directory
+    mode: "0755"
+
+- name: Enable TLP service
+  systemd:
+    name: tlp
+    enabled: true
+    state: started
+  become: true

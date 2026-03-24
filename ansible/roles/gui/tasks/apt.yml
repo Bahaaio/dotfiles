@@ -36,10 +36,16 @@
         signed_by: https://repo.protonvpn.com/debian/public_key.asc
         state: present
 
+    - name: Check ticktick installation
+      stat:
+        path: /usr/bin/ticktick
+      register: ticktick_check
+
     - name: Install ticktick
       apt:
         deb: https://www.ticktick.com/static/getApp/download?type=linux_deb_x64
         state: present
+      when: not ticktick_check.stat.exists
 
     - name: Install packages
       apt:

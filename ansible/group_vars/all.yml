@@ -3,6 +3,7 @@ dotfiles_dir: "{{ ansible_env.HOME }}/dotfiles"
 wallpapers_dir: "{{ ansible_env.HOME }}/Pictures/wallpapers"
 wallpapers_repo: "https://github.com/Bahaaio/wallpapers.git"
 plymouth_theme: "bgrt"
+ulauncher_version: "5.15.15"
 
 # XDG Base Directories
 xdg_data_home: "{{ ansible_env.HOME }}/.local/share"

@@ -1,8 +1,27 @@
-- name: Install rofi and ulauncher
+- name: Check installed Ulauncher version
+  command: dpkg-query -W -f='${Version}' ulauncher
+  register: ulauncher_installed
+  failed_when: false
+  changed_when: false
+
+- name: Download Ulauncher
+  get_url:
+    url: "https://github.com/Ulauncher/Ulauncher/releases/download/{{ulauncher_version}}/ulauncher_{{ulauncher_version}}_all.deb"
+    dest: /tmp/ulauncher_{{ulauncher_version}}_all.deb
+    mode: "0644"
+  when: ulauncher_installed.stdout != ulauncher_version
+
+# for some reason, using apt module with deb has dependency issues
+- name: Install Ulauncher
+  command: apt install -y /tmp/ulauncher_{{ulauncher_version}}_all.deb
+  args:
+    creates: /usr/bin/ulauncher
+  become: true
+  when: ulauncher_installed.stdout != ulauncher_version
+
+- name: Install rofi
   apt:
-    name:
-      - rofi
-      - ulauncher
+    name: rofi
     state: present
   become: true
 

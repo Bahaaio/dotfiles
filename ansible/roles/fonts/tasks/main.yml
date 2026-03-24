@@ -11,29 +11,9 @@
     path: "{{ fonts_dir }}/JetBrainsMono"
   register: font_file
 
-- name: Create fonts directory
-  file:
-    path: "{{ fonts_dir }}"
-    state: directory
-    mode: "0755"
-
-- name: Download JetBrains Mono Nerd Font
-  get_url:
-    url: "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip"
-    dest: "/tmp/JetBrainsMono.zip"
-    mode: "0644"
-  when: not font_file.stat.exists
-
-- name: Create font subdirectory
-  file:
-    path: "{{ fonts_dir }}/JetBrainsMono"
-    state: directory
-    mode: "0755"
-  when: not font_file.stat.exists
-
-- name: Extract JetBrains Mono Nerd Font
+- name: Download and extract JetBrains Mono Nerd Font
   unarchive:
-    src: "/tmp/JetBrainsMono.zip"
+    src: "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip"
     dest: "{{ fonts_dir }}/JetBrainsMono"
     remote_src: true
   when: not font_file.stat.exists

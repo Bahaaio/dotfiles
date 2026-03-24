@@ -12,6 +12,3 @@
 
 - name: Include neovim installation
   include_tasks: neovim.yml
-
-- name: Include wezterm installation
-  include_tasks: wezterm.yml

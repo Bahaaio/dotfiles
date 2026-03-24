@@ -1,9 +1,43 @@
 - name: Install GUI apps from apt
-  apt:
-    name:
+  become: true
+  vars:
+    gui_packages:
       - vlc
       - mpv
+      - wezterm
+      - dbeaver-ce
       - nautilus
       - obs-studio
-    state: present
-  become: true
+      - proton-vpn-gnome-desktop
+  block:
+    - name: Add WezTerm repository
+      deb822_repository:
+        name: wezterm
+        uris: https://apt.fury.io/wez/
+        suites: "*"
+        components: "*"
+        signed_by: https://apt.fury.io/wez/gpg.key
+        state: present
+
+    - name: Add DBeaver repository
+      deb822_repository:
+        name: dbeaver
+        uris: https://dbeaver.io/debs/dbeaver-ce
+        suites: /
+        signed_by: https://dbeaver.io/debs/dbeaver.gpg.key
+        state: present
+
+    - name: Add Proton VPN repository
+      deb822_repository:
+        name: protonvpn-stable
+        uris: https://repo.protonvpn.com/debian
+        suites: stable
+        components: main
+        signed_by: https://repo.protonvpn.com/debian/public_key.asc
+        state: present
+
+    - name: Install packages
+      apt:
+        name: "{{ gui_packages }}"
+        state: present
+        update_cache: true

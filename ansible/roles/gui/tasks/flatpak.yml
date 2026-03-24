@@ -18,5 +18,4 @@
       - app.zen_browser.Zen
       - com.rtosta.zapzap
       - org.localsend.localsend_app
-      - io.dbeaver.DBeaverCommunity
     state: present

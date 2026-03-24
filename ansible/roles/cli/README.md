@@ -9,6 +9,5 @@ Installs command-line tools and terminal applications.
 - **Go tools**: lazydocker, pomo, vhs, goreleaser
 - **NPM tools**: opencode-ai
 - **Neovim**: Builds latest from source
-- **WezTerm**: Installs from official repository
 
 All tools are installed to XDG-compliant paths where applicable.

@@ -4,7 +4,7 @@ Installs graphical applications.
 
 ## What it does
 
-- **APT apps**: VLC, MPV, Nautilus, OBS, protonvpn
+- **APT apps**: WezTerm, VLC, MPV, Nautilus, OBS, protonvpn, dbeaver
 - **Flatpak apps**: Discord, Postman, Zen Browser, ZapZap, Localsend
 - **JetBrains Toolbox**: IDE manager for JetBrains IDEs
 

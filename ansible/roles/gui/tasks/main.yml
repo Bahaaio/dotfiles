@@ -6,6 +6,3 @@
 
 - name: Include JetBrains Toolbox installation
   include_tasks: jetbrains.yml
-
-- name: Include Proton VPN installation
-  include_tasks: protonvpn.yml

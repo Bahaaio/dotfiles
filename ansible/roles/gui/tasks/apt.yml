@@ -36,6 +36,11 @@
         signed_by: https://repo.protonvpn.com/debian/public_key.asc
         state: present
 
+    - name: Install ticktick
+      apt:
+        deb: https://www.ticktick.com/static/getApp/download?type=linux_deb_x64
+        state: present
+
     - name: Install packages
       apt:
         name: "{{ gui_packages }}"

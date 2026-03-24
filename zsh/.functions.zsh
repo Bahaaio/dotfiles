@@ -19,6 +19,15 @@ function dclear() {
     docker volume rm -f $(docker volume ls -q) >/dev/null 2>&1 || true # remove all volumes
 }
 
+# yazi cd on exit
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
 # exercism download
 exercism () {
     if [[ $1 == "download" ]]; then

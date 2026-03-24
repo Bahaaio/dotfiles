@@ -57,7 +57,6 @@ alias ef='nvim ~/.functions.zsh'
 # utils
 alias ai='opencode'
 alias vim='nvim'
-alias y='yazi'
 alias copy='xclip -selection clipboard'
 alias paste='xclip -selection clipboard -o'
 alias leet='nvim leetcode.nvim'

@@ -1,32 +1,27 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# exit on error
 set -euo pipefail
 
-dir="$HOME"/github/neovim
+NEOVIM_DIR="$HOME/github/neovim"
+STARTING_DIR="$(pwd)"
 
-# remove previous installation
-echo "removing previous clone..."
-rm -rf "$dir"
+if [[ -d "$NEOVIM_DIR/.git" ]]; then
+  echo "neovim already exists at $NEOVIM_DIR, pulling latest changes..."
+  cd "$NEOVIM_DIR"
+  git pull
+else
+  git clone https://github.com/neovim/neovim.git "$NEOVIM_DIR"
+fi
 
-# clone nvim
-echo "cloning..."
-git clone --depth 1 https://github.com/neovim/neovim.git "$dir"
-
-# install dependencies
 echo "installing dependencies..."
-sudo apt update
 sudo apt install -y ninja-build gettext cmake curl build-essential
 
-# build and install
-cd "$dir"
-echo "building..."
+echo "building neovim..."
+cd "$NEOVIM_DIR"
 make CMAKE_BUILD_TYPE=Release
-
-echo "installing..."
 sudo make install
 
-# check version
+cd "$STARTING_DIR"
+
 echo "neovim installed successfully!"
-echo "checking version..."
 nvim --version

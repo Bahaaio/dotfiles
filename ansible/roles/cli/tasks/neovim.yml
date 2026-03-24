@@ -24,8 +24,6 @@
   git:
     repo: https://github.com/neovim/neovim
     dest: "{{ ansible_env.HOME }}/github/neovim"
-    clone: true
-    depth: 1
     version: master
   when: not nvim_binary.stat.exists
 

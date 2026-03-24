@@ -5,4 +5,4 @@
   include_tasks: flatpak.yml
 
 - name: Include JetBrains Toolbox installation
-  include_tasks: jetbrains.yml
+  include_tasks: toolbox.yml

@@ -1,0 +1,58 @@
+- name: Install JetBrains Toolbox dependencies
+  apt:
+    name:
+      - tar
+      - libxi6
+      - libxrender1
+      - libxtst6
+      - mesa-utils
+      - libfontconfig
+      - libgtk-3-bin
+      - dbus-user-session
+    state: present
+  become: true
+
+- name: Check if JetBrains Toolbox is installed
+  stat:
+    path: "{{ toolbox_dir }}/bin/jetbrains-toolbox"
+  register: toolbox_check
+
+- name: Install JetBrains Toolbox
+  when: not toolbox_check.stat.exists
+
+  block:
+    - name: Get latest JetBrains Toolbox download URL
+      uri:
+        url: "https://data.services.jetbrains.com/products/releases?code=TBA&latest=true&type=release"
+        return_content: true
+      register: toolbox_releases
+
+    - name: Download and extract JetBrains Toolbox
+      unarchive:
+        src: "{{ toolbox_releases.json.TBA[0].downloads.linux.link }}"
+        dest: "{{ toolbox_dir }}"
+        remote_src: true
+        extra_opts: [--strip-components=1]
+
+    - name: Create JetBrains Toolbox desktop entry
+      copy:
+        dest: "{{ xdg_data_home }}/applications/jetbrains-toolbox.desktop"
+        content: |
+          [Desktop Entry]
+          Icon=toolbox
+          Exec={{ toolbox_dir }}/bin/jetbrains-toolbox %u
+          Version=1.0
+          Type=Application
+          Categories=Development
+          Name=JetBrains Toolbox
+          StartupWMClass=jetbrains-toolbox
+          Terminal=false
+          MimeType=
+          X-GNOME-Autostart-enabled=true
+          X-Icon-Path={{ xdg_data_home }}/icons/hicolor/scalable/apps/toolbox.svg
+          X-Installed-Icon-Cache-Path={{ xdg_data_home }}/icons/hicolor
+          StartupNotify=false
+          X-GNOME-Autostart-Delay=10
+          X-MATE-Autostart-Delay=10
+          X-KDE-autostart-after=panel
+        mode: "0744"

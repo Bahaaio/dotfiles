@@ -1,0 +1,51 @@
+#:schema https://github.com/joshmedeski/sesh/raw/main/sesh.schema.json
+
+blacklist = ["scratch"]
+
+[default_session]
+preview_command = "lsd --tree --depth=1 --color=always --icon=always {}"
+
+[[wildcard]]
+pattern = "~/dotfiles/**"
+startup_command = "nvim"
+
+[[wildcard]]
+pattern = "~/.config/**"
+startup_command = "nvim"
+
+[[wildcard]]
+pattern = "~/code/**"
+startup_command = "nvim"
+
+[[wildcard]]
+pattern = "~/Documents/**"
+startup_command = "y"
+
+[[wildcard]]
+pattern = "~/Downloads"
+startup_command = "y"
+
+[[session]]
+name = "nvim"
+path = "~/dotfiles/config/nvim"
+startup_command = "nvim"
+
+[[session]]
+name = "tmux"
+path = "~/dotfiles/config/tmux"
+startup_command = "nvim"
+
+[[session]]
+name = "wezterm"
+path = "~/dotfiles/config/wezterm"
+startup_command = "nvim"
+
+[[session]]
+name = "zsh"
+path = "~/dotfiles/zsh"
+startup_command = "nvim"
+
+[[session]]
+name = "i3"
+path = "~/dotfiles/config/i3"
+startup_command = "nvim"

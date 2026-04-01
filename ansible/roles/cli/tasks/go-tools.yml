@@ -1,3 +1,8 @@
+- name: Install sesh
+  command: go install github.com/joshmedeski/sesh/v2@latest
+  args:
+    creates: "{{ gopath }}/bin/sesh"
+
 - name: Install lazydocker via go
   command: go install github.com/jesseduffield/lazydocker@latest
   args:

@@ -33,13 +33,13 @@ alias less='less -R'
 man() { command man "$@" | batcat -pl man; }
 
 # nala
-alias install='sudo nala install'
-alias remove='sudo nala remove'
-alias update='sudo nala upgrade'
+alias i='sudo nala install'
+alias r='sudo nala remove'
+alias u='sudo nala upgrade'
+alias p='sudo nala purge'
+alias s='nala show'
 alias undo='sudo nala history undo'
-alias show='nala show'
 alias search='nala search'
-alias purge='sudo nala purge'
 alias list='sudo nala list -u'
 alias autoremove='sudo nala autoremove --purge'
 

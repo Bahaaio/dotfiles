@@ -57,7 +57,7 @@ while true; do
     ;;
   'c' | 'C')
     echo -e "${ALT_SCREEN_ON}"
-    git diff --cached --color | less -RX
+    git diff --cached --color
     echo -ne "${ALT_SCREEN_OFF}"
     ;;
   'q' | 'Q')

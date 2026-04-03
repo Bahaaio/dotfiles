@@ -5,18 +5,15 @@
 [core]
 	pager = delta
 	autocrlf = input
-	excludesfile = $HOME/.gitignore_global
-[commit]
-	gpgsign = true
-[credential "https://github.com"]
-	helper = !/usr/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = !/usr/bin/gh auth git-credential
 [init]
 	defaultbranch = main
+[commit]
+	gpgsign = true
 [diff]
 	algorithm = histogram
 [delta]
     dark = true
     navigate = true
     hunk-header-style = syntax
+[credential "https://github.com"]
+	helper = !/usr/bin/gh auth git-credential

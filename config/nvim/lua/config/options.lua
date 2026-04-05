@@ -7,9 +7,5 @@
 --  ╚═════╝ ╚═╝        ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 --
 
-local opt = vim.o
-
--- opt.spell = true
-
--- don't use system clipboard
-vim.o.clipboard = ""
+vim.opt.clipboard = "" -- don't use system clipboard
+vim.opt.colorcolumn = "100" -- highlight column

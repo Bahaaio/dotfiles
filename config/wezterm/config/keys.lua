@@ -48,6 +48,12 @@ return {
 				local blur_opacity = 0.85
 				local overrides = window:get_config_overrides() or {}
 
+        local inital_opacity = require("config.appearance").window_background_opacity
+        print(inital_opacity)
+        if overrides.window_background_opacity == nil then
+          overrides.window_background_opacity = inital_opacity
+        end
+
 				if overrides.window_background_opacity == blur_opacity then
 					overrides.window_background_opacity = 1.0
 				else

@@ -1,4 +1,4 @@
-- name: Install dependencies
+- name: Install lockscreen dependencies
   apt:
     name:
       - autoconf

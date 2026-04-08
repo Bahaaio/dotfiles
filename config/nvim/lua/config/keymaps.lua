@@ -39,12 +39,6 @@ map({ "n", "t" }, "<M-'>", "<cmd>ToggleTerm direction=float<Cr>", { desc = "togg
 map("n", "<c-_>", function() Snacks.terminal() end, { desc = "Terminal (cwd)" })
 -- map("t", "<C-x>", "<c-\\><c-n>", {})
 
--- tab management
-map("n", "<leader>to", "<cmd>tabnew<Cr>", { desc = "open new tab" })
-map("n", "<leader>td", "<cmd>tabclose<Cr>", { desc = "close current tab" })
-map("n", "<leader>tn", "<cmd>tabn<Cr>", { desc = "go to next tab" })
-map("n", "<leader>tp", "<cmd>tabp<Cr>", { desc = "go to previous tab" })
-
 -- Commenting
 map("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })
 map("v", "<leader>/", "gc", { desc = "toggle comment", remap = true })

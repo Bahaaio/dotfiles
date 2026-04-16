@@ -50,7 +50,7 @@ alias rdepends='apt rdepends'
 # zsh
 alias src='source ~/.zshrc'
 alias e='nvim ~/.zshrc'
-alias ee='nvim ~/.zshenv'
+alias ee='nvim ~/.zprofile'
 alias ea='nvim ~/.aliases.zsh'
 alias ef='nvim ~/.functions.zsh'
 

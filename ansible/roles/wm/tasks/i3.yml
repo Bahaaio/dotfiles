@@ -18,6 +18,7 @@
       - numlockx
       - gnome-calendar
       - gnome-weather
+      - gnome-calculator
     state: present
   become: true
 

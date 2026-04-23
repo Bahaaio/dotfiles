@@ -35,7 +35,7 @@ map("n", "<leader>fF", LazyVim.pick("files"), { desc = "Find Files (Root Dir)" }
 map({ "n", "t" }, "<M-'>", "<cmd>ToggleTerm direction=float<Cr>", { desc = "toggle floating terminal" })
 -- stylua: ignore
 map("n", "<c-_>", function() Snacks.terminal() end, { desc = "Terminal (cwd)" })
--- map("t", "<C-x>", "<c-\\><c-n>", {})
+map("t", "<C-x>", "<c-\\><c-n>", {})
 
 -- Commenting
 map("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })

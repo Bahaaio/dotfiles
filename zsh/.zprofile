@@ -21,7 +21,8 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export PATH="$HOME/.local/bin:$PATH"
 
 # java
-export JAVA_HOME="/usr/lib/jvm/java-25-openjdk-amd64"
+export JAVA_HOME="$(dirname $(dirname $(readlink -f $(which javac))))"
+export PATH="$JAVA_HOME/bin:$PATH"
 
 # node.js
 export NPM_CONFIG_CACHE="$XDG_DATA_HOME/npm"

@@ -13,15 +13,15 @@ return {
 	color_scheme = "Catppuccin Mocha",
 
 	-- font
-	font_size = 18,
+	font_size = 16,
 	font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Bold" }),
 
 	-- tab bar
 	enable_tab_bar = false,
-	window_decorations = "RESIZE",
+	window_decorations = "NONE",
 
 	-- window
-	-- window_background_opacity = 0.85,
+	window_background_opacity = 0.85,
 	window_close_confirmation = "NeverPrompt",
 	adjust_window_size_when_changing_font_size = false,
 	window_padding = { top = 10, bottom = 0 },

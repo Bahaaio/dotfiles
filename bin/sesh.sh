@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 # kill session or remove zoxide entry
 # shellcheck disable=SC2016

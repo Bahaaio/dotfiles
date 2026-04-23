@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # opens the remote URL of the git repository in the current tmux pane
 

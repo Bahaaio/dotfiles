@@ -11,6 +11,8 @@
 # ZSH CORE CONFIGURATION
 # ============================================================================
 
+typeset -U PATH
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -24,7 +26,8 @@ if [ ! -d $ZINIT_HOME ]; then
 fi
 
 source "${ZINIT_HOME}/zinit.zsh"
-autoload -Uz compinit && compinit # completions
+autoload -Uz compinit
+compinit -C -d "$HOME/.cache/zcompdump"
 
 # p10k
 zinit ice depth=1; zinit light romkatv/powerlevel10k

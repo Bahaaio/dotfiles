@@ -16,6 +16,7 @@
     max_icon_size = 50
     sticky_history = false
     history_length = 50
+    offset = 10x10
     dmenu = /usr/local/bin/rofi -dmenu -theme ~/.config/rofi/launcher/style.rasi -p dunst:
     corner_radius = 16
     mouse_left_click = do_action, close_current

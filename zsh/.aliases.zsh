@@ -65,6 +65,10 @@ alias clock='tty-clock -c -s -b -t -C 6'
 alias ld='lazydocker'
 alias lg='lazygit'
 alias t='~/.local/bin/sesh.sh'
+alias ns='sudo nixos-rebuild switch --flake ~/nixos-dotfiles'
+alias ne='nvim ~/nixos-dotfiles'
+alias gc='sudo nix-collect-garbage -d'
+alias nu='ns --upgrade'
 
 # exercism
 alias es='exercism submit'

@@ -9,6 +9,8 @@
 	defaultbranch = main
 [commit]
 	gpgsign = true
+[pull]
+	rebase = true
 [diff]
 	algorithm = histogram
 [delta]

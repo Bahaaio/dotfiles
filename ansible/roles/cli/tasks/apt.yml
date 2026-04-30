@@ -23,3 +23,9 @@
     src: /usr/bin/fdfind
     dest: "{{ bin_dir }}/fd"
     state: link
+
+- name: Symlink bat to batcat in ~/.local/bin
+  file:
+    src: /usr/bin/batcat
+    dest: "{{ bin_dir }}/bat"
+    state: link

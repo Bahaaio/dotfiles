@@ -26,11 +26,11 @@ alias rm='trash'
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias c='clear'
-alias cat='batcat'
+alias cat='bat'
 alias rg='rg --glob="!.git" --hidden --follow'
 alias diff='delta --dark'
 alias less='less -R'
-man() { command man "$@" | batcat -pl man; }
+man() { command man "$@" | bat -pl man; }
 
 # nala
 alias i='sudo nala install'

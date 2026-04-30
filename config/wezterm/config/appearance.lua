@@ -1,5 +1,5 @@
 local wezterm = require("wezterm")
-local kanso = require("colors.kanso-zen")
+-- local kanso = require("colors.kanso-zen")
 
 return {
 	-- perfomance & rendering
@@ -9,11 +9,11 @@ return {
 	webgpu_power_preference = "HighPerformance",
 
 	-- color scheme
-	colors = kanso,
+	-- colors = kanso,
 	color_scheme = "Catppuccin Mocha",
 
 	-- font
-	font_size = 16,
+	font_size = 14,
 	font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Bold" }),
 
 	-- tab bar

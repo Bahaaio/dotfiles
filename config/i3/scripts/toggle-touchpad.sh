@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 # script to toggle the touchpad on/off and set preferred properties when enabled.
 # Requires: xinput, dunstify

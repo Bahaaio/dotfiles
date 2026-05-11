@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Script to adjust screen brightness, show a notification, and play a sound.
 # Requires: brightnessctl, dunstify

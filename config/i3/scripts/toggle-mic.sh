@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Script to toggle microphone mute
 # Specifc to Asus laptops
@@ -11,7 +11,7 @@ wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
 # check volume status and update LED
 if wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q "MUTED"; then
-    echo 1 >$LED_PATH
+  echo 1 >$LED_PATH
 else
-    echo 0 >$LED_PATH
+  echo 0 >$LED_PATH
 fi

@@ -60,6 +60,11 @@ bindkey -e # emacs key bindings
 bindkey '^n' history-search-forward
 bindkey '^p' history-search-backward
 
+# edit command line in $EDITOR
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey '^X^E' edit-command-line
+
 # ============================================================================
 # SHELL OPTIONS & HISTORY
 # ============================================================================

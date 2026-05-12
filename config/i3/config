@@ -85,8 +85,8 @@ bindsym Shift+XF86MonBrightnessUp   exec --no-startup-id ~/.config/i3/scripts/br
 bindsym Shift+XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/scripts/brightness.sh 0%
 
 # screenshots
-bindsym Print       exec flameshot full -c -p ~/Pictures/screenshots/
-bindsym Shift+Print exec flameshot gui  -c -p ~/Pictures/screenshots/
+bindsym Print       exec flameshot full -c -p ~/Pictures/Screenshots/
+bindsym Shift+Print exec flameshot gui  -c -p ~/Pictures/Screenshots/
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

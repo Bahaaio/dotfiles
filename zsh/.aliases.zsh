@@ -68,7 +68,7 @@ alias t='~/.local/bin/sesh.sh'
 alias ns='sudo nixos-rebuild switch --flake ~/nixos-dotfiles'
 alias ne='nvim ~/nixos-dotfiles'
 alias gc='sudo nix-collect-garbage -d'
-alias nu='nix flake update ~/nixos-dotfiles && ns'
+alias nu='sudo nix flake update --flake ~/nixos-dotfiles && ns'
 
 # exercism
 alias es='exercism submit'

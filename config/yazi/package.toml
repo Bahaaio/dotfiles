@@ -1,9 +1,9 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:chmod"
-rev = "b886025"
-hash = "1adc12c2b2b025411ab61eb8f0879574"
+rev = "c2c16c8"
+hash = "f0c8c378184d5f8abd1b095a443d336d"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
-rev = "68326b4"
-hash = "9bbdc072b7888c21e4ea0b289bb25f85"
+rev = "36c49ac"
+hash = "7dfe41c9c3d9be76da8a844263d0bbed"

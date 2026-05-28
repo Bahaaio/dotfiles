@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-LANGS="eng+ara"
+LANGS="eng"
 
-grim -g "$(slurp)" - | tesseract -l "$LANGS" - - | wl-copy &&
+SELECTION=$(slurp 2>/dev/null)
+[[ -z "$SELECTION" ]] && exit 1
+
+grim -g "$SELECTION" - | tesseract -l "$LANGS" - - | wl-copy &&
   notify-send "Copied to clipboard" "$(wl-paste)"

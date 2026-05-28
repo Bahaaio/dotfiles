@@ -1,6 +1,0 @@
-- name: Install opencode via npm
-  npm:
-    name: opencode-ai
-    global: true
-    state: present
-    executable: "{{ fnm_path }}/aliases/default/bin/npm"

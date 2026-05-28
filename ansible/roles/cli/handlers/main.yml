@@ -1,2 +1,0 @@
-- name: install yazi packages
-  command: ya pkg install

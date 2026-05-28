@@ -1,8 +1,0 @@
-- name: Include apt-based GUI apps
-  include_tasks: apt.yml
-
-- name: Include flatpak GUI apps
-  include_tasks: flatpak.yml
-
-- name: Include JetBrains Toolbox installation
-  include_tasks: toolbox.yml

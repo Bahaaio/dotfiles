@@ -1,7 +1,0 @@
-- name: Install Java and Maven
-  apt:
-    name:
-      - maven
-      - openjdk-25-jdk
-    state: present
-  become: true

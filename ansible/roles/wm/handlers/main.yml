@@ -1,3 +1,0 @@
-- name: update betterlockscreen
-  command: betterlockscreen -u {{ wallpapers_dir }}/japan_lush_house.png
-  changed_when: true

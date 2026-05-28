@@ -26,6 +26,16 @@ pattern = "~/Downloads"
 startup_command = "y"
 
 [[session]]
+name = "nix"
+path = "~/nixos-dotfiles"
+startup_command = "nvim"
+
+[[session]]
+name = "dotfiles"
+path = "~/dotfiles"
+startup_command = "nvim"
+
+[[session]]
 name = "nvim"
 path = "~/dotfiles/config/nvim"
 startup_command = "nvim"

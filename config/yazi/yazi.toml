@@ -10,3 +10,7 @@ show_symlink = false
 [preview]
 max_width = 1200
 max_height = 1200
+
+[opener]
+open = [{ run = "xdg-open %s1", desc = "Open", for = "linux", orphan = true }]
+reveal = [{ run = "xdg-open %d1", desc = "Reveal", for = "linux", orphan = true }]

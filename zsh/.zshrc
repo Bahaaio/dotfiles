@@ -37,8 +37,6 @@ zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
-zinit wait lucid for MichaelAquilina/zsh-autoswitch-virtualenv
-export AUTOSWITCH_SILENT=1
 
 # snippets
 zinit snippet OMZP::sudo
@@ -89,7 +87,7 @@ source ~/.aliases.zsh
 source ~/.functions.zsh
 
 # ============================================================================
-# TOOL INITIALIZATION (keep at end for performance)
+# TOOL INITIALIZATION
 # ============================================================================
 
 # fzf
@@ -98,6 +96,3 @@ source <(fzf --zsh)
 
 # zoxide
 eval "$(zoxide init --cmd cd zsh)"
-
-# fnm
-eval "$(fnm env)"

@@ -15,7 +15,6 @@ exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 exec --no-startup-id copyq
 exec --no-startup-id dunst
 exec --no-startup-id feh --bg-fill --randomize ~/Pictures/wallpapers/
-# exec --no-startup-id dex --autostart --environment i3
 
 # applications
 exec --no-startup-id $browser
@@ -35,7 +34,7 @@ exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 0.3 # set default m
 exec --no-startup-id xset r rate 200 35 # keyboard repeat rate
 exec --no-startup-id xset s off -dpms # disable auto-lock and screen dimming
 exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen --lock -- -e --nofork
-exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 # polkit agent for sudo password prompts
+# exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 # polkit agent for sudo password prompts
 
 # key bindings -------------------------
 

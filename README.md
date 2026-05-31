@@ -12,13 +12,5 @@ My personal setup for a clean and productive Linux environment.
 
 ![Neovim](https://raw.githubusercontent.com/Bahaaio/wallpapers/main/.github/screenshots/nvim.png)
 
-## Installation
-
-Uses [install.sh](install.sh) to automate the setup process.
-
-```sh
-curl -fsSL https://raw.githubusercontent.com/Bahaaio/dotfiles/main/install.sh | bash
-```
-
 > [!NOTE]
 > Use [link.sh](link.sh) to symlink dotfiles manually.

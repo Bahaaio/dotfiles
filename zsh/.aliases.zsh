@@ -32,20 +32,11 @@ alias diff='delta --dark'
 alias less='less -R'
 man() { command man "$@" | bat -pl man; }
 
-# nala
-alias i='sudo nala install'
-alias r='sudo nala remove'
-alias u='sudo nala upgrade'
-alias p='sudo nala purge'
-alias s='nala show'
-alias undo='sudo nala history undo'
-alias search='nala search'
-alias list='sudo nala list -u'
-alias autoremove='sudo nala autoremove --purge'
-
-# apt
-alias depends='apt depends'
-alias rdepends='apt rdepends'
+# nix
+alias ns='sudo nixos-rebuild switch --flake ~/nixos-dotfiles'
+alias nu='sudo nix flake update --flake ~/nixos-dotfiles && ns'
+alias gc='sudo nix-collect-garbage -d'
+alias ne='nvim ~/nixos-dotfiles'
 
 # zsh
 alias src='source ~/.zshrc'
@@ -65,10 +56,6 @@ alias clock='tty-clock -c -s -b -t -C 6'
 alias ld='lazydocker'
 alias lg='lazygit'
 alias t='~/.local/bin/sesh.sh'
-alias ns='sudo nixos-rebuild switch --flake ~/nixos-dotfiles'
-alias ne='nvim ~/nixos-dotfiles'
-alias gc='sudo nix-collect-garbage -d'
-alias nu='sudo nix flake update --flake ~/nixos-dotfiles && ns'
 
 # exercism
 alias es='exercism submit'

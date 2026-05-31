@@ -16,7 +16,7 @@
     "mpris",
   ],
 
-  "modules-center": ["clock"],
+  "modules-center": ["clock", "custom/prayers"],
 
   "modules-right": [
     "tray",
@@ -66,7 +66,7 @@
     "on-click": "$TERMINAL -e btop",
   },
   "clock": {
-    "format": "{:%I:%M %p}",
+    "format": "{:%a %d %b, %I:%M %p}",
     "format-alt": "{:%A %d/%m/%Y}",
     "tooltip-format": "<span>{calendar}</span>",
     "tooltip": true,
@@ -94,6 +94,7 @@
     "on-click": "wezterm start --class float -e impala",
   },
   "battery": {
+    "interval": 60,
     "format": "{icon} {capacity}%",
     "format-discharging": "{icon} {capacity}%",
     "format-charging": "{icon} {capacity}%",
@@ -101,14 +102,8 @@
       "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
       "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     },
-    "format-full": "󰂅",
     "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
     "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
-    "interval": 5,
-    "states": {
-      "warning": 20,
-      "critical": 10,
-    },
   },
   "bluetooth": {
     "format": "",
@@ -167,5 +162,12 @@
       "paused": "",
     },
     "max-length": 50,
+  },
+  "custom/prayers": {
+    "interval": 60,
+    "format": " {}",
+    "tooltip": true,
+    "exec": "~/.config/waybar/indicators/prayer.sh",
+    "return-type": "json",
   },
 }

@@ -1,0 +1,11 @@
+calculation:
+  method: EGYPT
+
+  params:
+    madhab: SHAFI
+
+# https://www.mapcoordinates.net/en
+# Coords of Great Pyramid of Giza :)
+location:
+  lat: 29.97917
+  long: 31.13417

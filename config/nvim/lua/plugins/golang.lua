@@ -9,7 +9,7 @@ vim.api.nvim_create_autocmd("FileType", {
       direction = "float",
     })
 
-    vim.keymap.set("n", "<leader>r", function()
+    vim.keymap.set("n", "<leader>R", function()
       vim.cmd("write")
       go_term:toggle()
     end, { noremap = true, silent = true, desc = "Run golang project" })

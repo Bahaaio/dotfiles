@@ -12,7 +12,7 @@ font pango:JetBrainsMono Nerd Font Bold 14
 
 exec_always --no-startup-id picom
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
-exec --no-startup-id copyq
+exec --no-startup-id copyq --start-server
 exec --no-startup-id dunst
 exec --no-startup-id feh --bg-fill --randomize ~/Pictures/wallpapers/
 
@@ -24,7 +24,7 @@ exec --no-startup-id zapzap
 exec --no-startup-id redshift-gtk
 
 # scratch pads
-exec --no-startup-id wezterm --config font_size=13 start --class wezbtop -e btop
+exec --no-startup-id wezterm --config font_size=12 start --class btop -e btop
 exec --no-startup-id wezterm start --class wezscratch -e tmux new -A -s scratch
 
 # misc settings
@@ -48,7 +48,7 @@ bindsym $mod+x exec --no-startup-id ~/.config/rofi/powermenu/powermenu.sh
 bindsym $mod+v exec --no-startup-id copyq toggle
 
 # scratch pads
-bindsym $mod+b [class="wezbtop"] scratchpad show; move position center
+bindsym $mod+b [class="btop"] scratchpad show; move position center
 bindsym $mod+o [class="wezscratch"] scratchpad show; move position center
 
 # window management
@@ -160,12 +160,12 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 for_window [class="zen"] move to workspace $ws1
 for_window [class="wezmain"] move to workspace $ws2
 for_window [class="ticktick"] move to workspace $ws5
-for_window [class="discord"] move to workspace $ws9
+for_window [class="vesktop"] move to workspace $ws9
 for_window [class="ZapZap"] move to workspace $ws10
 
 # scratch pads
-for_window [class="wezbtop"] move scratchpad
-for_window [class="wezbtop"] resize set 1261 823
+for_window [class="btop"] move scratchpad
+for_window [class="btop"] resize set 1261 823
 
 for_window [class="wezscratch"] move scratchpad
 for_window [class="wezscratch"] resize set 1130 805

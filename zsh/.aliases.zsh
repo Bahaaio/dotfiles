@@ -33,10 +33,11 @@ alias less='less -R'
 man() { command man "$@" | bat -pl man; }
 
 # nix
-alias ns='sudo nixos-rebuild switch --flake ~/nixos-dotfiles'
-alias nu='sudo nix flake update --flake ~/nixos-dotfiles && ns'
-alias gc='sudo nix-collect-garbage -d'
-alias ne='nvim ~/nixos-dotfiles'
+alias ns='nh os switch'
+alias nu='nh os switch --update'
+alias gc='nh clean all --optimise'
+alias s='nh search'
+alias ne="nvim $NH_FLAKE"
 
 # zsh
 alias src='source ~/.zshrc'
@@ -48,14 +49,21 @@ alias ef='nvim ~/.functions.zsh'
 # utils
 alias ai='opencode'
 alias vim='nvim'
-alias copy='xclip -selection clipboard'
-alias paste='xclip -selection clipboard -o'
 alias leet='nvim leetcode.nvim'
 alias rest='pomo break'
 alias clock='tty-clock -c -s -b -t -C 6'
 alias ld='lazydocker'
 alias lg='lazygit'
 alias t='~/.local/bin/sesh.sh'
+
+# clipboard
+if [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
+  alias copy='wl-copy'
+  alias paste='wl-paste'
+else
+  alias copy='xclip -selection clipboard'
+  alias paste='xclip -selection clipboard -o'
+fi
 
 # exercism
 alias es='exercism submit'

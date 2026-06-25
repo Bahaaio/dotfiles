@@ -19,6 +19,9 @@ return {
 		{ key = "F11", mods = mod.NONE, action = action.ToggleFullScreen },
 		{ key = "F12", mods = mod.NONE, action = action.ShowDebugOverlay },
 
+    -- send shift+enter as CSI-u so that tmux can distinguish it from enter
+    { key = "Enter", mods = "SHIFT", action = action.SendString("\x1b[13;2u") },
+
 		-- open url
 		{
 			key = "O", mods = mod.ALT,

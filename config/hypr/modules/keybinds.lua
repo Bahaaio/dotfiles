@@ -77,7 +77,7 @@ binds({
 		"SHIFT + XF86MonBrightnessDown",
 		function()
 			hl.timer(function()
-				hl.dispatch(hl.dsp.dpms())
+				hl.dispatch(hl.dsp.dpms({ action = "disable" }))
 			end, { timeout = 500, type = "oneshot" })
 		end,
 	},

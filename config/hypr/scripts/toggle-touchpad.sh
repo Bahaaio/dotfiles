@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-CONFIG_FILE="$HOME/.config/hypr/modules/touchpad.conf"
+CONFIG_FILE="$HOME/.config/hypr/modules/touchpad.lua"
 
 if grep -q 'enabled *= *true' "$CONFIG_FILE"; then
   sed -i 's/enabled *= *true/enabled = false/' "$CONFIG_FILE"

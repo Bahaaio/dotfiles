@@ -12,7 +12,7 @@
 }
 {
     "label" : "logout",
-    "action" : "~/.config/hypr/scripts/logout.sh",
+    "action" : "uwsm stop",
     "text" : "Logout",
     "keybind" : "e"
 }

@@ -7,20 +7,13 @@ return {
   },
 
   {
-    "folke/tokyonight.nvim",
-    opts = {
-      style = "night",
-      -- transparent = true,
-    },
+    "webhooked/kanso.nvim",
   },
 
   {
-    "webhooked/kanso.nvim",
+    "catppuccin/nvim",
     opts = {
-      transparent = true,
-      background = {
-        dark = "zen",
-      },
+      transparent_background = true,
     },
   },
 }

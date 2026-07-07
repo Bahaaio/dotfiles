@@ -14,20 +14,18 @@
 typeset -U PATH
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+if [[ -r "$XDG_CACHE_HOME/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "$XDG_CACHE_HOME/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # zinit
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-if [ ! -d $ZINIT_HOME ]; then
+ZINIT_HOME="$XDG_DATA_HOME/zinit/zinit.git"
+if [[ ! -d $ZINIT_HOME ]]; then
   mkdir -p "$(dirname $ZINIT_HOME)"
   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
 source "${ZINIT_HOME}/zinit.zsh"
-autoload -Uz compinit
-compinit -C -d "$HOME/.cache/zcompdump"
 
 # p10k
 zinit ice depth=1; zinit light romkatv/powerlevel10k
@@ -40,6 +38,10 @@ zinit light zsh-users/zsh-completions
 
 # snippets
 zinit snippet OMZP::sudo
+
+# completions
+autoload -Uz compinit
+compinit -C -d "$XDG_CACHE_HOME/zsh-completions"
 
 # prompt
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

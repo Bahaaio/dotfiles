@@ -71,7 +71,7 @@ bindkey '^X^E' edit-command-line
 
 HISTSIZE=100000                         # maximum history lines kept in memory
 SAVEHIST=$HISTSIZE                      # maximum history lines saved to histfile
-HISTFILE="$XDG_CACHE_HOME/.zsh_history" # move histfile to cache
+HISTFILE="$XDG_STATE_HOME/.zsh_history" # history file location
 setopt hist_expire_dups_first           # delete duplicate commands first when trimming history
 setopt hist_ignore_dups                 # ignore duplicated commands when adding to history
 setopt SHARE_HISTORY                    # share command history between all sessions

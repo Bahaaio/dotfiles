@@ -46,6 +46,10 @@ nmap <leader>q <Action>(HideAllWindows)
 nmap <C-S> :w<CR>
 nnoremap <expr> <Esc> v:hlsearch ? ':nohlsearch<CR>' : '<Esc>'
 
+" change font size
+nnoremap <C-=> :action EditorIncreaseFontSize<CR>
+nnoremap <C--> :action EditorDecreaseFontSize<CR>
+
 let g:WhichKeyDesc_line_below = "]<space> add empty line below cursor"
 let g:WhichKeyDesc_line_above = "[<space> add empty line above cursor"
 nmap ]<space> o<Esc>k
@@ -231,11 +235,11 @@ let g:WhichKeyDesc_misc_doc = "<leader>? Toggle documentation"
 map <leader>/ <Action>(CommentByLineComment)
 nmap <leader>? <Action>(ToggleRenderedDocPresentation)
 
-" .ideavimrc
+" ideavimrc
 let g:WhichKeyDesc_vim = "<leader>v ideavim"
-let g:WhichKeyDesc_vim_edit = "<leader>ve Edit .ideavimrc"
-let g:WhichKeyDesc_vim_reload = "<leader>vr Reload .ideavimrc"
-nnoremap <leader>ve :e ~/.ideavimrc<CR>
+let g:WhichKeyDesc_vim_edit = "<leader>ve Edit ideavimrc"
+let g:WhichKeyDesc_vim_reload = "<leader>vr Reload ideavimrc"
+nnoremap <leader>ve :e ~/.config/ideavim/ideavimrc<CR>
 nnoremap <leader>vr :action IdeaVim.ReloadVimRc.reload<CR>
 
 " Git
@@ -258,12 +262,12 @@ nmap <leader>gb <Action>(Github.Open.In.Browser)
 let g:WhichKeyDesc_hunk = "<leader>gh Git hunk"
 let g:WhichKeyDesc_hunk_reset = "<leader>ghr Reset hunk"
 let g:WhichKeyDesc_hunk_revert = "<leader>ghR Revert file changes"
-let g:WhichKeyDesc_hunk_diff = "<leader>ghd Diff hunk"
+let g:WhichKeyDesc_hunk_preview = "<leader>ghp Preview hunk diff"
 let g:WhichKeyDesc_hunk_next = "]h Next hunk"
 let g:WhichKeyDesc_hunk_prev = "[h Previous hunk"
 nmap <leader>ghr <Action>(Vcs.RollbackChangedLines)
 nmap <leader>ghR <Action>(Vcs.RollbackChangedLines)
-nmap <leader>ghd <Action>(Vcs.ShowDiffChangedLines)
+nmap <leader>ghp <Action>(Vcs.ShowDiffChangedLines)
 nmap ]h <Action>(VcsShowNextChangeMarker)
 nmap [h <Action>(VcsShowPrevChangeMarker)
 

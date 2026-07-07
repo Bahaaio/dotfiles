@@ -71,11 +71,12 @@ HISTSIZE=100000                         # maximum history lines kept in memory
 SAVEHIST=$HISTSIZE                      # maximum history lines saved to histfile
 HISTFILE="$XDG_STATE_HOME/.zsh_history" # history file location
 setopt hist_expire_dups_first           # delete duplicate commands first when trimming history
-setopt hist_ignore_dups                 # ignore duplicated commands when adding to history
-setopt SHARE_HISTORY                    # share command history between all sessions
-setopt HIST_REDUCE_BLANKS               # strip extra spaces before saving
+setopt hist_ignore_dups                 # ignore duplicated commands history list
+setopt hist_ignore_space                # ignore commands that start with space
+setopt hist_reduce_blanks               # strip extra spaces before saving
+setopt share_history                    # share history between all running sessions
 setopt autocd                           # auto-cd when typing dir name
-setopt globdots                         # include dotfiles
+setopt globdots                         # include dotfiles in glob pattersn
 setopt interactive_comments             # allow comments in interactive shell
 
 # ============================================================================

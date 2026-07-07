@@ -39,7 +39,7 @@ zinit snippet OMZP::sudo
 
 # completions
 autoload -Uz compinit
-compinit -C -d "$XDG_CACHE_HOME/zsh-completions"
+compinit -C -d "$XDG_CACHE_HOME/zcompdump"
 
 # prompt
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

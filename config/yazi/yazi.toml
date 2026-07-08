@@ -3,7 +3,7 @@
 [mgr]
 ratio = [1, 3, 3]
 sort_by = "natural"
-linemode = "size"
+linemode = "none"
 show_hidden = true
 show_symlink = false
 
@@ -14,3 +14,9 @@ max_height = 1200
 [opener]
 open = [{ run = "xdg-open %s1", desc = "Open", for = "linux", orphan = true }]
 reveal = [{ run = "xdg-open %d1", desc = "Reveal", for = "linux", orphan = true }]
+
+[plugin]
+prepend_fetchers = [
+  { url = "*", run = "git", group = "git" },
+  { url = "*/", run = "git", group = "git" },
+]

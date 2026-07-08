@@ -1,2 +1,10 @@
 [flavor]
 dark = "catppuccin-mocha"
+
+[git]
+added_sign = " "
+deleted_sign = " "
+modified_sign = " "
+updated_sign = " "
+untracked_sign = " "
+clean_sign = "  "

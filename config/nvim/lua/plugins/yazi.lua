@@ -29,6 +29,7 @@ return {
     name = "plugins.yazi",
     lazy = true,
     build = function(plugin)
+      require("yazi.plugin").build_plugin(plugin, { sub_dir = "git.yazi" })
       require("yazi.plugin").build_plugin(plugin, { sub_dir = "chmod.yazi" })
       require("yazi.plugin").build_plugin(plugin, { sub_dir = "full-border.yazi" })
     end,

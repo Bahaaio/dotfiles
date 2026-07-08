@@ -60,6 +60,10 @@ return {
 ]],
         },
       },
+      keys = {
+        -- cwd instead of root
+        { key = "f", action = ":lua Snacks.dashboard.pick('files', { root = false })" },
+      },
     },
   },
 }

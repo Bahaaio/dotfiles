@@ -15,6 +15,24 @@ return {
   },
 
   {
+    "yazi-rs/flavors",
+    name = "catppuccin-mocha.yazi",
+    lazy = true,
+    build = function(spec)
+      require("yazi.plugin").build_flavor(spec, { sub_dir = "catppuccin-mocha.yazi" })
+    end,
+  },
+
+  {
+    "yazi-rs/plugins",
+    name = "chmod.yazi",
+    lazy = true,
+    build = function(plugin)
+      require("yazi.plugin").build_plugin(plugin, { sub_dir = "chmod.yazi" })
+    end,
+  },
+
+  {
     "folke/snacks.nvim",
     opts = {
       explorer = { replace_netrw = false },

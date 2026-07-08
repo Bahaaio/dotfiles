@@ -18,6 +18,7 @@ unmap("n", "<leader>qq")
 
 -- misc
 map("n", "<leader>\\", "<C-w>v", { desc = "Split window right" })
+map("t", "<C-x>", "<c-\\><c-n>", {})
 
 -- Insert movement
 map("i", "<C-h>", "<Left>", { desc = "move left" })
@@ -33,12 +34,6 @@ map("n", "<leader>fF", LazyVim.pick("files"), { desc = "Find Files (Root Dir)" }
 
 -- lsp
 map("n", "<M-Cr>", vim.lsp.buf.code_action, { desc = "Code Action" })
-
--- floating terminal
-map({ "n", "t" }, "<M-'>", "<cmd>ToggleTerm direction=float<Cr>", { desc = "toggle floating terminal" })
--- stylua: ignore
-map("n", "<c-_>", function() Snacks.terminal() end, { desc = "Terminal (cwd)" })
-map("t", "<C-x>", "<c-\\><c-n>", {})
 
 -- Commenting
 map("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })

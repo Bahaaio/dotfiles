@@ -2,14 +2,9 @@ return {
   {
     "akinsho/toggleterm.nvim",
     lazy = true,
-    event = "VeryLazy",
-    config = function()
-      require("toggleterm").setup({
-        float_opts = {
-          border = "curved",
-        },
-      })
-    end,
+    opts = {
+      float_opts = { border = "curved" },
+    },
   },
 
   -- silence hover not available
@@ -46,6 +41,11 @@ return {
   {
     "snacks.nvim",
     opts = {
+      styles = {
+        terminal = {
+          wo = { winbar = "" },
+        },
+      },
       dashboard = {
         preset = {
           header = [[

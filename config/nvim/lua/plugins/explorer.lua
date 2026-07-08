@@ -11,6 +11,7 @@ return {
       open_for_directories = true,
       keymaps = { cycle_open_buffers = false },
       integrations = { grep_in_directory = "snacks.picker" },
+      yazi_floating_window_border = "none",
     },
   },
 
@@ -25,10 +26,11 @@ return {
 
   {
     "yazi-rs/plugins",
-    name = "chmod.yazi",
+    name = "plugins.yazi",
     lazy = true,
     build = function(plugin)
       require("yazi.plugin").build_plugin(plugin, { sub_dir = "chmod.yazi" })
+      require("yazi.plugin").build_plugin(plugin, { sub_dir = "full-border.yazi" })
     end,
   },
 

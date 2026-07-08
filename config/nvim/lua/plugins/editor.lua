@@ -61,4 +61,43 @@ return {
       focus = true,
     },
   },
+
+  {
+    "folke/snacks.nvim",
+    opts = {
+      explorer = { replace_netrw = false },
+      picker = {
+        reverse = false,
+        win = {
+          input = {
+            keys = {
+              ["<Esc>"] = { "close", mode = { "n", "i" } },
+            },
+          },
+        },
+        sources = {
+          files = {
+            layout = { preview = false },
+            hidden = true,
+          },
+          -- explorer
+          explorer = {
+            hidden = true,
+            win = {
+              list = {
+                keys = {
+                  ["o"] = "confirm",
+                  ["O"] = "explorer_open", -- open with system application
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+    keys = {
+      { "<leader>e", false },
+      { "<leader>E", false },
+    },
+  },
 }

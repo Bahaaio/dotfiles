@@ -39,7 +39,7 @@ binds({
 	{ "XF86Calculator", run(calculator) },
 
 	-- special workspaces
-	{ mod .. " + O", hl.dsp.workspace.toggle_special("scratchpad") },
+	{ mod .. " + O", hl.dsp.workspace.toggle_special("scratch") },
 	{ mod .. " + B", hl.dsp.workspace.toggle_special("btop") },
 
 	-- layout and window management

@@ -22,6 +22,6 @@ hl.on("hyprland.start", function()
 	-- run("zapzap")
 
 	-- special workspaces
-	run("wezterm start --class scratchpad -e tmux new -A -s scratch")
+	run("wezterm start --class scratch -e tmux new -A -s scratch")
 	run("wezterm --config font_size=12 start --class btop -e btop")
 end)

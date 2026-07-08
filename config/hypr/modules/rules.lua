@@ -62,12 +62,12 @@ hl.window_rule({
 
 -- special workspaces
 hl.window_rule({
-	match = { class = "scratchpad" },
+	match = { class = "scratch" },
 
 	float = true,
 	size = { 1100, 800 },
 	center = true,
-	workspace = "special:scratchpad silent",
+	workspace = "special:scratch silent",
 })
 
 hl.window_rule({

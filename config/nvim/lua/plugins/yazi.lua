@@ -11,7 +11,7 @@ return {
       open_for_directories = true,
       keymaps = { cycle_open_buffers = false },
       integrations = { grep_in_directory = "snacks.picker" },
-      yazi_floating_window_border = "none",
+      yazi_floating_window_border = "rounded",
     },
   },
 

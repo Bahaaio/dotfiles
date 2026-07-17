@@ -57,7 +57,6 @@ alias lg='lazygit'
 alias t='~/.local/bin/sesh.sh'
 
 # help
-alias -g -- -h='-h 2>&1 | bat -plhelp'
 alias -g -- --help='--help 2>&1 | bat -plhelp'
 
 # clipboard

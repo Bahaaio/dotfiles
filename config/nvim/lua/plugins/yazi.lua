@@ -9,6 +9,7 @@ return {
     },
     opts = {
       open_for_directories = true,
+      highlight_hovered_buffers_in_same_directory = false,
       keymaps = { cycle_open_buffers = false },
       integrations = { grep_in_directory = "snacks.picker" },
       yazi_floating_window_border = "rounded",

@@ -9,10 +9,21 @@
 	defaultbranch = main
 [commit]
 	gpgsign = true
+[fetch]
+	prune = true
 [pull]
 	rebase = true
+[push]
+	autoSetupRemote = true
+[rebase]
+	autoStash = true
+[merge]
+	conflictstyle = zdiff3
 [diff]
+  colorMoved = default
 	algorithm = histogram
+[log]
+  date = auto:human
 [delta]
     dark = true
     navigate = true

@@ -28,5 +28,6 @@
     dark = true
     navigate = true
     hunk-header-style = syntax
+    syntax-theme = Catppuccin Mocha
 [credential "https://github.com"]
 	helper = !/usr/bin/env gh auth git-credential

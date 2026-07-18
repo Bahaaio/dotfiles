@@ -14,5 +14,6 @@ sesh connect "$(
     --bind 'ctrl-x:reload(sesh list -z --icons)' \
     --bind 'ctrl-f:reload(fd -H -d 2 -t d . ~ ~/code ~/dotfiles ~/Documents)' \
     --bind "ctrl-d:execute-silent($DELETE_CMD)+reload(sesh list --icons)" \
+    --bind "space:jump,jump:accept" \
     --preview 'sesh preview {}'
 )"

@@ -30,6 +30,7 @@ alias cat='bat'
 alias rg='rg --glob="!.git" --hidden --follow'
 alias diff='delta --dark'
 alias less='less -R'
+alias ports='ss -tulpn'
 man() { command man "$@" | bat -plman }
 
 # nix
@@ -55,6 +56,8 @@ alias clock='tty-clock -csbtC6'
 alias ld='lazydocker'
 alias lg='lazygit'
 alias t='~/.local/bin/sesh.sh'
+alias es='exercism submit'
+alias charge='sudo tlp fullcharge'
 
 # help
 alias -g -- --help='--help 2>&1 | bat -plhelp'
@@ -67,10 +70,3 @@ else
   alias copy='xclip -selection clipboard'
   alias paste='xclip -selection clipboard -o'
 fi
-
-# exercism
-alias es='exercism submit'
-alias ej='exercism submit ./src/main/java/*.java'
-
-# tlp
-alias charge='sudo tlp fullcharge'

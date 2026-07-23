@@ -32,9 +32,6 @@ map("n", "<leader>sG", LazyVim.pick("live_grep"), { desc = "Grep (Root Dir)" })
 map("n", "<leader>ff", LazyVim.pick("files", { root = false }), { desc = "Find Files (cwd)" })
 map("n", "<leader>fF", LazyVim.pick("files"), { desc = "Find Files (Root Dir)" })
 
--- lsp
-map("n", "<M-Cr>", vim.lsp.buf.code_action, { desc = "Code Action" })
-
 -- Commenting
 map("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })
 map("v", "<leader>/", "gc", { desc = "toggle comment", remap = true })

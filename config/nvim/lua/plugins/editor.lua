@@ -63,6 +63,20 @@ return {
   },
 
   {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        ["*"] = {
+          keys = {
+            { "<C-k>", false, mode = "i" }, -- disable signature help in insert mode
+            { "<M-Cr>", vim.lsp.buf.code_action, { desc = "Code Action" } },
+          },
+        },
+      },
+    },
+  },
+
+  {
     "folke/snacks.nvim",
     opts = {
       explorer = { replace_netrw = false },

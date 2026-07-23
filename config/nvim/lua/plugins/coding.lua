@@ -1,7 +1,6 @@
 return {
   {
     "Civitasv/cmake-tools.nvim",
-    dependencies = { "akinsho/toggleterm.nvim" },
     ft = { "c", "cpp", "h", "hpp", "cmake" },
     lazy = true,
     keys = {
@@ -16,7 +15,6 @@ return {
     config = function()
       require("cmake-tools").setup({
         cmake_runner = { -- runner to use
-          name = "toggleterm", -- name of the runner
           default_opts = {
             terminal = {
               split_size = 25,

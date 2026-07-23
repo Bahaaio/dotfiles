@@ -1,13 +1,5 @@
 return {
   {
-    "akinsho/toggleterm.nvim",
-    lazy = true,
-    opts = {
-      float_opts = { border = "curved" },
-    },
-  },
-
-  {
     "folke/noice.nvim",
     opts = {
       -- silence hover not available

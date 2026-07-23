@@ -7,12 +7,32 @@ return {
     },
   },
 
-  -- silence hover not available
   {
     "folke/noice.nvim",
     opts = {
-      lsp = {
-        hover = { silent = true },
+      -- silence hover not available
+      lsp = { hover = { silent = true } },
+      presets = { lsp_doc_border = true },
+    },
+  },
+
+  {
+    "saghen/blink.cmp",
+    opts = {
+      completion = {
+        menu = { border = "rounded" },
+        documentation = { window = { border = "rounded" } },
+      },
+    },
+  },
+
+  {
+    {
+      "neovim/nvim-lspconfig",
+      opts = {
+        diagnostics = {
+          float = { border = "rounded" },
+        },
       },
     },
   },

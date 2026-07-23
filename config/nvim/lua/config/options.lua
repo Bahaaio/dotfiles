@@ -7,5 +7,6 @@
 --  ╚═════╝ ╚═╝        ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 --
 
-vim.opt.clipboard = "" -- don't use system clipboard
-vim.opt.colorcolumn = "100" -- highlight column
+vim.o.clipboard = "" -- don't use system clipboard
+vim.o.colorcolumn = "100" -- highlight column
+vim.o.winborder = "rounded" -- rounded border for floating windows

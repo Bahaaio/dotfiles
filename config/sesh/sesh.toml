@@ -3,7 +3,7 @@
 blacklist = ["scratch"]
 
 [default_session]
-preview_command = "lsd --tree --depth=1 --color=always --icon=always {}"
+preview_command = "eza --tree -L1 --icons --color=always {}"
 
 [[wildcard]]
 pattern = "~/dotfiles/**"

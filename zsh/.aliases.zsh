@@ -8,11 +8,12 @@
 # Bahaaio
 
 # ls
-alias ls='lsd'
+alias ls='eza --icons=always'
 alias l='ls -lah'
 alias la='ls -A'
 alias lt='ls --tree'
 alias lta='ls --tree -a'
+alias lc='ls --code=both'
 
 # cd
 alias ..='cd ..'

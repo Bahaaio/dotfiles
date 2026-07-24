@@ -49,7 +49,7 @@ eval "$(dircolors -b)" # Enable colors
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} # Enable ls colors
 zstyle ':completion:*' menu no # disable zsh menu
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' 'l:|=* r:|=*' # Case-insensitive + substring matching
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd --tree --depth=1 --color=always --icon=always $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --tree -L1 --icons --color=always $realpath'
 zstyle ':completion:*' sort false # disable sorting (preserve order)
 zstyle ':completion:*:cd:*' sort true # enable sorting for cd completions
 

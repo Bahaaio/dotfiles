@@ -3,16 +3,16 @@ return {
     "mikavilpas/yazi.nvim",
     dependencies = { "folke/snacks.nvim" },
     cmd = "Yazi",
-    keys = {
-      { "<leader>e", mode = { "n", "v" }, "<cmd>Yazi<cr>", desc = "Open yazi" },
-      { "<leader>E", "<cmd>Yazi cwd<cr>", desc = "Open yazi (Root dir)" },
-    },
     opts = {
       open_for_directories = true,
       highlight_hovered_buffers_in_same_directory = false,
       keymaps = { cycle_open_buffers = false },
       integrations = { grep_in_directory = "snacks.picker" },
       yazi_floating_window_border = "rounded",
+    },
+    keys = {
+      { "<leader>e", mode = { "n", "v" }, "<cmd>Yazi<cr>", desc = "Open yazi" },
+      { "<leader>E", "<cmd>Yazi cwd<cr>", desc = "Open yazi (Root dir)" },
     },
   },
 

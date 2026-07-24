@@ -13,10 +13,10 @@ return {
 
   {
     "Wansmer/treesj",
+    opts = { use_default_keymaps = false },
     keys = {
       { "<leader>cj", "<cmd>TSJToggle<cr>", desc = "Join Toggle" },
     },
-    opts = { use_default_keymaps = false },
   },
 
   {
@@ -36,19 +36,18 @@ return {
       },
     },
     keys = function()
-      -- stylua: ignore
+      local flash = require("flash")
+
       return {
-        { "m", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash", },
-        { "<C-t>", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter", },
+        { "m", mode = { "n", "x", "o" }, flash.jump, desc = "Flash" },
+        { "<C-t>", mode = { "n", "o", "x" }, flash.treesitter, desc = "Flash Treesitter" },
       }
     end,
   },
 
   {
     "folke/trouble.nvim",
-    opts = {
-      focus = true,
-    },
+    opts = { focus = true },
   },
 
   {
@@ -71,28 +70,27 @@ return {
       explorer = { replace_netrw = false },
       picker = {
         reverse = false,
-        win = {
-          input = {
-            keys = {
-              ["<Esc>"] = { "close", mode = { "n", "i" } },
-            },
-          },
-        },
         sources = {
           files = {
             layout = { preview = false },
             hidden = true,
           },
-          -- explorer
           explorer = {
             hidden = true,
             win = {
               list = {
                 keys = {
                   ["o"] = "confirm",
-                  ["O"] = "explorer_open", -- open with system application
+                  ["O"] = "explorer_open",
                 },
               },
+            },
+          },
+        },
+        win = {
+          input = {
+            keys = {
+              ["<Esc>"] = { "close", mode = { "n", "i" } },
             },
           },
         },

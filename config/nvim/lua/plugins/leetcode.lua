@@ -2,16 +2,7 @@ local leet_arg = "leetcode.nvim"
 
 return {
   "kawre/leetcode.nvim",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "MunifTanjim/nui.nvim",
-    "folke/tokyonight.nvim",
-  },
-  config = function(_, opts)
-    require("leetcode").setup(opts)
-    -- use tokyonight theme
-    vim.cmd(":colorscheme tokyonight")
-  end,
+  dependencies = { "nvim-lua/plenary.nvim", "MunifTanjim/nui.nvim" },
   lazy = leet_arg ~= vim.fn.argv(0, -1),
   opts = {
     arg = leet_arg,

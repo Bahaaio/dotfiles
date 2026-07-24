@@ -71,6 +71,7 @@ return {
       picker = {
         reverse = false,
         sources = {
+          grep = { hidden = true },
           files = {
             layout = { preview = false },
             hidden = true,

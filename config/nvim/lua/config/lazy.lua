@@ -33,6 +33,7 @@ require("lazy").setup({
   install = { colorscheme = { "catppuccin-mocha" } },
   ui = {
     border = "rounded",
+    wrap = false,
     backdrop = 100,
   },
   checker = {

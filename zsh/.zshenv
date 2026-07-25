@@ -33,3 +33,7 @@ export PATH="$GOPATH/bin:$PATH"
 # rust
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export PATH="$CARGO_HOME/bin:$PATH"
+
+# tools
+# https://github.com/BurntSushi/ripgrep/issues/1719
+export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/ripgreprc"

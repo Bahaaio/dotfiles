@@ -1,0 +1,15 @@
+# don't let ripgrep vomit really long lines to my terminal, and show a preview.
+--max-columns=150
+--max-columns-preview
+
+# search hidden files / directories
+--hidden
+
+# follow symlinks
+--follow
+
+# using glob patterns to include/exclude files or folders
+--glob=!.git/*
+
+# because who cares about case!?
+--smart-case

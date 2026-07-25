@@ -19,20 +19,21 @@ unmap("n", "<leader>qq")
 -- misc
 map("n", "<leader>\\", "<C-w>v", { desc = "Split window right" })
 map("t", "<C-x>", "<c-\\><c-n>", {})
+map({ "t", "n" }, "<M-'>", Snacks.terminal.focus, { desc = "Toggle terminal" })
 
--- Insert movement
+-- insert movement
 map("i", "<C-h>", "<Left>", { desc = "move left" })
 map("i", "<C-j>", "<Down>", { desc = "move down" })
 map("i", "<C-k>", "<Up>", { desc = "move up" })
 map("i", "<C-l>", "<Right>", { desc = "move right" })
 
--- LazyVim
+-- lazyVim
 map("n", "<leader>sg", LazyVim.pick("live_grep", { root = false }), { desc = "Grep (cwd)" })
 map("n", "<leader>sG", LazyVim.pick("live_grep"), { desc = "Grep (Root Dir)" })
 map("n", "<leader>ff", LazyVim.pick("files", { root = false }), { desc = "Find Files (cwd)" })
 map("n", "<leader>fF", LazyVim.pick("files"), { desc = "Find Files (Root Dir)" })
 
--- Commenting
+-- commenting
 map("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })
 map("v", "<leader>/", "gc", { desc = "toggle comment", remap = true })
 

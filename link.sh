@@ -5,11 +5,8 @@
 
 set -e
 
-# create required directories if they don't exist
+# ensure .config exists and symlink config
 mkdir -p "$HOME/.config"
-mkdir -p "$HOME/.local/bin"
-
-stow bin --target="$HOME/.local/bin/"
 stow config --target="$HOME/.config/"
 
 # symlink .zshenv to home directory

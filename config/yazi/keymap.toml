@@ -16,5 +16,4 @@ prepend_keymap = [
   { on = [ "g", "p" ], run = "cd ~/Pictures",   desc = "Go ~/Pictures" },
   { on = [ "g", "v" ], run = "cd ~/Videos",     desc = "Go ~/Videos" },
   { on = [ "g", "s" ], run = "cd ~/Documents",  desc = "Go ~/Documents" },
-  { on = [ "g", "b" ], run = "cd ~/.local/bin", desc = "Go ~/.local/bin" },
 ]

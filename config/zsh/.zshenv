@@ -23,9 +23,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # zsh
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
-# bin
-export PATH="$HOME/.local/bin:$PATH"
-
 # node.js
 export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
 

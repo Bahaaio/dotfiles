@@ -41,11 +41,11 @@ alias s='nh search'
 alias ne="nvim $NH_FLAKE"
 
 # zsh
-alias src='source ~/.zshrc'
-alias e='nvim ~/.zshrc'
-alias ee='nvim ~/.zshenv'
-alias ea='nvim ~/.aliases.zsh'
-alias ef='nvim ~/.functions.zsh'
+alias src="source $ZDOTDIR/.zshrc"
+alias e="nvim $ZDOTDIR/.zshrc"
+alias ee="nvim $ZDOTDIR/.zshenv"
+alias ea="nvim $ZDOTDIR/aliases.zsh"
+alias ef="nvim $ZDOTDIR/functions.zsh"
 alias anon='unset HISTFILE'
 
 # utils

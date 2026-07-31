@@ -52,7 +52,7 @@ startup_command = "nvim"
 
 [[session]]
 name = "zsh"
-path = "~/dotfiles/zsh"
+path = "~/dotfiles/config/zsh"
 startup_command = "nvim"
 
 [[session]]

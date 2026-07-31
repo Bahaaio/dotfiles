@@ -11,7 +11,7 @@
 # ZSH CORE CONFIGURATION
 # ============================================================================
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Enable Powerlevel10k instant prompt. Should stay close to the top of .zshrc.
 if [[ -r "$XDG_CACHE_HOME/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "$XDG_CACHE_HOME/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -42,7 +42,7 @@ autoload -Uz compinit
 compinit -C -d "$XDG_CACHE_HOME/zcompdump"
 
 # prompt
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source "$ZDOTDIR/p10k.zsh"
 
 # Completion styling
 eval "$(dircolors -b)" # Enable colors
@@ -84,8 +84,8 @@ setopt interactive_comments             # allow comments in interactive shell
 # ============================================================================
 
 # Load aliases and functions
-source ~/.aliases.zsh
-source ~/.functions.zsh
+source "$ZDOTDIR/aliases.zsh"
+source "$ZDOTDIR/functions.zsh"
 
 # ============================================================================
 # TOOL INITIALIZATION

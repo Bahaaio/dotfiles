@@ -14,6 +14,9 @@ export TERMINAL="wezterm"
 export BROWSER="zen"
 export EDITOR="nvim"
 
+# zsh
+export ZDOTDIR="$HOME/.config/zsh"
+
 # XDG base directories
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_DATA_HOME="$HOME/.local/share"

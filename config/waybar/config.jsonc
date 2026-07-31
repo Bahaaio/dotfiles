@@ -9,12 +9,7 @@
   "margin-left": 8,
   "margin-right": 8,
 
-  "modules-left": [
-    "custom/nix",
-    "custom/weather",
-    "hyprland/workspaces",
-    "mpris",
-  ],
+  "modules-left": ["custom/nix", "custom/weather", "hyprland/workspaces"],
 
   "modules-center": ["clock", "custom/prayers"],
 
@@ -47,13 +42,7 @@
       "10": "10",
       "active": "󱓻",
     },
-    "persistent-workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": [],
-    },
+    "persistent-workspaces": { "1": [], "2": [], "3": [], "4": [], "5": [] },
   },
   "custom/nix": {
     "format": "  BTW",
@@ -150,18 +139,6 @@
     "exec": "wttrbar",
     "return-type": "json",
     "on-click": "gnome-weather",
-  },
-  "mpris": {
-    "format": "{player_icon} {artist} - {title}",
-    "format-paused": "{status_icon} <i>{artist} - {title}</i>",
-    "player-icons": {
-      "default": "",
-      "mpv": " ",
-    },
-    "status-icons": {
-      "paused": "",
-    },
-    "max-length": 50,
   },
   "custom/prayers": {
     "interval": 60,

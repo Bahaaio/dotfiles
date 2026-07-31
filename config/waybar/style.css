@@ -45,7 +45,6 @@ mpris.empty {
 #backlight,
 #custom-weather,
 #memory,
-#mpris,
 #window,
 #tray,
 #cpu,
@@ -95,9 +94,6 @@ tooltip {
 }
 #tray {
   margin: 0;
-}
-#mpris {
-  margin-right: 5px;
 }
 
 tooltip {

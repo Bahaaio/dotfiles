@@ -8,7 +8,7 @@
 # Bahaaio
 
 # ls
-alias ls='eza --icons=always'
+alias ls='eza --icons=auto'
 alias l='ls -lah'
 alias la='ls -A'
 alias lt='ls --tree'

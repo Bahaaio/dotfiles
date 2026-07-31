@@ -55,7 +55,7 @@ alias leet='nvim leetcode.nvim'
 alias clock='tty-clock -csbtC4'
 alias ld='lazydocker'
 alias lg='lazygit'
-alias t='~/.local/bin/sesh.sh'
+alias t='~/.config/tmux/scripts/sesh.sh'
 alias es='exercism submit'
 alias charge='sudo tlp fullcharge'
 

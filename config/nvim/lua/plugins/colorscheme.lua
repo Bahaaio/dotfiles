@@ -17,6 +17,12 @@ return {
           transparent = false,
         },
       },
+      custom_highlights = function(colors)
+        return {
+          FloatBorder = { fg = colors.surface0 },
+          BlinkCmpMenuBorder = { fg = colors.surface0 },
+        }
+      end,
     },
   },
 }

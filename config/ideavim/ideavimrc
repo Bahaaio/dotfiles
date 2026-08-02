@@ -55,10 +55,10 @@ let g:WhichKeyDesc_line_above = "[<space> add empty line above cursor"
 nmap ]<space> o<Esc>k
 nmap [<space> O<Esc>j
 
-let g:WhichKeyDesc_run = "<leader>R Run"
-let g:WhichKeyDesc_stop = "<leader>S Stop"
-nmap <leader>R <Action>(Run)
-nmap <leader>S <Action>(Stop)
+let g:WhichKeyDesc_run = "\\r Run"
+let g:WhichKeyDesc_stop = "\\s Stop"
+nmap \\r <Action>(Run)
+nmap \\s <Action>(Stop)
 
 " Paste
 map <C-S-v> <Action>(EditorPaste)

@@ -20,6 +20,27 @@ return {
   },
 
   {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    opts = {
+      settings = { save_on_toggle = true },
+    },
+    keys = function()
+      local harpoon = require("harpoon")
+
+      return {
+        { "<leader>h", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = "Harpoon Quick Menu" },
+        { "<leader>H", function() harpoon:list():add() end, desc = "Harpoon File" },
+
+        { "<M-1>", function() harpoon:list():select(1) end, desc = "Harpoon to File 1" },
+        { "<M-2>", function() harpoon:list():select(2) end, desc = "Harpoon to File 2" },
+        { "<M-3>", function() harpoon:list():select(3) end, desc = "Harpoon to File 3" },
+        { "<M-4>", function() harpoon:list():select(4) end, desc = "Harpoon to File 4" },
+      }
+    end,
+  },
+
+  {
     "folke/flash.nvim",
     opts = {
       modes = {

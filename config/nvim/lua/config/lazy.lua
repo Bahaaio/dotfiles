@@ -37,9 +37,9 @@ require("lazy").setup({
     backdrop = 100,
   },
   checker = {
-    enabled = true, -- check for plugin updates periodically
-    notify = false, -- notify on update
-  }, -- automatically check for plugin updates
+    enabled = false, -- don't check for plugin updates
+    notify = false, -- don't notify on update
+  },
   performance = {
     rtp = {
       -- disable some rtp plugins

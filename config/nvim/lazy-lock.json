@@ -7,8 +7,6 @@
   "bufferline.nvim": { "branch": "main", "commit": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3" },
   "catppuccin": { "branch": "main", "commit": "05e8787020dcfdb937bf2ff23855ea2415b4e072" },
   "catppuccin-mocha.yazi": { "branch": "main", "commit": "4770a3467169bfdb0a3b11601921aaf27c100630" },
-  "clangd_extensions.nvim": { "branch": "main", "commit": "78c2ecd659d54972be17aa6ba2deac3c53223b80" },
-  "cmake-tools.nvim": { "branch": "master", "commit": "22859d754b5de738cfe9945e0910729f63deefd0" },
   "conform.nvim": { "branch": "master", "commit": "619363c30309d29ffa631e67c8183f2a72caa373" },
   "cord.nvim": { "branch": "master", "commit": "8f081613c1314a0d6f38839c2788216621efb4d9" },
   "dial.nvim": { "branch": "master", "commit": "f2634758455cfa52a8acea6f142dcd6271a1bf57" },

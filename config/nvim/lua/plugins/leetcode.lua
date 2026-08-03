@@ -7,18 +7,8 @@ return {
   opts = {
     arg = leet_arg,
     image_support = true,
-    lang = "cpp",
-    storage = { home = "~/code/competetive/leetcode/" },
-    injector = {
-      ["cpp"] = {
-        imports = function()
-          return {
-            "#include <bits/stdc++.h>",
-            "using namespace std;",
-          }
-        end,
-      },
-    },
+    lang = "csharp",
+    storage = { home = "~/code/competetive/leetcode" },
   },
   keys = {
     { "<localleader>", "", desc = "Leetcode" },

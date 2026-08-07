@@ -3,6 +3,7 @@
 # kill session or remove zoxide entry
 # shellcheck disable=SC2016
 DELETE_CMD='s={2..}; tmux kill-session -t "$s" || zoxide remove "${s/#\~/$HOME}"'
+DIRECTORIES="~ ~/code ~/dotfiles ~/Documents -E .cache"
 
 sesh connect "$(
   sesh list --icons | fzf-tmux -p 80%,70% \
@@ -12,7 +13,7 @@ sesh connect "$(
     --bind 'ctrl-t:reload(sesh list -t --icons)' \
     --bind 'ctrl-g:reload(sesh list -c --icons)' \
     --bind 'ctrl-x:reload(sesh list -z --icons)' \
-    --bind 'ctrl-f:reload(fd -H -d 2 -t d . ~ ~/code ~/dotfiles ~/Documents)' \
+    --bind "ctrl-f:reload(fd -H -d2 -t d . $DIRECTORIES)" \
     --bind "ctrl-d:execute-silent($DELETE_CMD)+reload(sesh list --icons)" \
     --bind "space:jump,jump:accept" \
     --preview 'sesh preview {}'

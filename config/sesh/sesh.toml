@@ -27,7 +27,7 @@ startup_command = "y"
 
 [[session]]
 name = "nix"
-path = "~/nixos-dotfiles"
+path = "$NH_FLAKE"
 startup_command = "nvim"
 
 [[session]]

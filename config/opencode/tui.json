@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/tui.json",
-  "theme": "github",
+  "theme": "catppuccin",
   "diff_style": "stacked",
   "keybinds": {
     "messages_page_up": "ctrl+u",

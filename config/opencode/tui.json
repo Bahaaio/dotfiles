@@ -4,6 +4,8 @@
   "diff_style": "stacked",
   "keybinds": {
     "messages_page_up": "ctrl+u",
-    "messages_page_down": "ctrl+d"
+    "messages_page_down": "ctrl+d",
+    "diff_open": "<leader>d",
+    "session_fork": "<leader>f",
   }
 }

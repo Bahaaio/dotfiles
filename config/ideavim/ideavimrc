@@ -223,6 +223,12 @@ imap <C-l> <Right>
 inoremap <C-e> <End>
 inoremap <C-a> <Home>
 
+" Move lines
+map <A-j> <Action>(MoveLineDown)
+imap <A-j> <Action>(MoveLineDown)
+map <A-k> <Action>(MoveLineUp)
+imap <A-k> <Action>(MoveLineUp)
+
 " Yanking
 nnoremap y "+y
 vnoremap y "+y

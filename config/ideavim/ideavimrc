@@ -78,7 +78,7 @@ vnoremap > >gv
 
 " NERDTree
 let g:WhichKeyDesc_misc_tree = "<leader>e NERDTree focus"
-nmap <leader>e :NERDTreeFocus<CR>
+nmap <leader>e :NERDTreeFocus<CR><Action>(SelectInProjectView)
 
 " easymotion
 nmap m <Plug>(easymotion-s)

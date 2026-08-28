@@ -92,6 +92,12 @@ nmap <leader>df <Action>(ActivateProblemsViewToolWindow)
 nmap ]d <Action>(GotoNextError)
 nmap [d <Action>(GotoPreviousError)
 
+" Errors
+let g:WhichKeyDesc_errors_next = "]e next error"
+let g:WhichKeyDesc_errors_prev = "[e previous error"
+nmap ]e <Action>(ReSharperGotoNextErrorInSolution)
+nmap [e <Action>(ReSharperGotoPrevErrorInSolution)
+
 " Find
 let g:WhichKeyDesc_find = "<leader>f Find"
 let g:WhichKeyDesc_find_files = "<leader>ff Find files"

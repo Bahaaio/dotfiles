@@ -3,16 +3,5 @@
   "autoupdate": false,
   "experimental": {
     "disable_paste_summary": true
-  },
-  "agent": {
-    "code-reviewer": {
-      "mode": "subagent",
-      "description": "Reviews code for best practices and potential issues",
-      "prompt": "You are a code reviewer. Focus on security, performance, and maintainability.",
-      "tools": {
-        "write": false,
-        "edit": false
-      }
-    }
   }
 }

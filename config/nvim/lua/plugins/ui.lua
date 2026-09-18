@@ -48,6 +48,12 @@ return {
           wo = { winbar = "" },
         },
       },
+      image = {
+        doc = {
+          enabled = true,
+          inline = false,
+        },
+      },
       dashboard = {
         preset = {
           header = [[

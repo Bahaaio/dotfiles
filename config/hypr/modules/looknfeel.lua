@@ -10,7 +10,7 @@ hl.config({
 		gaps_in = 5,
 		gaps_out = 10,
 
-		border_size = 2,
+		border_size = 0,
 
 		col = {
 			active_border = active_border_color,
@@ -27,7 +27,7 @@ hl.config({
 	},
 
 	decoration = {
-		rounding = 10,
+		rounding = 16,
 		rounding_power = 2,
 
 		-- Change transparency of focused and unfocused windows
@@ -38,7 +38,6 @@ hl.config({
 			enabled = true,
 			range = 4,
 			render_power = 3,
-			color = 0xee1a1a1a,
 		},
 
 		-- https://wiki.hypr.land/Configuring/Basics/Variables/#blur

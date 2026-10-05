@@ -1,7 +1,4 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "autoupdate": false,
-  "experimental": {
-    "disable_paste_summary": true
-  }
 }

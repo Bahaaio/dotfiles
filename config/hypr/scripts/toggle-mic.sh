@@ -4,7 +4,6 @@
 
 LED_PATH="/sys/class/leds/platform::micmute/brightness"
 
-wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 swayosd-client --input-volume mute-toggle
 
 # toggle the mic led

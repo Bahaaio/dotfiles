@@ -48,8 +48,8 @@ binds({
 	{ mod .. " + S", hl.dsp.layout("togglesplit") }, -- dwindle only
 	{ mod .. " + T", hl.dsp.group.toggle() },
 	{ mod .. " + G", hl.dsp.group.toggle() },
-	{ mod .. " + N", hl.dsp.group.next() },
-	{ mod .. " + P", hl.dsp.group.prev() },
+	{ mod .. " + L", hl.dsp.group.next() },
+	{ mod .. " + H", hl.dsp.group.prev() },
 	{ mod .. " + SPACE", hl.dsp.window.cycle_next() },
 	{ mod .. " + SHIFT + SPACE", hl.dsp.window.float() },
 

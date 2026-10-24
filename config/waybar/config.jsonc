@@ -80,7 +80,7 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "spacing": 1,
-    "on-click": "wezterm start --class float -e impala",
+    "on-click": "XDG_CURRENT_DESKTOP=gnome uwsm-app -- gnome-control-center",
   },
   "battery": {
     "interval": 60,

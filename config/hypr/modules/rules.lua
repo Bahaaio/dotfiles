@@ -4,7 +4,7 @@
 -- TODO: change hardcoded sizes to dynamic sizes
 
 hl.window_rule({
-	match = { class = "(localsend.*|.*copyq|.*pavucontrol|.*satty|btop)" },
+	match = { class = "(localsend.*|.*copyq|.*pavucontrol|.*satty|btop|org.gnome.Settings)" },
 
 	float = true,
 	center = true,

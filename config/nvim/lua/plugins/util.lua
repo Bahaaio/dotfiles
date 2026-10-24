@@ -11,7 +11,12 @@ return {
   },
 
   {
-    "mrjones2014/smart-splits.nvim",
+    "smart-splits-nvim/smart-splits.nvim",
+    dependencies = { "smart-splits-nvim/backend-tmux" },
+    opts = {
+      mux = { backend = "smart-splits-backend-tmux" },
+      move = { at_edge = "stop" },
+    },
     keys = function()
       local smart_splits = require("smart-splits")
 

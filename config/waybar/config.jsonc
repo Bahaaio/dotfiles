@@ -138,7 +138,6 @@
     "interval": 600,
     "exec": "wttrbar",
     "return-type": "json",
-    "on-click": "gnome-weather",
   },
   "custom/prayers": {
     "interval": 60,

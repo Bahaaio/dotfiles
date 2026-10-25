@@ -25,6 +25,7 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
 # node.js
 export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
+export PATH="$XDG_DATA_HOME/pnpm/bin:$PATH"
 
 # golang
 export GOPATH="$XDG_DATA_HOME/go"

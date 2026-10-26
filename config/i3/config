@@ -20,7 +20,7 @@ exec --no-startup-id feh --bg-fill --randomize ~/Pictures/wallpapers/
 exec --no-startup-id $browser
 exec --no-startup-id wezterm start --class wezmain -e tmux new -A -s dev
 exec --no-startup-id ticktick
-exec --no-startup-id zapzap
+exec --no-startup-id zapfast
 exec --no-startup-id redshift-gtk
 
 # scratch pads
@@ -161,7 +161,7 @@ for_window [class="zen"] move to workspace $ws1
 for_window [class="wezmain"] move to workspace $ws2
 for_window [class="ticktick"] move to workspace $ws5
 for_window [class="vesktop"] move to workspace $ws9
-for_window [class="ZapZap"] move to workspace $ws10
+for_window [class="zapfast"] move to workspace $ws10
 
 # scratch pads
 for_window [class="btop"] move scratchpad

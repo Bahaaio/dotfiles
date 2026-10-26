@@ -19,7 +19,7 @@ hl.on("hyprland.start", function()
 	run("zen", { workspace = "1 silent" })
 	run("wezterm start -e tmux new -A -s dev", { workspace = "2 silent" })
 	run("ticktick", { workspace = "5 silent" })
-	-- run("zapzap")
+	-- run("zapfast")
 
 	-- special workspaces
 	run("wezterm start --class scratch -e tmux new -A -s scratch")

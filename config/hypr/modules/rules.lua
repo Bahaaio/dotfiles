@@ -19,10 +19,10 @@ hl.window_rule({ match = { class = "org.gnome.Nautilus" }, float = true, size = 
 hl.window_rule({ match = { class = "Postman" }, workspace = 4 })
 hl.window_rule({ match = { class = "ticktick" }, workspace = 5 })
 hl.window_rule({ match = { class = "vesktop" }, workspace = 9 })
-hl.window_rule({ match = { class = ".*zapzap" }, workspace = 10 })
+hl.window_rule({ match = { class = "zapfast" }, workspace = 10 })
 
--- disable screen sharing for zapzap
-hl.window_rule({ match = { class = ".*zapzap" }, no_screen_share = true })
+-- disable screen sharing for zapfast
+hl.window_rule({ match = { class = "zapfast" }, no_screen_share = true })
 
 -- don't focus ticktick when open
 hl.window_rule({ match = { class = "ticktick" }, suppress_event = "activatefocus" })
@@ -56,8 +56,11 @@ hl.window_rule({
 
 -- blur
 hl.window_rule({
-	match = { class = "zen|.*Nautilus|.*pavucontrol|vesktop|ticktick|.*zapzap|Postman", fullscreen = false },
-	opacity = "0.9",
+	match = {
+		class = "zen|.*Nautilus|.*pavucontrol|vesktop|ticktick|zapfast|Postman|jetbrains-.*",
+		fullscreen = false, -- don't blur fullscreen windows
+	},
+	opacity = 0.9,
 })
 
 -- special workspaces

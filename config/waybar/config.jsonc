@@ -80,7 +80,7 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "spacing": 1,
-    "on-click": "XDG_CURRENT_DESKTOP=gnome uwsm-app -- gnome-control-center",
+    "on-click": "XDG_CURRENT_DESKTOP=gnome uwsm-app -- gnome-control-center wifi",
   },
   "battery": {
     "interval": 60,

@@ -63,10 +63,5 @@ alias charge='sudo tlp fullcharge'
 alias -g -- --help='--help 2>&1 | bat -plhelp'
 
 # clipboard
-if [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
-  alias copy='wl-copy'
-  alias paste='wl-paste'
-else
-  alias copy='xclip -selection clipboard'
-  alias paste='xclip -selection clipboard -o'
-fi
+alias copy='wl-copy'
+alias paste='wl-paste'

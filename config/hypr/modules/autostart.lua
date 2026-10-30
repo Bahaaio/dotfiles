@@ -5,6 +5,8 @@ local function run(app, rules)
 end
 
 hl.on("hyprland.start", function()
+	hl.exec_cmd("hyprlock")
+
 	run("hyprpaper")
 	run("waybar")
 	run("hypridle")

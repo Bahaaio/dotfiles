@@ -9,8 +9,8 @@ return {
   {
     "catppuccin",
     opts = {
-      transparent_background = false,
-      float = { transparent = false },
+      transparent_background = true,
+      float = { transparent = true },
       integrations = {
         gitsigns = {
           enabled = true,

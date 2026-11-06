@@ -43,6 +43,7 @@ hl.config({
 		-- https://wiki.hypr.land/Configuring/Basics/Variables/#blur
 		blur = {
 			enabled = true,
+			popups = true,
 			size = 12,
 			passes = 2,
 			contrast = 1.5,
